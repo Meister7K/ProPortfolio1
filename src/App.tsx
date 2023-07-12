@@ -1,4 +1,5 @@
 import { useRef, useEffect} from "react";
+import Button from "./components/button/Button";
 import "./App.scss";
 
 function App() {
@@ -30,7 +31,11 @@ function App() {
 
   useEffect(()=>{
     textFlip();
-  },[])
+  },[]);
+
+  const addComponent = ()=>{
+
+  }
 
   return (
     <>
@@ -42,9 +47,10 @@ function App() {
       >
         KARL FINKEL
       </h1>
-      <button className="playBtn btn">
-        Play
-      </button>
+      <Button /*onClick={}*/ text="PLAY">
+
+      </Button>
+      
     </>
   );
 }
