@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect} from "react";
 import "./App.scss";
 
 function App() {
@@ -28,6 +28,10 @@ function App() {
     }, 30);
   };
 
+  useEffect(()=>{
+    textFlip();
+  },[])
+
   return (
     <>
       <h1
@@ -38,6 +42,9 @@ function App() {
       >
         KARL FINKEL
       </h1>
+      <button className="playBtn btn">
+        Play
+      </button>
     </>
   );
 }
