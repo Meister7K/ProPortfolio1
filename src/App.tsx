@@ -47,7 +47,7 @@ function App() {
       >
         KARL FINKEL
       </h1>
-      <Button /*onClick={}*/ text="PLAY">
+      <Button /*onClick={}*/ text="ENTER">
 
       </Button>
       
