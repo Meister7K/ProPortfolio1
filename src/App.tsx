@@ -1,5 +1,6 @@
 import Layout from "./components/layout/Layout";
 import "./App.scss";
+import {useState, useEffect} from 'react'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from "./components/pages/homepage/Home";
 import Contact from "./components/pages/contact/Contact";
@@ -9,13 +10,21 @@ import Game from "./components/pages/game/Game";
 import Error from "./components/pages/error/Error";
 import Projects from "./components/pages/projects/Projects";
 import Resume from "./components/pages/resume/Resume";
+import Loader from "./components/loader/Loader";
 
 
 function App() {
+const [loading, setLoading] = useState(false);
+
+useEffect(()=>{
+  setLoading(true);
+  setTimeout(()=>{
+    setLoading(false);
+  },1000)
+},[]);
 
   return (
-    <>
-      <BrowserRouter>
+    <div className="container">{loading? (<Loader/>):(<BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout/>}>
             <Route index element={<Home/>}/>
@@ -27,8 +36,10 @@ function App() {
             <Route path="*" element={<Error/>}/>
           </Route>
         </Routes>
-      </BrowserRouter>
-    </>
+      </BrowserRouter>)}
+    
+      
+    </div>
   );
 }
 
