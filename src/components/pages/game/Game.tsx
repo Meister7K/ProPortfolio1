@@ -1,12 +1,13 @@
+import GameCanvas from "../../game_setup/GameCanvas"
 import "./Game.scss"
-import * as THREE from 'three';
+
 
 
 
 function Game(props:any){
     return(
         <>
-        
+        <GameCanvas/>
         </>
     )
 }
