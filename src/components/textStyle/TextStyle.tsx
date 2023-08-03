@@ -4,38 +4,36 @@ import { useRef, useEffect} from "react";
 function TextStyle() {
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*+=-<>?/";
     const titleRef: any = useRef();
+    
     const textFlip = () => {
-      let loops = -1;
+      let loops: number = -1;
+      const textInterval: any = setInterval(() => {
+        if (titleRef.current) {
+          loops = loops + 1 / 3;
+          if (loops >= titleRef.current.innerText.length) {
+            clearInterval(textInterval);
+            return;
+          }
   
-      const textInterval = setInterval(() => {
-        titleRef.current.innerText = titleRef.current.innerText
-          .split("")
-          .map((char: any, index: number) => {
-            if (index < loops) {
-              console.log(titleRef.current.dataset.value[index]);
-              return titleRef.current.dataset.value[index];
-            }
-  
-            return chars[Math.floor(Math.random() * chars.length)];
-          })
-          .join("");
-  
-        if (loops >= titleRef.current.innerText.length) {
-          clearInterval(textInterval);
+          titleRef.current.innerText = titleRef.current.dataset.value
+            .split("")
+            .map((char: any, index: number) =>
+              index < loops ? char : chars[Math.floor(Math.random() * chars.length)]
+            )
+            .join("");
         }
-  
-        loops += 1/3;
       }, 30);
     };
   
-    useEffect(()=>{
+    useEffect(() => {
       textFlip();
-    },[]);
+    }, []);
+    
   
    
   
     return (
-      <>
+      <div className="title-container">
         <h1
           ref={titleRef}
           className="title"
@@ -44,7 +42,7 @@ function TextStyle() {
         >
           KARL FINKEL
         </h1>  
-      </>
+      </div>
     );
   }
   

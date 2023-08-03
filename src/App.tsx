@@ -11,6 +11,8 @@ import Error from "./components/pages/error/Error";
 import Projects from "./components/pages/projects/Projects";
 import Resume from "./components/pages/resume/Resume";
 import Loader from "./components/loader/Loader";
+import Landing from "./components/pages/landing/Landing";
+import Support from "./components/pages/support/Support";
 
 
 function App() {
@@ -27,12 +29,14 @@ useEffect(()=>{
     <div className="container">{loading? (<Loader/>):(<BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout/>}>
+            <Route path="landing" element={<Landing/>}/>
             <Route index element={<Home/>}/>
             <Route path="about" element={<About/>}/>
-            <Route path="projects" element={<Projects/>}/>
             <Route path="resume" element={<Resume/>}/>
-            <Route path="game" element={<Game/>}/>
+            <Route path="projects" element={<Projects/>}/>
             <Route path="contact" element={<Contact/>}/>
+            <Route path="game" element={<Game/>}/>
+            <Route path="support" element={<Support/>}/>
             <Route path="*" element={<Error/>}/>
           </Route>
         </Routes>
