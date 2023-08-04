@@ -6,9 +6,9 @@ import "./Game.scss"
 
 function Game(props:any){
     return(
-        <>
+        <div id="game">
         <GameCanvas/>
-        </>
+        </div>
     )
 }
 

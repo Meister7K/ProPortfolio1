@@ -1,5 +1,5 @@
 import "./Nav.scss"
-import { Outlet, Link } from "react-router-dom"
+import { HashLink as Link } from "react-router-hash-link";
 
 
 function Nav(props:any){
@@ -8,25 +8,25 @@ function Nav(props:any){
         <nav className="nav">
             <ul>
                 <li className="navLink">
-                    <Link to="/">Home</Link>
+                    <Link smooth to="#home">Home</Link>
                 </li>
                 <li className="navLink">
-                    <Link to="/about">About</Link>
+                    <Link smooth to="#about">About</Link>
                 </li>
                 <li className="navLink">
-                    <Link to="/resume">Resume</Link>
+                    <Link smooth to="#resume">Resume</Link>
                 </li>
                 <li className="navLink">
-                    <Link to="/projects">Projects</Link>
+                    <Link smooth to="#projects">Projects</Link>
                 </li>
                 <li className="navLink">
-                    <Link to="/game">Game</Link>
+                    <Link smooth to="#game">Game</Link>
                 </li>
                 <li className="navLink">
-                    <Link to="/contact">Contact</Link>
+                    <Link smooth to="#contact">Contact</Link>
                 </li>
                 <li className="navLink">
-                    <Link to="/support">Support</Link>
+                    <Link smooth to="#support">Support</Link>
                 </li>
             </ul>
         </nav>

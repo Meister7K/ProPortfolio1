@@ -1,3 +1,21 @@
-.nav li {
+.nav ul, .nav ul li {
     list-style: none;
+   padding: 0;
+   margin:0;
+}
+
+.nav{
+    position: fixed;
+    display: flex;
+    bottom:5vh;
+    right:5vw;
+    z-index: 10;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 1px 1px 20px rgba(0,0,0,0.696);
+    padding: 2dvi;
+}
+
+.nav:active{
+
 }

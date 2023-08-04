@@ -33,8 +33,8 @@ useEffect(()=>{
             <Route path="resume" element={<Resume/>}/>
             <Route path="projects" element={<Projects/>}/>
             <Route path="contact" element={<Contact/>}/>
-            <Route path="game" element={<Game/>}/>
             <Route path="support" element={<Support/>}/>
+            <Route path="game" element={<Game/>}/>
             <Route path="*" element={<Error/>}/>
           </Route>
         </Routes>
