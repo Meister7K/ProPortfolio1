@@ -14,10 +14,10 @@ function Nav(props:any){
                     <Link to="/about">About</Link>
                 </li>
                 <li className="navLink">
-                    <Link to="/projects">Projects</Link>
+                    <Link to="/resume">Resume</Link>
                 </li>
                 <li className="navLink">
-                    <Link to="/resume">Resume</Link>
+                    <Link to="/projects">Projects</Link>
                 </li>
                 <li className="navLink">
                     <Link to="/game">Game</Link>
@@ -25,7 +25,9 @@ function Nav(props:any){
                 <li className="navLink">
                     <Link to="/contact">Contact</Link>
                 </li>
-                
+                <li className="navLink">
+                    <Link to="/support">Support</Link>
+                </li>
             </ul>
         </nav>
         

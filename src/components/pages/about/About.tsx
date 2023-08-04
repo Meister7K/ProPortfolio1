@@ -4,6 +4,9 @@ import "./About.scss"
 function About(props:any){
     return(
         <>
+        <div>
+            <h2>This is the about page. It needs a headshot and a story</h2>
+        </div>
         
         </>
     )
