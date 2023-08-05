@@ -11,11 +11,30 @@
     right:5vw;
     z-index: 10;
     border-radius: 10px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(1px);
     box-shadow: 1px 1px 20px rgba(0,0,0,0.696);
     padding: 2dvi;
 }
 
-.nav:active{
+ul:hover > .nav-link{
+    opacity: 0.3;
+}
 
+  ul:hover > .nav-link:hover{
+    opacity: 1;
+}
+
+.nav-link{
+    transition: opacity 400ms ease;
+}
+ul{
+    transition: opacity 400ms ease;
+}
+
+.nav-link:active{
+    filter: drop-shadow( 1px 1px 10px white) invert(100%);
+}
+.nav button{
+    width: 100%;
+    margin-top: 5px;
 }

@@ -2,6 +2,7 @@ import Layout from "./components/layout/Layout";
 import "./App.scss";
 import {useState, useEffect} from 'react'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import Home from "./components/pages/homepage/Home";
 import Contact from "./components/pages/contact/Contact";
 import Maintenance from "./components/pages/maintenance/Maintenance";
@@ -12,9 +13,19 @@ import Projects from "./components/pages/projects/Projects";
 import Resume from "./components/pages/resume/Resume";
 import Loader from "./components/loader/Loader";
 import Support from "./components/pages/support/Support";
+import image from "../src/assets/dark-souls.gif"
+import { useActiveMenu } from "react-active-menu";
 
 
 function App() {
+
+const {
+  active,
+  handleTriggerClick,
+  registerSectionRef,
+  registerTriggerRef,
+} = useActiveMenu({smooth:true});
+
 const [loading, setLoading] = useState(false);
 
 useEffect(()=>{
@@ -25,10 +36,11 @@ useEffect(()=>{
 },[]);
 
   return (
-    <div className="container">{loading? (<Loader/>):(<BrowserRouter>
+    <div className="container">{loading? (<Loader/>):(
+    <HashRouter>
         <Routes>
           <Route path="/" element={<Layout/>}>
-            <Route index element={<Home/>}/>
+            <Route path="home" element={<Home/>}/>
             <Route path="about" element={<About/>}/>
             <Route path="resume" element={<Resume/>}/>
             <Route path="projects" element={<Projects/>}/>
@@ -38,7 +50,7 @@ useEffect(()=>{
             <Route path="*" element={<Error/>}/>
           </Route>
         </Routes>
-      </BrowserRouter>)}
+      </HashRouter>)}
     
       
     </div>
