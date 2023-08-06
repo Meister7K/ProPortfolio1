@@ -1,5 +1,6 @@
 import "./Resume.scss"
 import SkillList from "../../skill-list/SkillList";
+import resume from "../../../assets/files/Karl Finkel Resume.pdf"
 
 
 function Resume(props:any){
@@ -138,7 +139,7 @@ function Resume(props:any){
     const eduArray: any =[{
       "title":"UTA",
       "years":"2023",
-      "description":""
+      "description":"Full Stack Bootcamp through the University of Texas at Austin that covered the full MERN stack"
     }];
 
     return(
@@ -180,7 +181,9 @@ function Resume(props:any){
                 <a href=""><h5>CAPM</h5></a>
                 <a href=""><h5>Flex Full MERN Stack Bootcamp</h5></a>
             </div>
-            
+            <div className="resume-link">
+            <a href={resume} download> <button className='download' >Download my Resume</button></a>
+            </div>
         </div>
     )
 }

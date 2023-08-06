@@ -1,5 +1,5 @@
 import "./About.scss"
-import headshot from "../../../assets/headshot.jpg"
+import headshot from "../../../assets/images/headshot.jpg"
 import RandomCycle from "../../randomcycle/RandomCycle"
 import Button from "../../button/Button"
 

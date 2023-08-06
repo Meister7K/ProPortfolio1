@@ -25,12 +25,19 @@ function Layout() {
     </div>
     <div className="pages">
      <Home/>
+     <br/>
      <About/>
+     <br/>
      <Resume/>
+     <br/>
      <Projects/>
+     <br/>
      <Contact/>
+     <br/>
      <Game/>
+     <br/>
      <Support/>
+     <br/>
     </div>
       <Nav/>
       <div className="footer">
