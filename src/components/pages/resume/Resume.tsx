@@ -127,35 +127,58 @@ function Resume(props:any){
         //   {"name":"","icon":},
          ];
 
+    const workArray: any =[{
+      "title":"Project Coordinator", 
+      "years":"2020-2023",
+      "company":"LSC",
+      "location":"Austin, TX(remote)",
+      "description":"Performed project coordination and management duties for one large and several smaller clients that rely on LSC's Integrity Management group. Managed a team of several technicians over five lines of business spanning several states."
+  }];
+
+    const eduArray: any =[{
+      "title":"UTA",
+      "years":"2023",
+      "description":""
+    }];
+
     return(
         <div id="resume">
             <h1 className="resume-title">Resume </h1>
             <SkillList skills={iconArray}/>
             <div className="work-history-container">
-                <h3>Work History</h3>
+                <h2>Work History</h2>
                 <ul className="history-list>">
-                    <li>
-                        <h4>
-
-                        </h4>
-                        <p>
-
-                        </p>
-                    </li>
+                {
+                workArray.map((job:any, index:any) => (
+                <li className="job-item" key={index}>
+                    <h3 className="job-title">{job.title}</h3>
+                    <h3 className="years">{job.years}</h3>
+                    <h4 className="company">{job.company}</h4>
+                    <h4 className="location">{job.location}</h4>
+                    <p className="job-description">{job.description}</p>
+                    <p></p>
+                     
+                </li>
+                )) }
                 </ul>
             </div>
             <div className="education-container">
-                <h3>Education</h3>
+                <h2>Education</h2>
                 <ul className="education-list>">
-                    <li>
-                        <h4>
-
-                        </h4>
-                        <p>
-                            
-                        </p>
-                    </li>
+                {
+                eduArray.map((school:any, index:any) => (
+                <li key={index}>
+                    <h4 className="school-title">{school.title}</h4>
+                    <h4 className="years">{school.years}</h4>
+                    <p className="school-description">{school.description}</p>
+                    <p></p>
+                </li>
+                
+                )) }
                 </ul>
+                <h4>Certifications</h4>
+                <a href=""><h5>CAPM</h5></a>
+                <a href=""><h5>Flex Full MERN Stack Bootcamp</h5></a>
             </div>
             
         </div>

@@ -5,7 +5,7 @@ function SkillList({skills}:any){
     return(
         <>
             <div className="skills-container">
-                <h3>Skills</h3>
+                <h2>Skills</h2>
                 <ul className="skill-list">
                     {
                         skills.map((skill:any, index:any)=>(

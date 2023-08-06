@@ -3,9 +3,11 @@ import "./Button.scss"
 
 function Button(props:any){
     return(
-        <button className="btn ">
+        <a href={props.href} target="blank">
+            <button className="btn">
             {props.text}
-        </button>
+            </button>
+        </a>
     )
 }
 
