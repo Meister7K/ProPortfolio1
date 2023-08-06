@@ -56,6 +56,13 @@ function Contact(props:any){
               </ul>
             </form>
           </div>
+          <div className="contact-links">
+          <ul>
+            <li>
+              <a></a>
+            </li>
+          </ul>
+          </div>
     </div>
     )
 }

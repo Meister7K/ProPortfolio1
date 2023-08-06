@@ -13,7 +13,6 @@ import Projects from "./components/pages/projects/Projects";
 import Resume from "./components/pages/resume/Resume";
 import Loader from "./components/loader/Loader";
 import Support from "./components/pages/support/Support";
-import image from "../src/assets/dark-souls.gif"
 import { useActiveMenu } from "react-active-menu";
 
 
