@@ -1,6 +1,8 @@
 import "./Resume.scss"
 import SkillList from "../../skill-list/SkillList";
 import resume from "../../../assets/files/Karl Finkel Resume.pdf"
+import BootCert from"../../../assets/files/UTABootCert.pdf"
+import CAPM from "../../../assets/files/CAPM certificate.pdf"
 
 
 function Resume(props:any){
@@ -134,17 +136,48 @@ function Resume(props:any){
       "company":"LSC",
       "location":"Austin, TX(remote)",
       "description":"Performed project coordination and management duties for one large and several smaller clients that rely on LSC's Integrity Management group. Managed a team of several technicians over five lines of business spanning several states."
-  }];
+  },
+  {
+    "title":"CP Technician", 
+    "years":"2018-2020",
+    "company":"LSC",
+    "location":"Roseville, MN(journeyman)",
+    "description":"Performed installation and maintenance on hardware for electrical systems for energy companies. Collected and ran data analytics on sustainability systems for clients. performed pre-construction surveys for future safety systems. Lead teams of 3-6 technicians on integrity management  and construction projects for large energy companies."
+},
+{
+  "title":"Civil Consultant Intern (Financial Crimes Investigation Unit)", 
+  "years":"2017",
+  "company":"Duluth Police Dept.",
+  "location":"Duluth, MN",
+  "description":"Shadowed and participated in operations of the department. Reviewed financial documents and imported data into the national database. Created data documents and reports from findings along with ran queries for case specific evidence."
+},
+{
+  "title":"Bartender, Bouncer, Line Cook", 
+  "years":"2014-2017",
+  "company":"Grandma's Sports Garden",
+  "location":"Duluth, MN",
+  "description":"Worked several positions while completing my undergraduate degree and playing football at UMD. Learned valuable time management and additional soft skills."
+}
+];
 
     const eduArray: any =[{
-      "title":"UTA",
+      "title":"University of Texas Austin",
       "years":"2023",
+      "cert": "Full Stack Flex Certification",
       "description":"Full Stack Bootcamp through the University of Texas at Austin that covered the full MERN stack"
-    }];
+    },
+    {
+      "title":"University of Minnesota Duluth",
+      "years":"2013-2017",
+      "cert":"B.A Criminology",
+      "description":"A Bachelors degree in Criminology specializing in cybersecurity and a minor in accounting."
+    }
+  ];
 
     return(
         <div id="resume">
             <h1 className="resume-title">Resume </h1>
+            <h4 className="resume-intro">A Full Stack Web Developer with a background in Project Management and life-long devotion to learning. Effective at combining efficiency and creative problem solving to develop intuitive solutions and user-friendly applications. Known among peers for a strong attention to detail and a can-do attitude regardless of the complexity of the project</h4>
             <SkillList skills={iconArray}/>
             <div className="work-history-container">
                 <h2>Work History</h2>
@@ -152,12 +185,16 @@ function Resume(props:any){
                 {
                 workArray.map((job:any, index:any) => (
                 <li className="job-item" key={index}>
-                    <h3 className="job-title">{job.title}</h3>
-                    <h3 className="years">{job.years}</h3>
-                    <h4 className="company">{job.company}</h4>
-                    <h4 className="location">{job.location}</h4>
+                    <div className="li-top">
+                      <h3 className="title">{job.title}</h3>
+                      <h3 className="years">{job.years}</h3>
+                    </div>
+                    
+                    <div className="li-bot">
+                      <h4 className="company">{job.company}</h4>
+                      <h4 className="location">{job.location}</h4>
+                    </div>
                     <p className="job-description">{job.description}</p>
-                    <p></p>
                      
                 </li>
                 )) }
@@ -168,21 +205,25 @@ function Resume(props:any){
                 <ul className="education-list>">
                 {
                 eduArray.map((school:any, index:any) => (
-                <li key={index}>
-                    <h4 className="school-title">{school.title}</h4>
+                <li className="edu-item" key={index}>
+                  <div className="li-top">
+                    <h4 className="title">{school.title}</h4>
                     <h4 className="years">{school.years}</h4>
+                  </div>
+                    
+                    <h4 className="cert">{school.cert}</h4>
                     <p className="school-description">{school.description}</p>
                     <p></p>
                 </li>
                 
                 )) }
                 </ul>
-                <h4>Certifications</h4>
-                <a href=""><h5>CAPM</h5></a>
-                <a href=""><h5>Flex Full MERN Stack Bootcamp</h5></a>
+                <h3>Certification Links</h3>
+                <a href={CAPM} target="blank"><h5>CAPM</h5></a>
+                <a href={BootCert} target="blank"><h5>UTA Flex Full MERN Stack Bootcamp</h5></a>
             </div>
             <div className="resume-link">
-            <a href={resume} download> <button className='download' >Download my Resume</button></a>
+            <a href={resume} download> <button className='download' >Download Full Resume</button></a>
             </div>
         </div>
     )

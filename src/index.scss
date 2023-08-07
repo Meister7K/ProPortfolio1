@@ -13,7 +13,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   margin:0 auto;
-  padding: 0;
+  padding-inline: 5dvw;
   min-width: 320px;
 }
 
@@ -23,8 +23,9 @@ a {
   text-decoration: inherit;
 }
 
-p{
-  padding-inline: 5dvw;
+p, h1,h2,h3,h4,h5{
+ 
+  margin: 0;
 }
 
 body {

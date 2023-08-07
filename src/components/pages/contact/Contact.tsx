@@ -75,7 +75,7 @@ function Contact(props:any){
             </form>
           </div>
           <div className="contact-links">
-            <h3>Additional Links</h3>
+            <h3>Or Reach Out Here</h3>
           <ul className="social-links">
           {
                 socialLinks.map((link, index:any) => (
