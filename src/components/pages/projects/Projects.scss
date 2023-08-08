@@ -1,21 +1,37 @@
+
+
 ul{
     list-style: none;
     padding: 0;
 }
+.project-container{
+    width: inherit;
+    overflow: scroll;
+
+}
 
 .project-track{
+
  display: flex;
- gap: 4vmin;
+ gap: 2dvw;
+
 }
 
 .project-item{
-
+  
     & > img{
-        width: 40vmin;
-        height: 56vmin;
+        width: 30dvw;
+        height: 30dvh;
         object-fit: cover;
         object-position: center;
         border-radius: 10px;
 
+    }
+}
+
+
+@media (max-width: 356px) {
+    .project-track{
+        display: block;
     }
 }

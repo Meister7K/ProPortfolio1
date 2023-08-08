@@ -1,10 +1,13 @@
 import "./Projects.scss";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Button from "../../button/Button";
 import TMFImage from"../../../assets/images/TMF-home.png"
 import DungeonImg from "../../../assets/images/DungeonGame-GIF.gif"
 import BlogImg from "../../../assets/images/BlogImg.png"
-function Projects(props: any) {
+
+
+function Projects(props:any) {
+
   const projectArray = [
     {"primary":false,
   "title":"Task Master Flex",
@@ -31,19 +34,60 @@ function Projects(props: any) {
   ];
 
   const proRef = useRef(null);
+  const [mouseDown, setMouseDown] = useState(false);
+  const mouseLocation = useRef({
+    initialX:0,
+    initialY:0,
+    scrollLeft:0,
+    scrollTop:0
+  });
+
+  const [isScrolling,setIsScrolling]= useState(false);
+
+  const handleScrollStart = (e:any)=>{
+    if(!proRef.current) return
+    const slider = proRef.current;
+    const initialX = e.pageX - slider.offsetLeft;
+    const initialY = e.pageY - slider.offsetTop;
+    const scrollLeft = slider.scrollLeft;
+    const scrollTop = slider.scrollTop;
+   mouseLocation.current = { initialX, initialY, scrollLeft, scrollTop }
+    setMouseDown(true)
+    document.body.style.cursor = "grabbing"
+  }
+
+  const handleScrollEnd = (e:any)=>{
+    setMouseDown(false)
+    if(!proRef.current)return
+    document.body.style.cursor = "default"
+  }
+
+  const handleScroll = (e:any)=>{
+    if(!mouseDown||!proRef.current) return;
+    e.preventDefault();
+    const slider = proRef.current;
+        const x = e.pageX - slider.offsetLeft;
+        const y = e.pageY - slider.offsetTop;
+        const walkX = (x - mouseLocation.current.initialX) * 1.5;
+        const walkY = (y - mouseLocation.current.initialY) * 1.5;
+        slider.scrollLeft = mouseLocation.current.scrollLeft - walkX;
+        slider.scrollTop = mouseLocation.current.scrollTop - walkY;
+        console.log(walkX, walkY)
+    }
   
+
 
 
   return (
     <div id="projects">
       <div className="projects-container">
         <h1>Projects</h1>
-        <ul className="project-track" /*onMouseDown={handleMD}*/>
+        <ul className="project-track" ref={proRef} onMouseDown={handleScrollStart} onMouseUp={handleScrollEnd} onMouseMove={handleScroll}>
           {
             projectArray.map((project:any, index:any)=>(
               <li className="project-item" id={project.primary ? ("primary"):("secondary")} key={index}>
             <h2>{project.title}</h2>
-            <img src={project.image}/>
+            <img src={project.image} draggable={false}/>
             <p>{project.description}</p>
             {project.inProgress ?  (<span>Under Development</span>):('')}
             <Button text="Link" href={project.link}/>
