@@ -3,11 +3,7 @@
 ul{
     list-style: none;
     padding: 0;
-}
-.project-container{
-    width: inherit;
-    overflow: scroll;
-
+    
 }
 
 .project-track{
@@ -16,22 +12,20 @@ ul{
  gap: 2dvw;
 
 }
-
 .project-item{
-  
-    & > img{
-        width: 30dvw;
-        height: 30dvh;
-        object-fit: cover;
-        object-position: center;
-        border-radius: 10px;
 
+    & > p,>h2{
+        text-shadow: 1px 0px 1px black, 0px 1px 1px black, -1px 0px 1px black, 0px -1px 1px black;
     }
 }
 
 
-@media (max-width: 356px) {
+@media (max-width: 400px) {
     .project-track{
         display: block;
+    }
+    .project-item{
+        width: 100%;
+        margin-bottom: 5dvh;
     }
 }

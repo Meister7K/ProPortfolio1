@@ -75,6 +75,7 @@ function Projects(props:any) {
         console.log(walkX, walkY)
     }
   
+    
 
 
 
@@ -85,9 +86,8 @@ function Projects(props:any) {
         <ul className="project-track" ref={proRef} onMouseDown={handleScrollStart} onMouseUp={handleScrollEnd} onMouseMove={handleScroll}>
           {
             projectArray.map((project:any, index:any)=>(
-              <li className="project-item" id={project.primary ? ("primary"):("secondary")} key={index}>
+              <li className="project-item" style={{backgroundImage:`url(${project.image})`,width:"32%",borderRadius:"10px",boxShadow:"1px 1px 20px rgba(0,0,0,0.696)"}} id={project.primary ? ("primary"):("secondary")} key={index} >
             <h2>{project.title}</h2>
-            <img src={project.image} draggable={false}/>
             <p>{project.description}</p>
             {project.inProgress ?  (<span>Under Development</span>):('')}
             <Button text="Link" href={project.link}/>
