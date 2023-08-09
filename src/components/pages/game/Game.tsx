@@ -1,4 +1,4 @@
-import GameCanvas from "../../game_setup/GameCanvas"
+import GameCanvas from "../../game_setup/canvas/GameCanvas"
 import "./Game.scss"
 
 
