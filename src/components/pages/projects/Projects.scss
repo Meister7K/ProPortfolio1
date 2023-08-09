@@ -1,35 +1,103 @@
+.ud {
+    position: absolute;
+    color: red;
+    filter: opacity(0.5);
+    transform: rotate(15deg);
+    border: 1px solid red;
+    border-radius: 3px;
+    z-index: 1;
+    pointer-events: none;
+  }
 
-
-ul{
-    list-style: none;
-    padding: 0;
-    
-}
-
-.project-track{
-
- display: flex;
- gap: 2dvw;
-
-}
-.project-item{
-    border-radius: 10px;
+.project-track {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    gap: 2dvw;
     user-select: none;
+  }
+  
+  .project-item {
+    display: block;
+    width: 50dvw;
+    height: 50dvh;
+    border-radius: 10px;
     background-position: center;
-    background-size:cover ;
+    background-size: cover;
+    text-shadow: 1px 0px 1px black, 0px 1px 1px black, -1px 0px 1px black, 0px -1px 1px black;
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+  }
+  
+  .project-content {
+    opacity: 0;
+    padding: 0;
+    max-height: 0;
+
+    transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+  }
+  
+  .primary {
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    z-index: 20;
+    //border-radius: 0%;
+    padding: 0;
+background-size: contain;
+background-repeat: no-repeat;
+backdrop-filter: blur(2px);
+
+p,h2{
+   font-weight: bolder;
+   backdrop-filter: blur(1px);
+}
+
+    .project-content {
+        position: relative;
+      opacity: 1;
+      max-height: 100vh;
+      padding: 1rem;
+    }
+   
+  }
+  
+  .secondary {
     
-    & > p,>h2{
-        text-shadow: 1px 0px 1px black, 0px 1px 1px black, -1px 0px 1px black, 0px -1px 1px black;
+    .pro-btn{
+        display: none;
     }
-}
+    .btn{
+        display: none;
+    }
+    .project-content {
+    
+      opacity: 0;
+      max-height: 0;
+      padding: 0;
+      
+    }
+    
+  }
+  
+  @media (max-width: 400px) {
+    .project-track {
+      display: block;
+    }
+    .project-item {
+      width: 100%;
+      margin-bottom: 5dvh;
+    }
+  }
 
-
-@media (max-width: 400px) {
-    .project-track{
-        display: block;
-    }
-    .project-item{
-        width: 100%;
-        margin-bottom: 5dvh;
-    }
-}
+  
+  
+  
+  
+  
+  

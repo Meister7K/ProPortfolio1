@@ -14,9 +14,9 @@
     backdrop-filter: blur(1px);
     box-shadow: 1px 1px 20px rgba(0,0,0,0.696);
     padding: 2dvi;
-}
 
-ul:hover > .nav-link{
+
+    ul:hover > .nav-link{
     opacity: 0.3;
 }
 
@@ -30,6 +30,9 @@ ul:hover > .nav-link{
 ul{
     transition: opacity 400ms ease;
 }
+}
+
+
 
 .nav-link:active{
     filter: drop-shadow( 1px 1px 10px white);
