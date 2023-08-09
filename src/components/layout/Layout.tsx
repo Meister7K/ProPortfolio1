@@ -32,9 +32,9 @@ function Layout() {
      <br/>
      <Projects/>
      <br/>
-     <Contact/>
-     <br/>
      <Game/>
+     <br/>
+     <Contact/>
      <br/>
      <Support/>
      <br/>
