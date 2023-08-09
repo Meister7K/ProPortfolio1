@@ -13,7 +13,11 @@ ul{
 
 }
 .project-item{
-
+    border-radius: 10px;
+    user-select: none;
+    background-position: center;
+    background-size:cover ;
+    
     & > p,>h2{
         text-shadow: 1px 0px 1px black, 0px 1px 1px black, -1px 0px 1px black, 0px -1px 1px black;
     }
