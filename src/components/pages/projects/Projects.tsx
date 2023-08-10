@@ -1,11 +1,13 @@
 import "./Projects.scss";
-import { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Button from "../../button/Button";
 import TMFImage from "../../../assets/images/TMF-home.png";
 import DungeonImg from "../../../assets/images/DungeonGame-GIF.gif";
 import BlogImg from "../../../assets/images/BlogImg.png";
 
 function Projects(props: any) {
+
+  // project list array
   const projectArray = [
     {
       id: 1,
@@ -42,7 +44,7 @@ function Projects(props: any) {
       inProgress: false,
     },
   ];
-
+  // project style transition
   const [projects, setProjects] = useState(projectArray);
 
   const handleDisplayChange = (projectID: any) => {
@@ -55,14 +57,98 @@ function Projects(props: any) {
     );
   };
 
-  const proRef = useRef(null);
+  //Set up side scroll for projects
+
+  const [mouseDownAt, setMouseDownAt] = useState<number | string>("0");
+  const [prevPercentage, setPrevPercentage] = useState("0");
+  const [percentage, setPercentage] = useState<number>(0);
+
+  const handleOnDown = (e: React.MouseEvent | React.TouchEvent) => {
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    setMouseDownAt(clientX);
+  };
+  
+  const handleOnMove = (e: React.MouseEvent | React.TouchEvent) => {
+    if (typeof mouseDownAt === "string" || mouseDownAt === 0) return;
+  
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const mouseDelta = parseFloat(mouseDownAt.toString()) - clientX;
+    const maxDelta = window.innerWidth / 2;
+  
+    const newPercentage = (mouseDelta / maxDelta) * -100;
+    const nextPercentageUnconstrained = parseFloat(prevPercentage) + newPercentage;
+    const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+  
+    setPercentage(nextPercentage);
+  
+    const track = document.getElementById("project-track") as HTMLElement;
+    track.style.transform = `translate(${nextPercentage}%, 100%)`;
+  
+    const projectCards = track.getElementsByClassName("project-item");
+    for (const projectCard of projectCards) {
+      (projectCard as HTMLElement).style.objectPosition = `${100 + nextPercentage}% center`;
+    }
+  };
+
+  React.useEffect(() => {
+    const handleOnDown = (e: MouseEvent | TouchEvent) => {
+      const clientX = 'touches' in e ? e.touches[0].clientX : (e as MouseEvent).clientX;
+      setMouseDownAt(clientX);
+    };
+  
+    const handleOnUp = () => {
+      setMouseDownAt(0);
+      setPrevPercentage(percentage.toString());
+    };
+  
+    const handleOnMove = (e: MouseEvent | TouchEvent) => {
+      if (typeof mouseDownAt === "string" || mouseDownAt === 0) return;
+  
+      const clientX = 'touches' in e ? e.touches[0].clientX : (e as MouseEvent).clientX;
+      const mouseDelta = parseFloat(mouseDownAt.toString()) - clientX;
+      const maxDelta = window.innerWidth / 2;
+  
+      const newPercentage = (mouseDelta / maxDelta) * -100;
+      const nextPercentageUnconstrained = parseFloat(prevPercentage) + newPercentage;
+      const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+  
+      setPercentage(nextPercentage);
+  
+      const track = document.getElementById("project-track") as HTMLElement;
+      track.style.transform = `translate(${nextPercentage}%, 0%)`; //
+  
+      const projectCards = track.getElementsByClassName("project-item");
+      for (const projectCard of projectCards) {
+        (projectCard as HTMLElement).style.objectPosition = `${100 + nextPercentage}% center`;
+      }
+    };
+  
+    window.addEventListener("mousedown", handleOnDown);
+    //window.addEventListener("touchstart", (e: TouchEvent) => handleOnDown(e));
+    window.addEventListener("mouseup", handleOnUp);
+    //window.addEventListener("touchend", (e: TouchEvent) => handleOnUp(e));
+    window.addEventListener("mousemove", handleOnMove);
+    //window.addEventListener("touchmove", (e: TouchEvent) => handleOnMove(e));
+  
+    return () => {
+      window.removeEventListener("mousedown", handleOnDown);
+      //window.removeEventListener("touchstart", (e: TouchEvent) => handleOnDown(e));
+      window.removeEventListener("mouseup", handleOnUp);
+      //window.removeEventListener("touchend", (e: TouchEvent) => handleOnUp(e));
+      window.removeEventListener("mousemove", handleOnMove);
+      //window.removeEventListener("touchmove", (e: TouchEvent) => handleOnMove(e));
+    };
+  }, [mouseDownAt, prevPercentage, percentage]);
+
+
 
   return (
     <div id="projects" className="page">
-      <div className="projects-container">
+      
         <h1>Projects</h1>
-        <ul className="project-track" ref={proRef}>
-          {projects.map((project: any, index: any) => (
+        <div className="projects-container">
+        <ul id="project-track">
+          {projects.map((project: any) => (
             <li
               className={`project-item  ${project.display}`}
               id={`project#${project.id}`}

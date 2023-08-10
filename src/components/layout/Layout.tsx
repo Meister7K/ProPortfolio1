@@ -11,6 +11,7 @@ import Game from "../pages/game/Game";
 import Support from "../pages/support/Support";
 import Logo from "../logo/Logo";
 import Clock from "../clock/Clock";
+//import ProjectTest from "../pages/projects/ProjectTest"
 
 function Layout() {
 
