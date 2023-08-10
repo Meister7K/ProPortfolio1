@@ -35,7 +35,7 @@ function Contact(props:any){
     }
 
     return(
-        <div id='contact'>
+        <div id='contact' className="page">
       <div className="contact-form">
         <h1>Contact</h1>
           <h2>Let's get in touch!</h2>

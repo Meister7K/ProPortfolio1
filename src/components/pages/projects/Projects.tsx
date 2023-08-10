@@ -58,7 +58,7 @@ function Projects(props: any) {
   const proRef = useRef(null);
 
   return (
-    <div id="projects">
+    <div id="projects" className="page">
       <div className="projects-container">
         <h1>Projects</h1>
         <ul className="project-track" ref={proRef}>

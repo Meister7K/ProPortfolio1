@@ -175,7 +175,7 @@ function Resume(props:any){
   ];
 
     return(
-        <div id="resume">
+        <div id="resume" className="page">
             <h1 className="resume-title">Resume </h1>
             <h4 className="resume-intro">A Full Stack Web Developer with a background in Project Management and life-long devotion to learning. Effective at combining efficiency and creative problem solving to develop intuitive solutions and user-friendly applications. Known among peers for a strong attention to detail and a can-do attitude regardless of the complexity of the project</h4>
             <SkillList skills={iconArray}/>

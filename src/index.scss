@@ -23,8 +23,11 @@ a {
   text-decoration: inherit;
 }
 
-p, h1,h2,h3,h4,h5{
- 
+h1,h2,h3,h4,h5{
+  margin: 0 0 2dvh 0;
+
+}
+p{
   margin: 0;
 }
 
@@ -77,9 +80,7 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-h1{
-  margin:0;
-}
+
 ul{
   list-style: none;
   padding: 0;

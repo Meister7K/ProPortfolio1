@@ -16,10 +16,10 @@ function About(props:any){
 
     return(
         <>
-        <div id="about">
+        <div id="about" className="page">
             <h2 className="about-title">Hello I'm <span>Karl</span></h2>
             <img className="headshot" src={headshot} alt='headshot'/>
-            <p>I'm an aspiring web dev. Formerly a project coordinator. Graduate of University of Minnesota Duluth. Defensive End of the UMD Bulldogs Football Team. Current resident of Denver, CO. Dog Daddy. Reading enthusiast. Interests in longevity, education & learning processes, sports, cybersecurity, and game development. </p>
+            <p>I'm an aspiring web dev. Formerly a project coordinator. Graduate of University of Minnesota Duluth. Defensive End of the UMD Bulldogs Football Team. Current resident of Denver, CO. Dog Daddy. Reading enthusiast. Interests in longevity, education, learning processes, sports, cybersecurity, and game development. </p>
             <br/>
             <h3> Learn more here</h3>
             <ul className="link-list">
