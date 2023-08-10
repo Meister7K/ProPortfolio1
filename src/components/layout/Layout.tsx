@@ -10,6 +10,7 @@ import Contact from "../pages/contact/Contact";
 import Game from "../pages/game/Game";
 import Support from "../pages/support/Support";
 import Logo from "../logo/Logo";
+import Clock from "../clock/Clock";
 
 function Layout() {
 
@@ -21,6 +22,7 @@ function Layout() {
     <div id="top"/>
     <div className="header">
       <TextStyle/>
+      <Clock/>
       <Logo/>
     </div>
     <div className="pages">
