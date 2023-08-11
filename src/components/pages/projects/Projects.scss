@@ -51,7 +51,7 @@
     height: 56vmin;
     object-fit: cover;
     object-position: 100% center;
-    transition: transform 1200ms;
+    transition: object-position 1200ms;
     animation-fill-mode: forwards;
   }
 }
@@ -68,7 +68,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 90%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
@@ -83,13 +83,15 @@
   h2 {
     font-weight: bolder;
     backdrop-filter: blur(1px);
+
   }
 
   .project-content {
     position: relative;
     opacity: 1;
     max-height: 100vh;
-    padding: 5dvi;
+    max-width: 500px;
+    padding: 2dvi;
   }
   .pro-image {
     width: 100%;
