@@ -143,7 +143,7 @@ function Projects(props: any) {
   
       const newPercentage = (mouseDelta / maxDelta) * -100;
       const nextPercentageUnconstrained = parseFloat(prevPercentage) + newPercentage;
-      const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+      const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -90);
   
       setPercentage(nextPercentage);
   

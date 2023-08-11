@@ -11,7 +11,8 @@
 
 .projects-container {
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  //height: 90dvh;
 }
 
 #project-track {
@@ -21,7 +22,7 @@
   gap: 1vmin;
   width: fit-content;
   user-select: none;
-  transition: transform 1200ms;
+  transition: transform 1000ms;
   animation-fill-mode: forwards;
 }
 
@@ -29,30 +30,31 @@
   position: absolute;
   user-select: none;
   flex: 0 0 auto;
-  transition: all 1200ms;
+  transition: all 1000ms;
   animation-fill-mode: forwards;
 }
 
 .project-item {
   flex: 0 0 auto;
   display: block;
-  width: 40vmin;
-  height: 56vmin;
+  width: 30vmin;
+  height: 50vmin;
   background-position: 100% center;
   background-size: cover;
   text-shadow: 1px 0px 1px black, 0px 1px 1px black, -1px 0px 1px black,
     0px -1px 1px black;
   transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+  transform: translate(0%);
   .pro-image {
       position: absolute;
     user-select: none;
     flex: 0 0 auto;
     display: block;
-    width: 40vmin;
-    height: 56vmin;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    object-position: 100% center;
-    transition: object-position 1200ms;
+    object-position: center;
+    transition: object-position 1000ms;
     animation-fill-mode: forwards;
   }
 }
@@ -66,11 +68,11 @@
 }
 
 .primary {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  width: 90%;
-  height: 100%;
+  width: 100vmin;
+  height: 100vmin;
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
@@ -125,14 +127,27 @@
     
     .pro-image{
       width: 100%;
-      height: auto;
+      height: 100%;
       border-radius: 10px;
     }
   }
-  // .primary{
-  //   .pro-image{
-  //     height: 100dvh;
-  //     width:100dvw;
-  //   }
-  // }
+  .primary{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+
+    padding: 0;
+  
+    backdrop-filter: blur(2px);
+    .pro-image{
+      height: auto;
+    }
+  }
 }
