@@ -3,10 +3,12 @@
     height: 3.2em;
     width: 3.2em;
     border-radius: 50%;
+    z-index: 10;
 }
 
 .logo{
     position:fixed;
     top:1dvh;
     right: 1dvw;
+    z-index: 11;
 }

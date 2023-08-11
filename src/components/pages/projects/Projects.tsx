@@ -43,6 +43,39 @@ function Projects(props: any) {
       repo: "https://github.com/Meister7K/14-Model-View-Controller-MVC-Tech-Blog",
       inProgress: false,
     },
+    {
+      id: 4,
+      display: "secondary",
+      title: "MVC Blog Site",
+      image: BlogImg,
+      description:
+        "This project was created to test the methods of the MVC model by creating a functional blog based website. The site allows you to sign up or login and once completed, post or comment on blogs previously created.",
+      link: "https://anime-blog.herokuapp.com/",
+      repo: "https://github.com/Meister7K/14-Model-View-Controller-MVC-Tech-Blog",
+      inProgress: false,
+    },
+    {
+      id: 5,
+      display: "secondary",
+      title: "MVC Blog Site",
+      image: BlogImg,
+      description:
+        "This project was created to test the methods of the MVC model by creating a functional blog based website. The site allows you to sign up or login and once completed, post or comment on blogs previously created.",
+      link: "https://anime-blog.herokuapp.com/",
+      repo: "https://github.com/Meister7K/14-Model-View-Controller-MVC-Tech-Blog",
+      inProgress: false,
+    },
+    {
+      id: 6,
+      display: "secondary",
+      title: "MVC Blog Site",
+      image: BlogImg,
+      description:
+        "This project was created to test the methods of the MVC model by creating a functional blog based website. The site allows you to sign up or login and once completed, post or comment on blogs previously created.",
+      link: "https://anime-blog.herokuapp.com/",
+      repo: "https://github.com/Meister7K/14-Model-View-Controller-MVC-Tech-Blog",
+      inProgress: false,
+    },
   ];
   // project style transition
   const [projects, setProjects] = useState(projectArray);
@@ -115,9 +148,9 @@ function Projects(props: any) {
       setPercentage(nextPercentage);
   
       const track = document.getElementById("project-track") as HTMLElement;
-      track.style.transform = `translate(${nextPercentage}%, 0%)`; //
+      track.style.transform = `translate(${nextPercentage}%, 0%)`;
   
-      const projectCards = track.getElementsByClassName("project-item");
+      const projectCards = track.getElementsByClassName("pro-image");
       for (const projectCard of projectCards) {
         (projectCard as HTMLElement).style.objectPosition = `${100 + nextPercentage}% center`;
       }
@@ -152,11 +185,12 @@ function Projects(props: any) {
             <li
               className={`project-item  ${project.display}`}
               id={`project#${project.id}`}
-              style={{ backgroundImage: `url(${project.image})` }}
+              
               onClick={() => handleDisplayChange(project.id)}
               key={project.id}
               draggable={false}
             >
+              <img src={project.image} className="pro-image" draggable={false}/>
               <div className="project-content">
                 <h2>{project.title}</h2>
                 <p>{project.description}</p>
