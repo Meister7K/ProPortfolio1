@@ -25,7 +25,7 @@ function About(props:any){
             <ul className="link-list">
                 {
                 links.map((link, index:any) => (
-                <li key={index} >
+                <li key={index} className="add-link">
                     <Button text={link.name} href={link.href} />
                 </li>
                 )) }

@@ -7,6 +7,10 @@
 }
 
 .link-list{
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+}
+.add-link{
+    margin: 1dvi;
 }
