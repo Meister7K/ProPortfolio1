@@ -14,6 +14,10 @@
   overflow: hidden;
   //height: 90dvh;
 }
+//!need to look at
+.projects-container.expanded{
+  overflow: visible;
+}
 
 #project-track {
   margin:0;
@@ -24,6 +28,12 @@
   user-select: none;
   transition: transform 1000ms;
   animation-fill-mode: forwards;
+}
+//! need to look at
+#project-track-expanded{
+  display: block;
+  width: 100%;
+  transform: none !important;
 }
 
 .pro-image {
@@ -70,16 +80,17 @@
 }
 
 .primary {
-  position: static;
-  width: 100vmin;
-  height: 100vmin;
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 20;
   //border-radius: 0%;
-
   backdrop-filter: blur(2px);
   p,
   h2 {
@@ -103,6 +114,9 @@
   }
 }
 
+.hide{
+  display:none;
+}
 .secondary {
   .pro-btn, .btn, p {
     display: none;
@@ -115,9 +129,6 @@
 
   
 }
-.set{
-    display: none;
-  }
 
 @media (max-width: 400px) {
   #project-track {

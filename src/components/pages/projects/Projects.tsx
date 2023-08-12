@@ -81,8 +81,10 @@ function Projects(props: any) {
   ];
   // project style transition
   const [projects, setProjects] = useState(projectArray);
+  const [expandedProject, setExpandedProject] = useState<number | null>(null);
 
   const handleDisplayChange = (projectID: any) => {
+    setExpandedProject(expandedProject === projectID ? null : projectID);
     setProjects((prevProjects) =>
       prevProjects.map((project) =>
         project.id === projectID
@@ -150,16 +152,15 @@ function Projects(props: any) {
   }, [mouseDownAt, prevPercentage, percentage]);
 
 
-
   return (
     <div id="projects" className="page">
       
         <h1>Projects</h1>
-        <div className="projects-container">
-        <ul id="project-track">
+        <div className={`projects-container ${expandedProject !== null ? 'expanded' : ''}`}>
+        <ul id={`project-track${expandedProject !== null ? '-expanded' : ''}`} >
           {projects.map((project: any) => (
             <li
-              className={`project-item  ${project.display}`}
+              className={`project-item  ${project.display} ${expandedProject === project.id ? 'primary' : ''}`}
               id={`project#${project.id}`}
               title="click to learn more"
               onClick={() => handleDisplayChange(project.id)}
