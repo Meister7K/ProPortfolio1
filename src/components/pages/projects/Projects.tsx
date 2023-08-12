@@ -4,6 +4,8 @@ import Button from "../../button/Button";
 import TMFImage from "../../../assets/images/TMF-home.png";
 import DungeonImg from "../../../assets/images/DungeonGame-GIF.gif";
 import BlogImg from "../../../assets/images/BlogImg.png";
+import ERImage from "../../../assets/images/ER quiz.png";
+import RickImg from "../../../assets/images/Morty's Book of Schwifty Ricktails.gif";
 
 function Projects(props: any) {
 
@@ -46,23 +48,23 @@ function Projects(props: any) {
     {
       id: 4,
       display: "secondary",
-      title: "MVC Blog Site",
-      image: BlogImg,
+      title: "Elden Ring Quiz Game",
+      image: ERImage,
       description:
-        "This project was created to test the methods of the MVC model by creating a functional blog based website. The site allows you to sign up or login and once completed, post or comment on blogs previously created.",
-      link: "https://anime-blog.herokuapp.com/",
-      repo: "https://github.com/Meister7K/14-Model-View-Controller-MVC-Tech-Blog",
+        "My goal for this project was to create a fun yet challenging website quiz on Elden Ring. My goal was to understand web APIs and making useful transitions. In this project I learned how to create timers, loop through event listeners, record data in local storage, and output that data into a viewable section of the HTML file. I hope you enjoy reviewing and taking this quiz, tarnished.",
+      link: "https://meister7k.github.io/04-Web-APIs-Challenge-Code-Quiz/",
+      repo: "https://github.com/Meister7K/04-Web-APIs-Challenge-Code-Quiz",
       inProgress: false,
     },
     {
       id: 5,
       display: "secondary",
-      title: "MVC Blog Site",
-      image: BlogImg,
+      title: "Rick & Morty Cocktail Generator",
+      image: RickImg,
       description:
-        "This project was created to test the methods of the MVC model by creating a functional blog based website. The site allows you to sign up or login and once completed, post or comment on blogs previously created.",
-      link: "https://anime-blog.herokuapp.com/",
-      repo: "https://github.com/Meister7K/14-Model-View-Controller-MVC-Tech-Blog",
+        "Morty's Book of Schwifty Ricktails is a web application that allows the user to select a base liquor and receive mixed drink ideas at random, based on the Rick and Morty character who also enjoys that drink. This was my first group project completed with some of my good friends from bootcamp.",
+      link: "https://sudo-apt-install.github.io/didactic/",
+      repo: "https://github.com/sudo-apt-install/didactic",
       inProgress: false,
     },
     {
@@ -96,32 +98,6 @@ function Projects(props: any) {
   const [prevPercentage, setPrevPercentage] = useState("0");
   const [percentage, setPercentage] = useState<number>(0);
 
-  const handleOnDown = (e: React.MouseEvent | React.TouchEvent) => {
-    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-    setMouseDownAt(clientX);
-  };
-  
-  const handleOnMove = (e: React.MouseEvent | React.TouchEvent) => {
-    if (typeof mouseDownAt === "string" || mouseDownAt === 0) return;
-  
-    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-    const mouseDelta = parseFloat(mouseDownAt.toString()) - clientX;
-    const maxDelta = window.innerWidth / 2;
-  
-    const newPercentage = (mouseDelta / maxDelta) * -100;
-    const nextPercentageUnconstrained = parseFloat(prevPercentage) + newPercentage;
-    const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
-  
-    setPercentage(nextPercentage);
-  
-    const track = document.getElementById("project-track") as HTMLElement;
-    track.style.transform = `translate(${nextPercentage}%, 100%)`;
-  
-    const projectCards = track.getElementsByClassName("project-item");
-    for (const projectCard of projectCards) {
-      (projectCard as HTMLElement).style.objectPosition = `${100 + nextPercentage}% center`;
-    }
-  };
 
   React.useEffect(() => {
     const handleOnDown = (e: MouseEvent | TouchEvent) => {
@@ -139,16 +115,16 @@ function Projects(props: any) {
   
       const clientX = 'touches' in e ? e.touches[0].clientX : (e as MouseEvent).clientX;
       const mouseDelta = parseFloat(mouseDownAt.toString()) - clientX;
-      const maxDelta = window.innerWidth / 2;
+      const maxDelta = window.innerWidth / 1.5;
   
       const newPercentage = (mouseDelta / maxDelta) * -100;
       const nextPercentageUnconstrained = parseFloat(prevPercentage) + newPercentage;
-      const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -90);
+      const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -99);
   
       setPercentage(nextPercentage);
   
       const track = document.getElementById("project-track") as HTMLElement;
-      track.style.transform = `translate(${nextPercentage}%, 0%)`;
+      track.style.transform = `translate(${20+nextPercentage}%, 0%)`;
   
       const projectCards = track.getElementsByClassName("pro-image");
       for (const projectCard of projectCards) {
@@ -157,19 +133,19 @@ function Projects(props: any) {
     };
   
     window.addEventListener("mousedown", handleOnDown);
-    //window.addEventListener("touchstart", (e: TouchEvent) => handleOnDown(e));
+    window.addEventListener("touchstart", (e: TouchEvent) => handleOnDown(e));
     window.addEventListener("mouseup", handleOnUp);
-    //window.addEventListener("touchend", (e: TouchEvent) => handleOnUp(e));
+    window.addEventListener("touchend", (e: TouchEvent) => handleOnUp(e));
     window.addEventListener("mousemove", handleOnMove);
-    //window.addEventListener("touchmove", (e: TouchEvent) => handleOnMove(e));
+    window.addEventListener("touchmove", (e: TouchEvent) => handleOnMove(e));
   
     return () => {
       window.removeEventListener("mousedown", handleOnDown);
-      //window.removeEventListener("touchstart", (e: TouchEvent) => handleOnDown(e));
+      window.removeEventListener("touchstart", (e: TouchEvent) => handleOnDown(e));
       window.removeEventListener("mouseup", handleOnUp);
-      //window.removeEventListener("touchend", (e: TouchEvent) => handleOnUp(e));
+      window.removeEventListener("touchend", (e: TouchEvent) => handleOnUp(e));
       window.removeEventListener("mousemove", handleOnMove);
-      //window.removeEventListener("touchmove", (e: TouchEvent) => handleOnMove(e));
+      window.removeEventListener("touchmove", (e: TouchEvent) => handleOnMove(e));
     };
   }, [mouseDownAt, prevPercentage, percentage]);
 
@@ -185,7 +161,7 @@ function Projects(props: any) {
             <li
               className={`project-item  ${project.display}`}
               id={`project#${project.id}`}
-              
+              title="click to learn more"
               onClick={() => handleDisplayChange(project.id)}
               key={project.id}
               draggable={false}

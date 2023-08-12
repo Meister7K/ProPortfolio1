@@ -11,7 +11,7 @@
 
 .projects-container {
   margin: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   //height: 90dvh;
 }
 
@@ -33,6 +33,8 @@
   transition: all 1000ms;
   animation-fill-mode: forwards;
 }
+
+
 
 .project-item {
   flex: 0 0 auto;
@@ -68,9 +70,7 @@
 }
 
 .primary {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: static;
   width: 100vmin;
   height: 100vmin;
   background-color: rgba(0, 0, 0, 0.8);
@@ -79,7 +79,6 @@
   align-items: center;
   z-index: 20;
   //border-radius: 0%;
-  padding: 0;
 
   backdrop-filter: blur(2px);
   p,
@@ -113,7 +112,12 @@
     max-height: 0;
     padding: 0;
   }
+
+  
 }
+.set{
+    display: none;
+  }
 
 @media (max-width: 400px) {
   #project-track {
