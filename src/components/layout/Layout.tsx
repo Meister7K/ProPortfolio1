@@ -17,31 +17,38 @@ function Layout() {
 
   const currentYear = new Date().getFullYear();
 
+  const { registerContainer, registerSection, registerTrigger } = useActiveMenu(
+    {
+      smooth: true
+    }
+  );
+
 
   return (
     <>
     <div id="top"/>
     <div className="header">
       <TextStyle/>
-      <Clock/>
+      
       <Logo/>
     </div>
-    <div className="pages">
-     <Home/>
+    <div className="pages" ref={registerContainer}>
+     <Home ref={registerSection("home")} />
      <br/>
-     <About/>
+     <About ref={registerSection("about")} />
      <br/>
-     <Resume/>
+     <Resume ref={registerSection("resume")} />
      <br/>
-     <Projects/>
+     <Projects ref={registerSection("projects")} />
      <br/>
-     <Game/>
+     <Game ref={registerSection("game")} />
      <br/>
-     <Contact/>
+     <Contact ref={registerSection("contact")} />
      <br/>
-     <Support/>
+     <Support ref={registerSection("support")} />
      <br/>
     </div>
+    <Clock/>
       <Nav/>
       <div className="footer">
         <p className="copyright">

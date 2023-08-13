@@ -223,7 +223,7 @@ function Resume(props:any){
                 <a href={BootCert} target="blank"><h5>UTA Flex Full MERN Stack Bootcamp</h5></a>
             </div>
             <div className="resume-link">
-            <a href={resume} download> <button className='download' >Download Full Resume</button></a>
+            <a href={resume} download> <button className='download btn' >Download Full Resume</button></a>
             </div>
         </div>
     )

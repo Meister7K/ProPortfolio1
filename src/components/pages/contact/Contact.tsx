@@ -69,7 +69,7 @@ function Contact(props:any){
                   ></textarea>
                 </li>
                 <li>
-                  <input type="submit" className="input-btn" value="Send" />
+                  <input type="submit" className="input-btn btn" value="Send" />
                 </li>
               </ul>
             </form>

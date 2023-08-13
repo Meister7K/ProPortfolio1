@@ -26,3 +26,13 @@
 .job-item:nth-child(odd) .job-description {
   text-align: left;
 }
+.education-container{
+  a{
+    color: inherit;
+    font-style: italic;
+    transition: all .3s ease;
+    &:hover{
+      filter: drop-shadow(0 0 3px white);
+    }
+  }
+}
