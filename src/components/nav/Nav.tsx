@@ -1,4 +1,5 @@
 import "./Nav.scss"
+import {useState, useRef} from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import {useActiveMenu} from "react-active-menu"
 
@@ -11,9 +12,13 @@ function Nav(props:any){
         }
       );
 
+
     return(
         <>
-        <nav className="nav">
+        <nav className={`nav`}>
+                <div className="menu-div l1"/>
+                <div className="menu-div l2"/>
+                <div className="menu-div l3"/>
             <ul>
                 <li className="nav-link">
                     
