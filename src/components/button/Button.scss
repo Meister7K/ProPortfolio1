@@ -13,12 +13,19 @@
     padding: 10px 20px;
     text-decoration: none;
     text-align: center;
-    transition: background-color 400ms, border-color 400ms;
+    transition: all 400ms;
     z-index: 10000;
+    text-shadow: 0 0 3px black;
   
     &:hover {
       background-color: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.2);
+
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    &:active{
+      transform: scale(.8);
     }
   
   }

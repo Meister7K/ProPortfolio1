@@ -70,6 +70,10 @@ ul{
 
 }
 
+.active{
+    opacity: 1;
+    filter: drop-shadow( 0 0 3px black 0.5);
+}
 
 
 .nav-link:active{
