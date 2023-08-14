@@ -6,6 +6,8 @@ import DungeonImg from "../../../assets/images/DungeonGame-GIF.gif";
 import BlogImg from "../../../assets/images/BlogImg.png";
 import ERImage from "../../../assets/images/ER quiz.png";
 import RickImg from "../../../assets/images/Morty's Book of Schwifty Ricktails.gif";
+import Sunset from '../../../assets/images/Sunset.jpg'
+import Planner from "../../../assets/images/planner.png"
 
 function Projects(props: any) {
 
@@ -70,12 +72,23 @@ function Projects(props: any) {
     {
       id: 6,
       display: "secondary",
-      title: "MVC Blog Site",
-      image: BlogImg,
+      title: "ORM Backend for E-commerce Site",
+      image: Sunset,
       description:
-        "This project was created to test the methods of the MVC model by creating a functional blog based website. The site allows you to sign up or login and once completed, post or comment on blogs previously created.",
-      link: "https://anime-blog.herokuapp.com/",
-      repo: "https://github.com/Meister7K/14-Model-View-Controller-MVC-Tech-Blog",
+        "This project was created to develop a back-end database for an e-commerce website that implemented Express, Sequelize, databases, and the CRUD methodology. the goal of this project was to create a backend that reads and responds to GET, POST, PUT and DELETE requests made by the client side of the app. follow steps in the Readme to download and use.",
+      link: "",
+      repo: "https://github.com/Meister7K/13-Object-Relational-Mapping-ORM-E-Commerce-Back-End",
+      inProgress: false,
+    },
+    {
+      id: 7,
+      display: "secondary",
+      title: "Daily Planner",
+      image: Planner,
+      description:
+        "I created a planner for use to record notes, check time, and see color labeled hour blocks to update using third party APIs. I learned how to link 3rd party APIs to a doc and implement their abilities to style and create useful functions for a webpage.",
+      link: "https://meister7k.github.io/05-Third-Party-APIs-Challenge-Work-Day-Scheduler/",
+      repo: "https://github.com/Meister7K/05-Third-Party-APIs-Challenge-Work-Day-Scheduler",
       inProgress: false,
     },
   ];
@@ -172,7 +185,11 @@ function Projects(props: any) {
                 <h2>{project.title}</h2>
                 <p>{project.description}</p>
                 {project.inProgress ? <span className="ud">Under Development</span> : ""}
-                <Button text="Link" href={project.link} className="pro-btn"/>
+
+
+                {project.link === ''?'':<Button text="Link" href={project.link} className="pro-btn"/>}
+
+
                 <Button text="Repository" href={project.repo} className="pro-btn" />
               </div>
             </li>
