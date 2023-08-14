@@ -63,7 +63,7 @@ function Clock(){
 
     useEffect(() => {
         const intervalId = setInterval(compose(
-            clear,
+            //clear,
             getCurrentTime,
             serializeClockTime,
             convertToCivilianTime,

@@ -13,17 +13,10 @@ import Projects from "./components/pages/projects/Projects";
 import Resume from "./components/pages/resume/Resume";
 import Loader from "./components/loader/Loader";
 import Support from "./components/pages/support/Support";
-import { useActiveMenu } from "react-active-menu";
 
 
 function App() {
 
-const {
-  active,
-  handleTriggerClick,
-  registerSectionRef,
-  registerTriggerRef,
-} = useActiveMenu({smooth:true});
 
 const [loading, setLoading] = useState(false);
 

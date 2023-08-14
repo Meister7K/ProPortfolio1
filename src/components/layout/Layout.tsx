@@ -17,11 +17,7 @@ function Layout() {
 
   const currentYear = new Date().getFullYear();
 
-  const { registerContainer, registerSection, registerTrigger } = useActiveMenu(
-    {
-      smooth: true
-    }
-  );
+ 
 
 
   return (
@@ -32,20 +28,20 @@ function Layout() {
       
       <Logo/>
     </div>
-    <div className="pages" ref={registerContainer}>
-     <Home ref={registerSection("home")} />
+    <div className="pages" >
+     <Home  />
      <br/>
-     <About ref={registerSection("about")} />
+     <About  />
      <br/>
-     <Resume ref={registerSection("resume")} />
+     <Resume />
      <br/>
-     <Projects ref={registerSection("projects")} />
+     <Projects  />
      <br/>
-     <Game ref={registerSection("game")} />
+     <Game  />
      <br/>
-     <Contact ref={registerSection("contact")} />
+     <Contact  />
      <br/>
-     <Support ref={registerSection("support")} />
+     <Support  />
      <br/>
     </div>
     <Clock/>
