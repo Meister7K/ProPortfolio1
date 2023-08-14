@@ -17,6 +17,7 @@
 
 .page{
     padding-top: 4.2em;
+    min-height: 100dvh;
 }
 
 @media (max-width: 400px){
@@ -31,4 +32,9 @@
             top: 2dvh;
         }
     }
+}
+
+.footer{
+    min-height: 30px;
+    width: 100%;
 }
