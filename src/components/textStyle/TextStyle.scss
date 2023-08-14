@@ -1,11 +1,13 @@
-.title{
+.main-title{
     text-align: start;
+    font-size: 4em;
+    white-space: nowrap;
 }
 
 .title-container{
     position: fixed;
     display: flex;
-    top: 0dvh;
-    left: 2dvw;
+    top: 1dvh;
+    left: 1dvw;
     z-index: 10;
 }

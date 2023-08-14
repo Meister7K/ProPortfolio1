@@ -39,10 +39,13 @@ function Player(props: ThreeElements['mesh']){
         onPointerOver={(_event) => hover(true)}
         onPointerOut={(_event) => hover(false)}
         position={[-1,1,0]}
+        rotation={[Math.PI/2, 0, 0]}
+        visible 
+        userData={{ hello: 'world' }}
         >
         <sphereGeometry args={[1,10,10]}  />
         <meshStandardMaterial
-            color={hovered ? "darkRed" : "white"}
+            color={hovered ? "blue" : "white" } 
         />
         </mesh>
         </>

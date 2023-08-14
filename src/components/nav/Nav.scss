@@ -13,10 +13,10 @@
     border-radius: 10px;
     backdrop-filter: blur(1px);
     box-shadow: 1px 1px 20px rgba(0,0,0,0.696);
-    padding: 2dvi;
+    padding: 1em;
     
-    min-width: 50px;
-    min-height: 50px;
+    min-width: 40px;
+    min-height: 40px;
     transition: all 1s ease-in-out;
    
     ul{
@@ -72,7 +72,7 @@ ul{
 
 .active{
     opacity: 1;
-    filter: drop-shadow( 0 0 3px black 0.5);
+    filter: drop-shadow( 0 0 5px black 0.5);
 }
 
 

@@ -36,7 +36,7 @@ function TextStyle() {
       <div className="title-container">
         <h1
           ref={titleRef}
-          className="title"
+          className="main-title"
           onMouseOver={textFlip}
           data-value="KARL FINKEL"
         >
