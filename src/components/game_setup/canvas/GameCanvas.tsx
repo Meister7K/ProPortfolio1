@@ -12,7 +12,7 @@ function GameCanvas(props:any){
             <camera/>
             <directionalLight color="red" position={[.5, -10, 10]} />
                 <pointLight position={[1,1,1]}/>
-                <Player position={[0, 0, 0]}/>
+                <Player position={[0, 0, 0]} name="player"/>
                 
             </Canvas>
         </div>
