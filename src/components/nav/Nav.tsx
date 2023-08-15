@@ -24,7 +24,7 @@ function Nav(props:any){
         const handleScrollView = () => {
             const scrollPosition = window.scrollY;
             for (const { section, top, height } of sectionPositions) {
-                if (scrollPosition >= top && scrollPosition < top + height) {
+                if (scrollPosition >= top-1 && scrollPosition < top + height) {
                     setActiveSection(section);
                     break;
                 }
