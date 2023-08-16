@@ -17,7 +17,7 @@ export const PlayerController =()=>{
     const rightPressed = useKeyboardControls((state)=>state[Controls.right]); 
     const backPressed = useKeyboardControls((state)=>state[Controls.back]); 
 
-    const playerRef = useRef(null);
+    const bodyRef = useRef(null);
     const isOnFloor= useRef(true);
 
     useFrame(()=>{
@@ -26,26 +26,38 @@ export const PlayerController =()=>{
             playerDex.y += _JUMP
             isOnFloor.current = false;
         }
-        if(forwardPressed){
-            playerDex.z -= _MOVEMENT_SPEED
+
+const linearVelocity= bodyRef.current.linvel()
+let changeRotationX=false;
+
+        if(forwardPressed && linearVelocity.z > -_MAX_VEL){
+            playerDex.z -= _MOVEMENT_SPEED;
+            changeRotationX = true;
         }
-        if(backPressed){
-            playerDex.z += _MOVEMENT_SPEED
+        if(backPressed && linearVelocity.z < _MAX_VEL){
+            playerDex.z += _MOVEMENT_SPEED;
+            changeRotationX = true;
         }
-        if(leftPressed){
-            playerDex.x -= _MOVEMENT_SPEED
+        if(leftPressed && linearVelocity.x > -_MAX_VEL){
+            playerDex.x -= _MOVEMENT_SPEED;
+            changeRotationX = true;
         }
-        if(rightPressed){
-            playerDex.x += _MOVEMENT_SPEED
+        if(rightPressed && linearVelocity.x<_MAX_VEL){
+            playerDex.x += _MOVEMENT_SPEED;
+            changeRotationX = true;
         }
 
-        playerRef.current.applyImpulse(playerDex, true)
+        bodyRef.current.applyImpulse(playerDex, true);
+        if(changeRotationX){
+            const playerAngle = Math.atan2(linearVelocity.x,linearVelocity.z);
+            player.current.rotation.y = playerAngle;
+        }
     });
 
         const player = useRef(null);
     return(
         <group>
-            <RigidBody ref={playerRef} colliders={false} scale={[0.5,0.5,0.5]} enabledRotations={[false,false,false]} onCollisionEnter={()=>{
+            <RigidBody ref={bodyRef} colliders={false} scale={[0.5,0.5,0.5]} enabledRotations={[false,false,false]} onCollisionEnter={()=>{
                 isOnFloor.current=true;
             }}>
             <CapsuleCollider args={[0.8,0.4]} position={[0,1.2,0]}/>

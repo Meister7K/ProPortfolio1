@@ -30,14 +30,14 @@ function Scene(props: ThreeElements["mesh"]) {
         position={[5, 5, 5]}
         intensity={0.8}
         castShadow
-        color={"white"}
+        color={"lightYellow"}
       />
       {/* stage */}
       <group position-y={0.5}>
-        <RigidBody colliders={false} type="fixed" position-y={-0.5} friction={5}>
+        <RigidBody colliders={false} type="fixed" position-y={-0.5} friction={2}>
         <CylinderCollider args={[1 / 2, 5]} />
-        <Cylinder scale={[.5, .1, .5]} receiveShadow />
-        <meshStandardMaterial color="gray" />
+        <Cylinder scale={[5, 1, 5]} receiveShadow />
+        <meshStandardMaterial color="green" />
       </RigidBody>
       </group>
       
@@ -53,7 +53,7 @@ function Scene(props: ThreeElements["mesh"]) {
           mixStrength={15}
           depthScale={1}
           minDepthThreshold={0.85}
-          color="silver"
+          color="lightBlue"
           metalness={0.6}
           roughness={1}
         />

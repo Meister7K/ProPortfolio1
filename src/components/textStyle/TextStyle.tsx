@@ -26,7 +26,10 @@ function TextStyle() {
     };
   
     useEffect(() => {
-      textFlip();
+      const delayEffect= setTimeout(()=>{
+        textFlip();
+      },1500)
+      
     }, []);
     
   

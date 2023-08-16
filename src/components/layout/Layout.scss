@@ -11,7 +11,7 @@
 }
 
 .pages{
-    max-width: 1300px;
+    max-width: 1000px;
     margin:0 auto;
 }
 
@@ -35,15 +35,15 @@
 }
 
 .footer{
-    position: static;
     min-height: 60px;
     display: flex;
-    width: auto;
     justify-content: center;
-   
+   .copyright{
+    position: absolute;
+   }
 }
 
-.page:not(.page:not(.projects)){
+.page:not(#projects){
     display: flex;
     align-items: center;
     justify-content: center;

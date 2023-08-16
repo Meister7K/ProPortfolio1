@@ -40,8 +40,8 @@ function Nav(props:any){
     }, []);
        
     return(
-        <div className="mask">
-        <nav className={`nav port`}>
+
+        <nav className={`nav`}>
              
             <ul>
 
@@ -55,8 +55,6 @@ function Nav(props:any){
                     
             </ul>
         </nav>
-        
-        </div>
     )
 }
 

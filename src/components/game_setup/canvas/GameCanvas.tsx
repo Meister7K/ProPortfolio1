@@ -4,6 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense, useMemo } from "react";
 import Scene from "../scene/Scene";
 import { KeyboardControls } from "@react-three/drei";
+import { GenerateGameLevel } from "../store/Store";
 
 
 
@@ -17,7 +18,7 @@ export const Controls ={
 
 
 function GameCanvas(props:any){
-    console.log();
+    //GenerateGameLevel({numberOfLevels: 5});
 
     const keyMap = useMemo(()=>[
         {name: Controls.forward, keys: ["ArrowUp","KeyW"]},
@@ -31,10 +32,10 @@ function GameCanvas(props:any){
         <div className="game-container">
             <KeyboardControls map={keyMap}>
             <Canvas className="game" id="game-canvas" flat linear shadows camera={{position:[0,10,20], fov:30} }> 
-            <color attach="background" args={["gray"]}/>
-            <fog attach="fog" args={["white", 3000, 4000]}/>
+            <color attach="background" args={["black"]}/>
+            <fog attach="fog" args={["white", 300, 400]}/>
             <Suspense>
-                <Physics>
+                <Physics debug>
                 <Scene name="scene"/>
                 </Physics>
                 

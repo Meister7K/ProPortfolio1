@@ -4,7 +4,6 @@
     left: 1dvw;
     z-index: 1000;
    color: black;
-   background-color: gray;
    width: fit-content;
    height: fit-content;
 }
@@ -12,6 +11,7 @@
     width: fit-content;
     align-self: center;
     animation: pulse 1s infinite alternate ;
+    z-index: 0;
 }
 
 #game{

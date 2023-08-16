@@ -1,7 +1,7 @@
 import GameCanvas from "../../game_setup/canvas/GameCanvas"
 import "./Game.scss"
 //import { Link } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 
 function Game(props:any){
@@ -16,19 +16,7 @@ function Game(props:any){
         setIsGameStarted(false);
       };
 
-      useEffect(() => {
-        const handleScroll = (e) => {
-          if (isGameStarted) {
-            e.preventDefault();
-          }
-        };
-    
-        window.addEventListener('wheel', handleScroll, { passive: false });
-    
-        return () => {
-          window.removeEventListener('wheel', handleScroll);
-        };
-      }, [isGameStarted]);
+   
 
     return(
         <div id="game" className="page">

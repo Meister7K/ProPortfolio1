@@ -21,12 +21,14 @@ function Layout() {
 
   return (
     <>
-  
-    <div className="header">
-      <TextStyle/>
-      
-      <Logo/>
+    <div className="mask">
+      <div className="header port">
+            <TextStyle/>
+            
+            <Logo/>
+          </div>
     </div>
+    
     <div className="pages" >
      <Home  />
      <br/>

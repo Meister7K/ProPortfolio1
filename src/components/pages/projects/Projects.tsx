@@ -169,6 +169,7 @@ function Projects(props: any) {
     <div id="projects" className="page">
       
         <h1>Projects</h1>
+        <br/>
         <div className={`projects-container ${expandedProject !== null ? 'expanded' : ''}`}>
         <ul id={`project-track${expandedProject !== null ? '-expanded' : ''}`} >
           {projects.map((project: any) => (
