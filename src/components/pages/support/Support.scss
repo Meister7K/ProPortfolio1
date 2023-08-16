@@ -3,16 +3,36 @@
 @keyframes dancing {
 
     from{
-        transform: scale(1);
+        filter: hue-rotate(0deg);
     }
     to{
-       transform: scale(2); 
+       filter: hue-rotate(360deg); 
     }
     
 }
 
-#venmo{
-   animation: 1s infinite alternate dancing ;
+@keyframes scroll {
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translate(-100%);
+    }
+}
+
+
+.support-title{
+    animation: 3s infinite linear dancing ;
    max-width: 100%;
    display: inline-block;
+   background: linear-gradient(
+    to right, #f32170, #eedd44);
+-webkit-text-fill-color: transparent;
+-webkit-background-clip: text;
+font-size: 4em;
 }
+
+.support-p{
+ animation: 10s infinite  linear scroll ;
+}
+

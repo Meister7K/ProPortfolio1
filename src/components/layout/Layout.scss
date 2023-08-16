@@ -35,6 +35,17 @@
 }
 
 .footer{
+    position: static;
     min-height: 60px;
-    width: 100%;
+    display: flex;
+    width: auto;
+    justify-content: center;
+   
+}
+
+.page:not(.page:not(.projects)){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

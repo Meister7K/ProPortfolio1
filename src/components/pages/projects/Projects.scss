@@ -45,12 +45,11 @@
 }
 
 
-
 .project-item {
   flex: 0 0 auto;
   display: block;
-  width: 30vmin;
-  height: 50vmin;
+  width: 50vmin;
+  height: 100vmin;
   background-position: 100% center;
   background-size: cover;
   text-shadow: 1px 0px 1px black, 0px 1px 1px black, -1px 0px 1px black,
@@ -95,7 +94,7 @@
   p,
   h2 {
     font-weight: bolder;
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(2px);
     margin-bottom: 5dvh;
   }
 
@@ -111,6 +110,11 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+  }
+  .btn{
+    margin:5px;
+    width: 8em;
+    
   }
 }
 

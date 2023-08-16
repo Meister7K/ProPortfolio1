@@ -4,10 +4,13 @@ import Button from "../../button/Button"
 function Support(props:any){
     return(
         <div id="support" className="page">
-            <h3 id="venmo" className="support-title">Feeling Generous?</h3>
-            <p> feel free to support me on my journey into the field of web development</p>
+            <h3  className="support-title">Feeling Generous?</h3>
+            <div className="mask">
+                <p className="support-p"> feel free to support me on my journey into the field of web development</p>
+            </div>
+            
             <br/>
-            <Button  text="Venmo" href="https://venmo.com/u/MR-7K"/>
+            <Button id="venmo" text="Venmo" href="https://venmo.com/u/MR-7K"/>
         </div>
     )
 }

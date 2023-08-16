@@ -1,0 +1,32 @@
+.exit{
+    position: fixed;
+    top:1dvh;
+    left: 1dvw;
+    z-index: 1000;
+   color: black;
+   background-color: gray;
+   width: fit-content;
+   height: fit-content;
+}
+.game-btn{
+    width: fit-content;
+    align-self: center;
+    animation: pulse 1s infinite alternate ;
+}
+
+#game{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+}
+
+@keyframes pulse {
+    from{
+        transform: scale(1);
+    }
+
+    to{
+transform: scale(1.2);
+    }
+}

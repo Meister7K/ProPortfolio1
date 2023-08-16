@@ -2,7 +2,6 @@ import Layout from "./components/layout/Layout";
 import "./App.scss";
 import {useState, useEffect} from 'react'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import { HashRouter } from "react-router-dom";
 import Home from "./components/pages/homepage/Home";
 import Contact from "./components/pages/contact/Contact";
 import Maintenance from "./components/pages/maintenance/Maintenance";
@@ -32,14 +31,14 @@ useEffect(()=>{
     <div className="container">{loading? (<Loader/>):(
       <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Layout/>}>
-              <Route path="home" element={<Home/>}/>
+            <Route element={<Layout/>}>
+              {/* <Route path="home" element={<Home/>}/>
               <Route path="about" element={<About/>}/>
               <Route path="resume" element={<Resume/>}/>
               <Route path="projects" element={<Projects/>}/>
               <Route path="contact" element={<Contact/>}/>
               <Route path="support" element={<Support/>}/>
-              <Route path="game" element={<Game/>}/>
+              <Route path="game" element={<Game/>}/> */}
               <Route path="game-canvas" element={<GameCanvas/>}/>
               <Route path="*" element={<Error/>}/>
             </Route>

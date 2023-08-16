@@ -186,11 +186,12 @@ function Projects(props: any) {
                 <p>{project.description}</p>
                 {project.inProgress ? <span className="ud">Under Development</span> : ""}
 
-
-                {project.link === ''?'':<Button text="Link" href={project.link} className="pro-btn"/>}
-
+               
+                  {project.link === ''?'':<Button text="Link" href={project.link} className="pro-btn"/>}
 
                 <Button text="Repository" href={project.repo} className="pro-btn" />
+             
+                
               </div>
             </li>
           ))}

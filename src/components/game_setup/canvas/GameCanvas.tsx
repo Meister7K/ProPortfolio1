@@ -6,6 +6,7 @@ import Scene from "../scene/Scene";
 import { KeyboardControls } from "@react-three/drei";
 
 
+
 export const Controls ={
     forward: "forward",
     back:"back",
@@ -31,7 +32,7 @@ function GameCanvas(props:any){
             <KeyboardControls map={keyMap}>
             <Canvas className="game" id="game-canvas" flat linear shadows camera={{position:[0,10,20], fov:30} }> 
             <color attach="background" args={["gray"]}/>
-            <fog attach="fog" args={["white", 30, 40]}/>
+            <fog attach="fog" args={["white", 3000, 4000]}/>
             <Suspense>
                 <Physics>
                 <Scene name="scene"/>
