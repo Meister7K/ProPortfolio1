@@ -13,6 +13,7 @@ import Projects from "./components/pages/projects/Projects";
 import Resume from "./components/pages/resume/Resume";
 import Loader from "./components/loader/Loader";
 import Support from "./components/pages/support/Support";
+import GameCanvas from "./components/game_setup/canvas/GameCanvas";
 
 
 function App() {
@@ -29,20 +30,22 @@ useEffect(()=>{
 
   return (
     <div className="container">{loading? (<Loader/>):(
-    <HashRouter>
-        <Routes>
-          <Route path="/" element={<Layout/>}>
-            <Route path="home" element={<Home/>}/>
-            <Route path="about" element={<About/>}/>
-            <Route path="resume" element={<Resume/>}/>
-            <Route path="projects" element={<Projects/>}/>
-            <Route path="contact" element={<Contact/>}/>
-            <Route path="support" element={<Support/>}/>
-            <Route path="game" element={<Game/>}/>
-            <Route path="*" element={<Error/>}/>
-          </Route>
-        </Routes>
-      </HashRouter>)}
+      <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout/>}>
+              <Route path="home" element={<Home/>}/>
+              <Route path="about" element={<About/>}/>
+              <Route path="resume" element={<Resume/>}/>
+              <Route path="projects" element={<Projects/>}/>
+              <Route path="contact" element={<Contact/>}/>
+              <Route path="support" element={<Support/>}/>
+              <Route path="game" element={<Game/>}/>
+              <Route path="game-canvas" element={<GameCanvas/>}/>
+              <Route path="*" element={<Error/>}/>
+            </Route>
+          </Routes>
+      </BrowserRouter>
+    )}
     
       
     </div>

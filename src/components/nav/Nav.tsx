@@ -8,7 +8,7 @@ function Nav(props:any){
 
        const location = useLocation();
        const [activeSection, setActiveSection]=useState("");
-        const sections = ["home", "about", "resume", "projects", "game", "contact", "support", "top"];
+        const sections = ["home", "about", "resume", "projects", "game", "contact", "support",/* "top"*/];
 
        useEffect(() => {
        
@@ -40,8 +40,8 @@ function Nav(props:any){
     }, []);
        
     return(
-        <>
-        <nav className={`nav`}>
+        <div className="mask">
+        <nav className={`nav port`}>
              
             <ul>
 
@@ -56,7 +56,7 @@ function Nav(props:any){
             </ul>
         </nav>
         
-        </>
+        </div>
     )
 }
 

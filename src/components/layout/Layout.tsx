@@ -1,5 +1,4 @@
 import "./Layout.scss";
-import {useActiveMenu} from "react-active-menu"
 import Nav from "../nav/Nav";
 import TextStyle from "../textStyle/TextStyle";
 import About from "../pages/about/About";
@@ -11,7 +10,7 @@ import Game from "../pages/game/Game";
 import Support from "../pages/support/Support";
 import Logo from "../logo/Logo";
 import Clock from "../clock/Clock";
-//import ProjectTest from "../pages/projects/ProjectTest"
+
 
 function Layout() {
 
@@ -22,7 +21,7 @@ function Layout() {
 
   return (
     <>
-    <div id="top"/>
+  
     <div className="header">
       <TextStyle/>
       

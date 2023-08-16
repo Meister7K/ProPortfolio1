@@ -2,6 +2,8 @@ import "./Player.scss"
 import * as THREE from 'three';
 import { useFrame, ThreeElements } from "@react-three/fiber";
 import {useRef, useState} from "react"
+import { Cylinder, OrbitControls } from "@react-three/drei";
+import { CylinderCollider, RigidBody } from "@react-three/rapier";
 
 
 function Player(props: ThreeElements['mesh']){
@@ -20,7 +22,7 @@ function Player(props: ThreeElements['mesh']){
     let hand = <mesh 
     {...props}
     ref={ball1Ref}
-    scale={clicked ? 1.3 : 1}
+    scale={0.5}
     onClick={(_event) => click(!clicked)}
     onPointerOver={(_event) => hover(true)}
     onPointerOut={(_event) => hover(false)}
@@ -39,7 +41,6 @@ function Player(props: ThreeElements['mesh']){
 
     return(
         <>
-      
         
         <mesh
         {...props}
