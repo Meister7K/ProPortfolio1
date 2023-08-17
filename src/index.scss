@@ -25,14 +25,15 @@ a {
 
 h1,h2,h3,h4,h5{
   margin: 0 0 2dvh 0;
-
+  filter: drop-shadow(0 0 2px black);
 }
 p{
   margin: 0;
+  filter: drop-shadow(0 0 2px black);
 }
 
 body {
-
+  
   margin: 0;
   // display: flex;
   place-items: center;
@@ -86,3 +87,4 @@ ul{
   padding: 0;
   margin:0;
 }
+

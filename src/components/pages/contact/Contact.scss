@@ -1,12 +1,25 @@
 .contact-form{
-  margin-bottom: 5dvh;
-  width: 100%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  ul{
+    width: 50dvw;
+    max-width: 400px;
+  }
+
   li{
     margin: 1dvi;
+    display: flex;
+    justify-content: center;
   }
 
   input:not(.input-btn), textarea{
-    width: 50%;
+    width:100%;
+  }
+  .input-btn{
+    z-index: 0;
   }
 }
 
@@ -31,6 +44,10 @@
   flex-wrap: wrap;
 }
 
-.input-btn{
+
+#contact{
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }

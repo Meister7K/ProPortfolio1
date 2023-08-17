@@ -29,10 +29,12 @@
     to right, #f32170, #eedd44);
 -webkit-text-fill-color: transparent;
 -webkit-background-clip: text;
-font-size: 4em;
+font-size: 2em;
 }
 
 .support-p{
- animation: 10s infinite  linear scroll ;
+ animation: 10s infinite linear scroll ;
+
+ overflow: hidden;
 }
 

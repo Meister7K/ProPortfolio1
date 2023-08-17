@@ -5,6 +5,7 @@ import { Suspense, useMemo } from "react";
 import Scene from "../scene/Scene";
 import { KeyboardControls } from "@react-three/drei";
 import { GenerateGameLevel } from "../store/Store";
+import { Menu } from "../menu/Menu";
 
 
 
@@ -42,6 +43,7 @@ function GameCanvas(props:any){
             </Suspense>
                 
             </Canvas>
+            <Menu />
             </KeyboardControls>
         </div>
     )

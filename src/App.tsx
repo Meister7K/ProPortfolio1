@@ -29,6 +29,7 @@ useEffect(()=>{
 
   return (
     <div className="container">{loading? (<Loader/>):(
+      
       <BrowserRouter>
           <Routes>
             <Route element={<Layout/>}>

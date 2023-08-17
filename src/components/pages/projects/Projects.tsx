@@ -96,6 +96,8 @@ function Projects(props: any) {
   const [projects, setProjects] = useState(projectArray);
   const [expandedProject, setExpandedProject] = useState<number | null>(null);
 
+  //! add screen size state to freeze scroll
+
   const handleDisplayChange = (projectID: any) => {
     setExpandedProject(expandedProject === projectID ? null : projectID);
     setProjects((prevProjects) =>
@@ -181,7 +183,7 @@ function Projects(props: any) {
               key={project.id}
               draggable={false}
             >
-              <img src={project.image} className="pro-image" draggable={false}/>
+              <img src={project.image} style={expandedProject !== null ? { objectPosition: "center" } : {}} className="pro-image" draggable={false}/>
               <div className="project-content">
                 <h2>{project.title}</h2>
                 <p>{project.description}</p>

@@ -74,6 +74,7 @@ function Contact(props:any){
               </ul>
             </form>
           </div>
+          <br/>
           <div className="contact-links">
             <h3>Or Reach Out Here</h3>
           <ul className="social-links">

@@ -1,4 +1,9 @@
-
+#resume{
+  h2{
+    display: flex;
+    justify-content: center;
+  }
+}
 
 .icon {
   width: 9dvw;
@@ -21,17 +26,25 @@
 
 }
 
-.job-item:nth-child(even) .job-description {
-  text-align: right;
-}
-.job-item:nth-child(odd) .job-description {
+.job-item .job-description {
   text-align: left;
 }
+
 .education-container{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .cert{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   a{
     color: inherit;
     font-style: italic;
     transition: all .3s ease;
+    
     &:hover{
       filter: drop-shadow(0 0 3px white);
     }

@@ -10,6 +10,7 @@ import Game from "../pages/game/Game";
 import Support from "../pages/support/Support";
 import Logo from "../logo/Logo";
 import Clock from "../clock/Clock";
+import Video from "../../assets/videos/techBackground.mp4"
 
 
 function Layout() {
@@ -30,6 +31,8 @@ function Layout() {
     </div>
     
     <div className="pages" >
+    <video src={Video} autoPlay loop muted id="video"/>
+       
      <Home  />
      <br/>
      <About  />
