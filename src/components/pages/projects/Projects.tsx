@@ -104,7 +104,7 @@ function Projects(props: any) {
  
    console.log(devInfo)
  
-   let mobileTest = regexDev.test(devInfo);
+   let isMobileDev = regexDev.test(devInfo);
  
 
   const handleDisplayChange = (projectID: any) => {
@@ -125,7 +125,7 @@ function Projects(props: any) {
   const [percentage, setPercentage] = useState<number>(0);
 
 
-  if (!mobileTest){
+  if (!isMobileDev){
   React.useEffect(() => {
     const handleOnDown = (e: MouseEvent | TouchEvent) => {
       const clientX = 'touches' in e ? e.touches[0].clientX : (e as MouseEvent).clientX;

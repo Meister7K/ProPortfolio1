@@ -5,6 +5,16 @@ import {useLocation} from "react-router-dom"
 
 
 function Nav(props:any){
+
+      //! add screen size state to freeze scroll
+
+   //!mobile testing 
+   let devInfo = navigator.userAgent;
+   let regexDev = /android|iphone|kindle|ipad/i;
+ 
+   console.log(devInfo)
+ 
+   let isMobileDev = regexDev.test(devInfo);
     
 
        const location = useLocation();

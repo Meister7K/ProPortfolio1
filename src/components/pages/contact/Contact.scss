@@ -31,6 +31,7 @@
   display: inline-block;
   margin: 2dvi;
   max-width: 100px;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
   transition: transform .5s ease-in-out;
   &:hover{
   transform: scale(1.3)
