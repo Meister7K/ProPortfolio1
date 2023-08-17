@@ -178,8 +178,10 @@ function Resume(props:any){
         <div id="resume" className="page">
             <h1 className="resume-title">Resume </h1>
             <h4 className="resume-intro">A Full Stack Web Developer with a background in Project Management and life-long devotion to learning. Effective at combining efficiency and creative problem solving to develop intuitive solutions and user-friendly applications. Known among peers for a strong attention to detail and a can-do attitude regardless of the complexity of the project</h4>
+            <br/>
             <SkillList skills={iconArray}/>
             <div className="work-history-container">
+              <br/>
                 <h2>Work History</h2>
                 <ul className="history-list>">
                 {
@@ -201,6 +203,7 @@ function Resume(props:any){
                 </ul>
             </div>
             <div className="education-container">
+              <br/>
                 <h2>Education</h2>
                 <ul className="education-list>">
                 {
@@ -218,7 +221,8 @@ function Resume(props:any){
                 
                 )) }
                 </ul>
-                <h3>Certification Links</h3>
+                <br/>
+                <h2>Certification Links</h2>
                 <a href={CAPM} target="blank"><h5>CAPM</h5></a>
                 <a href={BootCert} target="blank"><h5>UTA Flex Full MERN Stack Bootcamp</h5></a>
             </div>

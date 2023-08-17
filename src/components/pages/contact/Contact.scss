@@ -17,6 +17,8 @@
 
   input:not(.input-btn), textarea{
     width:100%;
+    background: transparent;
+    backdrop-filter: blur(5px);
   }
   .input-btn{
     z-index: 0;

@@ -6,7 +6,7 @@
     z-index: 1;
     width: 100%;
     backdrop-filter: blur(5px);
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
     border-radius: 0 0 10px 10px;
 }
 
@@ -14,13 +14,21 @@
     max-width: 1000px;
     margin:0 auto;
     scroll-snap-type: y mandatory;
+    overscroll-behavior-x: contain ;
 
 }
 
 .page{
     padding-top: 4.2em;
     min-height: 100dvh;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
+}
+
+.page:not(#projects, #contact){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 @media (max-width: 400px){
@@ -56,12 +64,7 @@
    }
 }
 
-.page:not(#projects, #contact){
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
+
 
 #video{
     position: fixed;
