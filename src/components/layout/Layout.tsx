@@ -11,6 +11,7 @@ import Support from "../pages/support/Support";
 import Logo from "../logo/Logo";
 import Clock from "../clock/Clock";
 import Video from "../../assets/videos/techBackground.mp4"
+import { useEffect, useRef } from "react";
 
 
 function Layout() {
@@ -34,19 +35,12 @@ function Layout() {
     <video src={Video} autoPlay loop muted id="video"/>
        
      <Home  />
-     <br/>
      <About  />
-     <br/>
-     <Resume />
-     <br/>
+     <Resume  />
      <Projects  />
-     <br/>
      <Game  />
-     <br/>
      <Contact  />
-     <br/>
      <Support  />
-     <br/>
     </div>
     <Clock/>
       <Nav/>

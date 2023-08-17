@@ -13,15 +13,14 @@
 .pages{
     max-width: 1000px;
     margin:0 auto;
-    scroll-snap-type: y mandatory;
-    overscroll-behavior-x: contain ;
+    scroll-snap-type: y proximity;
 
 }
 
 .page{
     padding-top: 4.2em;
     min-height: 100dvh;
-    scroll-snap-align: center;
+    scroll-snap-align: start end;
 }
 
 .page:not(#projects, #contact){
@@ -34,25 +33,19 @@
 @media (max-width: 400px){
     .header{
         .logo{
-            width: 3em;
-            height: 3em;
-            top: 2dvh;
+            width: 2em;
+            height: 2em;
+            right: 2em;
         }
         .main-title{
-            font-size: 3em;
+            font-size: 2em;
             top: 2dvh;
         }
     }
     .support-title{
         font-size: large;
     }
-
-    .page{
-        h1{
-            font-size:x-large;
-            white-space: nowrap;
-        }
-    }
+  
 }
 
 .footer{

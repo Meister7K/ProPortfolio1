@@ -98,6 +98,15 @@ function Projects(props: any) {
 
   //! add screen size state to freeze scroll
 
+   //!mobile testing 
+   let devInfo = navigator.userAgent;
+   let regexDev = /android|iphone|kindle|ipad/i;
+ 
+   console.log(devInfo)
+ 
+   let mobileTest = regexDev.test(devInfo);
+ 
+
   const handleDisplayChange = (projectID: any) => {
     setExpandedProject(expandedProject === projectID ? null : projectID);
     setProjects((prevProjects) =>
@@ -116,6 +125,7 @@ function Projects(props: any) {
   const [percentage, setPercentage] = useState<number>(0);
 
 
+  if (!mobileTest){
   React.useEffect(() => {
     const handleOnDown = (e: MouseEvent | TouchEvent) => {
       const clientX = 'touches' in e ? e.touches[0].clientX : (e as MouseEvent).clientX;
@@ -165,6 +175,7 @@ function Projects(props: any) {
       window.removeEventListener("touchmove", (e: TouchEvent) => handleOnMove(e));
     };
   }, [mouseDownAt, prevPercentage, percentage]);
+}
 
 
   return (
@@ -178,8 +189,9 @@ function Projects(props: any) {
             <li
               className={`project-item  ${project.display} ${expandedProject === project.id ? 'primary' : ''}`}
               id={`project#${project.id}`}
-              title="click to learn more"
-              onClick={() => handleDisplayChange(project.id)}
+              title="double click to toggle display"
+              onDoubleClick={() => handleDisplayChange(project.id)}
+              onTouchEnd={() => handleDisplayChange(project.id)}
               key={project.id}
               draggable={false}
             >
