@@ -18,9 +18,9 @@ function About(props:any){
     return(
         <>
         <div id="about" className="page">
-            <h2 className="about-title">Hello I'm <span>Karl</span></h2>
+            <h1 className="about-title">A wild Dev appeared! </h1>
             <ImageFlipper/>
-            <p>I'm an aspiring web dev. Formerly a project coordinator. Graduate of University of Minnesota Duluth. Defensive End of the UMD Bulldogs Football Team. Current resident of Denver, CO. Dog Daddy. Reading enthusiast. Interests in longevity, education, learning processes, sports, cybersecurity, and game development. </p>
+            <p>I'm <span>Karl</span>, an aspiring web dev. Formerly a project coordinator. Graduate of University of Minnesota Duluth. Defensive End of the UMD Bulldogs Football Team. Current resident of Denver, CO. Dog Daddy. Reading enthusiast. Interests in longevity, education, learning processes, sports, cybersecurity, and game development. </p>
             <br/>
             <h3> Learn more here</h3>
             <ul className="link-list">
