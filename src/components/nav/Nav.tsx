@@ -12,7 +12,6 @@ function Nav(props:any){
    let devInfo = navigator.userAgent;
    let regexDev = /android|iphone|kindle|ipad/i;
  
-   console.log(devInfo)
  
    let isMobileDev = regexDev.test(devInfo);
     

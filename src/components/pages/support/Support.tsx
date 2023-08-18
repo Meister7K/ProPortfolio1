@@ -6,7 +6,7 @@ function Support(props:any){
         <div id="support" className="page">
             <h3  className="support-title">Feeling Generous?</h3>
             <div className="mask">
-                <p className="support-p"> feel free to support me on my journey into the field of web development</p>
+                <p className="support-p"> feel free to support me on my journey into the field of web development!</p>
             </div>
             
             <br/>

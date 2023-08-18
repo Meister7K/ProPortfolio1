@@ -21,18 +21,11 @@ function App() {
   let devInfo = navigator.userAgent;
   let regexDev = /android|iphone|kindle|ipad/i;
 
-  console.log(devInfo)
+
 
   let mobileTest = regexDev.test(devInfo);
 
   console.log(mobileTest)
-
-  if (mobileTest) {
-      console.log("You are using a Mobile Device");
-  } else {
-      console.log("You are using Desktop");
-  }
-
 
 const [loading, setLoading] = useState(false);
 

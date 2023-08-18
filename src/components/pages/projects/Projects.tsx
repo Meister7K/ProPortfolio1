@@ -1,13 +1,13 @@
 import "./Projects.scss";
 import React, { useState, useRef, useEffect } from "react";
 import Button from "../../button/Button";
-import TMFImage from "../../../assets/images/TMF-home.png";
-import DungeonImg from "../../../assets/images/DungeonGame-GIF.gif";
-import BlogImg from "../../../assets/images/BlogImg.png";
-import ERImage from "../../../assets/images/ER quiz.png";
-import RickImg from "../../../assets/images/Morty's Book of Schwifty Ricktails.gif";
-import Sunset from '../../../assets/images/Sunset.jpg'
-import Planner from "../../../assets/images/planner.png"
+import TMFImage from "../../../assets/images/projects/TMF-home.png";
+import DungeonImg from "../../../assets/images/projects/DungeonGame-GIF.gif";
+import BlogImg from "../../../assets/images/projects/BlogImg.png";
+import ERImage from "../../../assets/images/projects/ER quiz.png";
+import RickImg from "../../../assets/images/projects/Morty's Book of Schwifty Ricktails.gif";
+import Sunset from '../../../assets/images/projects/Sunset.jpg'
+import Planner from "../../../assets/images/projects/planner.png"
 
 function Projects(props: any) {
 
@@ -102,7 +102,6 @@ function Projects(props: any) {
    let devInfo = navigator.userAgent;
    let regexDev = /android|iphone|kindle|ipad/i;
  
-   console.log(devInfo)
  
    let isMobileDev = regexDev.test(devInfo);
  

@@ -628,7 +628,7 @@ function Resume(props: any) {
         detail and a can-do attitude regardless of the complexity of the project
       </p>
       <br />
-      <SkillList skills={iconArray} />
+      <SkillList skills={iconArray} key={iconArray.index} />
       <div className="work-history-container">
         <br />
         <h2>Work History</h2>

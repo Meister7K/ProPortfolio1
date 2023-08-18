@@ -2,6 +2,7 @@ import "./About.scss"
 import headshot from "../../../assets/images/headshot.jpg"
 import RandomCycle from "../../randomcycle/RandomCycle"
 import Button from "../../button/Button"
+import ImageFlipper  from "../../imageflipper/ImageFlipper"
 
 //add random word cycler into span
 
@@ -18,7 +19,7 @@ function About(props:any){
         <>
         <div id="about" className="page">
             <h2 className="about-title">Hello I'm <span>Karl</span></h2>
-            <img className="headshot" src={headshot} alt='headshot'/>
+            <ImageFlipper/>
             <p>I'm an aspiring web dev. Formerly a project coordinator. Graduate of University of Minnesota Duluth. Defensive End of the UMD Bulldogs Football Team. Current resident of Denver, CO. Dog Daddy. Reading enthusiast. Interests in longevity, education, learning processes, sports, cybersecurity, and game development. </p>
             <br/>
             <h3> Learn more here</h3>

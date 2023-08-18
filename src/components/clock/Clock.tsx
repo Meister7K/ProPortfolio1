@@ -11,8 +11,6 @@ function Clock(){
 
     const oneSecond=()=>1000;
     const getCurrentTime =()=> new Date();
-    const clear = () => console.clear();
-    //const log = message => console.log(message);
     const serializeClockTime = (date: { getHours: () => any; getMinutes: () => any; getSeconds: () => any; }) =>({
         hours: date.getHours(),
         minutes: date.getMinutes(),
@@ -77,9 +75,9 @@ function Clock(){
 
 
     return(
-    <div className="mask">
-        <h3 className="clock port">{currentTime}</h3>
-    </div>
+    
+        <h3 className="clock">{currentTime}</h3>
+    
     );
 }
 
