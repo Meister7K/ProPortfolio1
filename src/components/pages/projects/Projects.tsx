@@ -125,7 +125,6 @@ function Projects(props: any) {
   const [percentage, setPercentage] = useState<number>(0);
 
 
-  if (!isMobileDev){
   React.useEffect(() => {
     const handleOnDown = (e: MouseEvent | TouchEvent) => {
       const clientX = 'touches' in e ? e.touches[0].clientX : (e as MouseEvent).clientX;
@@ -175,7 +174,7 @@ function Projects(props: any) {
       window.removeEventListener("touchmove", (e: TouchEvent) => handleOnMove(e));
     };
   }, [mouseDownAt, prevPercentage, percentage]);
-}
+
 
 
   return (

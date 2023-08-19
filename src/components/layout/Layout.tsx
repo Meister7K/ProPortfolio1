@@ -1,17 +1,19 @@
 import "./Layout.scss";
 import Nav from "../nav/Nav";
+import { useEffect, useRef } from "react";
+import React, {Suspense} from "react";
 import TextStyle from "../textStyle/TextStyle";
-import About from "../pages/about/About";
-import Home from "../pages/homepage/Home";
-import Resume from "../pages/resume/Resume";
-import Projects from "../pages/projects/Projects";
-import Contact from "../pages/contact/Contact";
-import Game from "../pages/game/Game";
-import Support from "../pages/support/Support";
+const About =React.lazy(()=> import("../pages/about/About"));
+const Home =React.lazy(()=> import("../pages/homepage/Home"));
+const Resume =React.lazy(()=> import("../pages/resume/Resume"));
+const Projects =React.lazy(()=> import("../pages/projects/Projects"));
+const Contact =React.lazy(()=> import("../pages/contact/Contact"));
+const Game =React.lazy(()=> import('../pages/game/Game'));
+const Support =React.lazy(()=> import("../pages/support/Support"));
 import Logo from "../logo/Logo";
 import Clock from "../clock/Clock";
 import Video from "../../assets/videos/techBackground.mp4"
-import { useEffect, useRef } from "react";
+
 
 
 function Layout() {
@@ -30,17 +32,19 @@ function Layout() {
             <Logo/>
           </div>
     </div>
-    
-    <div className="pages" >
     <video src={Video} autoPlay loop muted id="video"/>
-       
-     <Home  />
+    <div className="pages" >
+    <Suspense fallback={<div>Loading</div>}>
+      <Home  />
      <About  />
      <Resume  />
      <Projects  />
      <Game  />
      <Contact  />
      <Support  />
+    </Suspense>
+       
+     
     </div>
     <Clock/>
       <Nav/>
