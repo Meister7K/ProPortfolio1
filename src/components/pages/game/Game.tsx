@@ -22,7 +22,7 @@ function Game(props:any){
 
     return(
         <div id="game" className="page">
-            <h1><TextCreator text="L ets lay a game" speed={100}/></h1>
+            <h1><TextCreator text="L ets Play a Game" speed={100}/></h1>
             <details>
                 <summary>click here for running tips</summary>
                 <p>

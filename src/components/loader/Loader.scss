@@ -12,10 +12,10 @@
     width: 64px;
     height: 64px;
     border: 8px solid;
-    border-color: #ff5b00 transparent #ff5b00 transparent;
+    border-color: var(--DOrange) transparent var(--DOrange) transparent;
     border-radius: 50%;
     animation: spin-anim 1.2s linear infinite;
-    filter: drop-shadow(0 0 5px #ff5b00);
+    filter: drop-shadow(0 0 5px var(--DOrange));
 }
 
 @keyframes spin-anim {

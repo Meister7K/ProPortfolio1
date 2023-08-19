@@ -8,9 +8,10 @@ import KF4 from '../../assets/images/about/KF4.jpg';
 import KF5 from '../../assets/images/about/SPK.jpg';
 import KF6 from '../../assets/images/about/KF6.jpg';
 import KF7 from '../../assets/images/about/KF7.jpg';
+import Wedd from '../../assets/images/about/Wedding.jpg'
 
 const ImageFlipper = () => {
-  const ImgArray = [Headshot, KF1, KF2, KF3, KF4, KF5, KF6, KF7];
+  const ImgArray = [Headshot, KF1, Wedd, KF2, KF3, KF4, KF5, KF6, KF7];
   const [currentImg, setCurrentImg] = useState(0);
 
   const imgFlip = () => {
