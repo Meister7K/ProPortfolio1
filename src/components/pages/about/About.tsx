@@ -1,6 +1,5 @@
 import "./About.scss"
-import headshot from "../../../assets/images/headshot.jpg"
-import RandomCycle from "../../randomcycle/RandomCycle"
+import { TextCreator } from "../../textCreator/TextCreator"
 import Button from "../../button/Button"
 import ImageFlipper  from "../../imageflipper/ImageFlipper"
 
@@ -18,9 +17,9 @@ function About(props:any){
     return(
         <>
         <div id="about" className="page">
-            <h1 className="about-title">A wild Dev appeared! </h1>
+            <h1 className="about-title"><TextCreator text='A  Wild Dev Appeared!' speed={100}/></h1>
             <ImageFlipper/>
-            <p>I'm <span>Karl</span>, an aspiring web dev. Formerly a project coordinator. Graduate of University of Minnesota Duluth. Defensive End of the UMD Bulldogs Football Team. Current resident of Denver, CO. Dog Daddy. Reading enthusiast. Interests in longevity, education, learning processes, sports, cybersecurity, and game development. </p>
+            <p> <TextCreator text="I 'm Karl, an aspiring web dev. Formerly a project coordinator. Graduate of University of Minnesota Duluth. Defensive End of the UMD Bulldogs Football Team. Current resident of Denver, CO. Dog Daddy. Reading enthusiast. Interested in longevity, education, learning processes, sports, cybersecurity, and game development." speed={10}/></p>
             <br/>
             <h3> Learn more here</h3>
             <ul className="link-list">

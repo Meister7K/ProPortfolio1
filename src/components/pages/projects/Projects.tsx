@@ -8,6 +8,7 @@ import ERImage from "../../../assets/images/projects/ER quiz.png";
 import RickImg from "../../../assets/images/projects/Morty's Book of Schwifty Ricktails.gif";
 import Sunset from '../../../assets/images/projects/Sunset.jpg'
 import Planner from "../../../assets/images/projects/planner.png"
+import { TextCreator } from "../../textCreator/TextCreator";
 
 function Projects(props: any) {
 
@@ -180,7 +181,7 @@ function Projects(props: any) {
   return (
     <div id="projects" className="page">
       
-        <h1>Projects</h1>
+        <h1><TextCreator text="P rojects" speed={100}/></h1>
         <br/>
         <div className={`projects-container ${expandedProject !== null ? 'expanded' : ''}`}>
         <ul id={`project-track${expandedProject !== null ? '-expanded' : ''}`} >

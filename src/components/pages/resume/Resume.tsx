@@ -3,6 +3,7 @@ import SkillList from "../../skill-list/SkillList";
 import resume from "../../../assets/files/Karl Finkel Resume.pdf";
 import BootCert from "../../../assets/files/UTABootCert.pdf";
 import CAPM from "../../../assets/files/CAPM certificate.pdf";
+import { TextCreator } from "../../textCreator/TextCreator";
 
 function Resume(props: any) {
   const iconArray: any = [
@@ -572,7 +573,7 @@ function Resume(props: any) {
       company: "LSC",
       location: "Austin, TX(remote)",
       description:
-        "Performed project coordination and management duties for one large and several smaller clients that rely on LSC's Integrity Management group. Managed a team of several technicians over five lines of business spanning several states.",
+        "P erformed project coordination and management duties for one large and several smaller clients that rely on LSC's Integrity Management group. Managed a team of several technicians over five lines of business spanning several states.",
     },
     {
       title: "CP Technician",
@@ -580,7 +581,7 @@ function Resume(props: any) {
       company: "LSC",
       location: "Roseville, MN(journeyman)",
       description:
-        "Performed installation and maintenance on hardware for electrical systems for energy companies. Collected and ran data analytics on sustainability systems for clients. performed pre-construction surveys for future safety systems. Lead teams of 3-6 technicians on integrity management  and construction projects for large energy companies.",
+        "P erformed installation and maintenance on hardware for electrical systems for energy companies. Collected and ran data analytics on sustainability systems for clients. performed pre-construction surveys for future safety systems. Lead teams of 3-6 technicians on integrity management  and construction projects for large energy companies.",
     },
     {
       title: "Civil Consultant Intern (Financial Crimes Investigation Unit)",
@@ -588,7 +589,7 @@ function Resume(props: any) {
       company: "Duluth Police Dept.",
       location: "Duluth, MN",
       description:
-        "Shadowed and participated in operations of the department. Reviewed financial documents and imported data into the national database. Created data documents and reports from findings along with ran queries for case specific evidence.",
+        "S hadowed and participated in operations of the department. Reviewed financial documents and imported data into the national database. Created data documents and reports from findings along with ran queries for case specific evidence.",
     },
     {
       title: "Bartender, Bouncer, Line Cook",
@@ -596,7 +597,7 @@ function Resume(props: any) {
       company: "Grandma's Sports Garden",
       location: "Duluth, MN",
       description:
-        "Worked several positions while completing my undergraduate degree and playing football at UMD. Learned valuable time management and additional soft skills.",
+        "W orked several positions while completing my undergraduate degree and playing football at UMD. Learned valuable time management and additional soft skills.",
     },
   ];
 
@@ -619,13 +620,12 @@ function Resume(props: any) {
 
   return (
     <div id="resume" className="page">
-      <h1 className="resume-title">Resume </h1>
-      <p className="resume-intro">
-        A Full Stack Web Developer with a background in Project Management and
-        life-long devotion to learning. Effective at combining efficiency and
-        creative problem solving to develop intuitive solutions and
+      <h1 className="resume-title"><TextCreator text="R esume" speed={100}/></h1>
+      <p className="resume-intro"><TextCreator text="A  Full Stack Web Developer with a background in Project Management and
+        life-long devotion to learning. Effective at combining efficiency and creative problem solving to develop intuitive solutions and
         user-friendly applications. Known among peers for a strong attention to
-        detail and a can-do attitude regardless of the complexity of the project
+        detail and a can-do attitude regardless of the complexity of the project" speed={10}/>
+        
       </p>
       <br />
       <SkillList skills={iconArray} key={iconArray.index} />
@@ -645,7 +645,7 @@ function Resume(props: any) {
                   <h4 className="company">{job.company}</h4>
                   <h4 className="location">{job.location}</h4>
                 </div>
-                <p className="job-description">{job.description}</p>
+                <p className="job-description"><TextCreator text={job.description} speed={20}/></p>
               </li>
               <br />
             </>

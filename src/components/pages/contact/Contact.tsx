@@ -2,6 +2,7 @@ import "./Contact.scss"
 import emailjs from '@emailjs/browser'
 import { useRef } from 'react'
 import Button from "../../button/Button"
+import { TextCreator } from "../../textCreator/TextCreator"
 
 
 function Contact(props:any){
@@ -37,7 +38,7 @@ function Contact(props:any){
     return(
         <div id='contact' className="page">
       <div className="contact-form">
-        <h1>Contact</h1>
+        <h1><TextCreator text="C ontact" speed={100}/></h1>
           <h2>Let's get in touch!</h2>
             <form ref={form} onSubmit={sendEmail}>
               <ul>
