@@ -4,37 +4,43 @@ import { useRef, useState, useEffect } from "react";
 
 function Support(props:any){
 
-    const contentRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        const visiblePercentage = entry.intersectionRatio * 100;
-
-        // Determine if the element should be visible based on your threshold
-        const isVisibleThreshold = visiblePercentage >= 50; // Adjust threshold percentage
-
-        setIsVisible(isVisibleThreshold);
-      },
-      { threshold: [0, 0.5, 1] } // Intersection ratios to observe (0%, 50%, 100%)
-    );
-
-    if (contentRef.current) {
-      observer.observe(contentRef.current);
-    }
-
-    return () => {
-      if (contentRef.current) {
-        observer.unobserve(contentRef.current);
-      }
-    };
-  }, []);
+    const [isVisible, setIsVisible] = useState(false);
+    const elementRef = useRef(null);
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        if (!elementRef.current) return;
+  
+        const element = elementRef.current;
+        const rect = element.getBoundingClientRect();
+        console.log('t'+rect.top);
+        console.log('b'+rect.bottom);
+        console.log('el: '+element);
+  
+        // Check if the component is completely off the page
+        if (rect.bottom >= window.innerHeight/2 && rect.top <= window.innerHeight/2)
+        {
+          setIsVisible(true);
+        } else{
+          setIsVisible(false);
+        }
+      };
+  
+      // Attach the scroll event listener
+      window.addEventListener('scroll', handleScroll);
+  
+      // Call the scroll event handler initially to determine visibility
+      handleScroll();
+  
+      // Clean up the event listener when the component unmounts
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
 
 
     return(
-        <div id="support" className={`page ${isVisible ? 'visible-comp': 'invisible-comp'}`} ref={contentRef}>
+        <div id="support" ref={elementRef} className={`page ${isVisible ? 'visible-comp' : 'invisible-comp'}`}>
             <h3  className="support-title">Feeling Generous?</h3>
             <div className="mask">
                 <p className="support-pl"> feel free to support me on my journey into the field of web development!</p>

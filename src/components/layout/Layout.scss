@@ -84,14 +84,15 @@
 
 .invisible-comp > *{
     opacity: 0;
-    transform: translateY(50px);
+    //transform: translateY(50px);
     transition: all 1s ease-out;
     transition-delay: 0.2s;
+    pointer-events: none;
   }
   
   .visible-comp > *{
     opacity: 1;
-    transform: translateY(0);
+    //transform: translateY(0);
     transition: all 1s ease-out;
     transition-delay: 0.2s;
   }

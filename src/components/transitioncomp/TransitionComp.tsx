@@ -1,10 +1,9 @@
-import { useRef, useState, useEffect } from "react";
-import "./Home.scss"
+import { useState, useRef, useEffect } from "react";
 
-import { HashLink as Linkz } from "react-router-hash-link";
 
-function Home(props:any){
 
+
+export const TransitionComp = ({ children }:any) => {
     const [isVisible, setIsVisible] = useState(false);
     const elementRef = useRef(null);
   
@@ -38,14 +37,10 @@ function Home(props:any){
         window.removeEventListener('scroll', handleScroll);
       };
     }, []);
-    return(
-        <div id="home" className={`page home-container ${isVisible ? 'visible-comp' : 'invisible-comp'}`} ref={elementRef}>
-            
-            <Linkz to='#about' smooth>
-                <button className="btn enter">click or scroll to continue</button>
-            </Linkz>
-        </div>
-    )
-}
-
-export default Home
+  
+    return (
+      <div ref={elementRef} className={`scroll-transition ${isVisible ? 'visible-comp' : 'invisible-comp'}`}>
+        {children}
+      </div>
+    );
+  }; 

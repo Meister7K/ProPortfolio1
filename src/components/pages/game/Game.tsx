@@ -18,37 +18,44 @@ function Game(props:any){
         setIsGameStarted(false);
       };
 
-      // const contentRef = useRef(null);
-      // const [isVisible, setIsVisible] = useState(false);
+      const [isVisible, setIsVisible] = useState(false);
+      const elementRef = useRef(null);
     
-      // useEffect(() => {
-      //   const observer = new IntersectionObserver(
-      //     (entries) => {
-      //       const entry = entries[0];
-      //       const visiblePercentage = entry.intersectionRatio * 100;
+      useEffect(() => {
+        const handleScroll = () => {
+          if (!elementRef.current) return;
     
-      //       // Determine if the element should be visible based on your threshold
-      //       const isVisibleThreshold = visiblePercentage >= 50; // Adjust threshold percentage
+          const element = elementRef.current;
+          const rect = element.getBoundingClientRect();
+          console.log('t'+rect.top);
+          console.log('b'+rect.bottom);
+          console.log('el: '+element);
     
-      //       setIsVisible(isVisibleThreshold);
-      //     },
-      //     { threshold: [0, 0.5, 1] } // Intersection ratios to observe (0%, 50%, 100%)
-      //   );
+          // Check if the component is completely off the page
+          if (rect.bottom >= window.innerHeight/2 && rect.top <= window.innerHeight/2)
+          {
+            setIsVisible(true);
+          } else{
+            setIsVisible(false);
+          }
+        };
     
-      //   if (contentRef.current) {
-      //     observer.observe(contentRef.current);
-      //   }
+        // Attach the scroll event listener
+        window.addEventListener('scroll', handleScroll);
     
-      //   return () => {
-      //     if (contentRef.current) {
-      //       observer.unobserve(contentRef.current);
-      //     }
-      //   };
-      // }, []);
+        // Call the scroll event handler initially to determine visibility
+        handleScroll();
+    
+        // Clean up the event listener when the component unmounts
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
+ 
 
     return(
-        <div id="game" className={`page`}>
-            <h1><TextCreator text="Lets Play a Game" speed={100}/></h1>
+        <div id="game" ref={elementRef} className={`page ${isVisible ? 'visible-comp' : 'invisible-comp'}`}>
+            <h1><TextCreator text="L ets Play a Game" speed={100}/></h1>
             <details>
                 <summary>click here for running tips</summary>
                 <p>
