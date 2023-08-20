@@ -1,18 +1,18 @@
 import Layout from "./components/layout/Layout";
 import "./App.scss";
-import {useState, useEffect} from 'react'
+import {useState, useEffect, lazy} from 'react'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import Home from "./components/pages/homepage/Home";
-import Contact from "./components/pages/contact/Contact";
-import Maintenance from "./components/pages/maintenance/Maintenance";
-import About from "./components/pages/about/About";
-import Game from "./components/pages/game/Game";
+// import Home from "./components/pages/homepage/Home";
+// import Contact from "./components/pages/contact/Contact";
+// import Maintenance from "./components/pages/maintenance/Maintenance";
+// import About from "./components/pages/about/About";
+// import Game from "./components/pages/game/Game";
 import Error from "./components/pages/error/Error";
-import Projects from "./components/pages/projects/Projects";
-import Resume from "./components/pages/resume/Resume";
+// import Projects from "./components/pages/projects/Projects";
+// import Resume from "./components/pages/resume/Resume";
 import Loader from "./components/loader/Loader";
-import Support from "./components/pages/support/Support";
-import GameCanvas from "./components/game_setup/canvas/GameCanvas";
+//import Support from "./components/pages/support/Support";
+const GameCanvas = lazy(()=> import("./components/game_setup/canvas/GameCanvas")) ;
 
 
 function App() {

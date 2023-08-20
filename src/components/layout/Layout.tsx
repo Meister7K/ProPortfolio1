@@ -1,6 +1,6 @@
 import "./Layout.scss";
 import Nav from "../nav/Nav";
-import { useEffect, useRef } from "react";
+//import { useEffect, useState, lazy } from "react";
 import React, {Suspense} from "react";
 import TextStyle from "../textStyle/TextStyle";
 const About =React.lazy(()=> import("../pages/about/About"));
@@ -13,7 +13,7 @@ const Support =React.lazy(()=> import("../pages/support/Support"));
 import Logo from "../logo/Logo";
 import Clock from "../clock/Clock";
 import Video from "../../assets/videos/techBackground.mp4"
-
+import Loader from "../loader/Loader";
 
 
 function Layout() {
@@ -34,7 +34,7 @@ function Layout() {
     </div>
     <video src={Video} autoPlay loop muted id="video"/>
     <div className="pages" >
-    <Suspense fallback={<div>Loading</div>}>
+    <Suspense fallback={<Loader/>}>
       <Home  />
      <About  />
      <Resume  />

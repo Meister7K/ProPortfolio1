@@ -4,6 +4,7 @@ import resume from "../../../assets/files/Karl Finkel Resume.pdf";
 import BootCert from "../../../assets/files/UTABootCert.pdf";
 import CAPM from "../../../assets/files/CAPM certificate.pdf";
 import { TextCreator } from "../../textCreator/TextCreator";
+import { useRef, useState, useEffect } from "react";
 
 function Resume(props: any) {
   const iconArray: any = [
@@ -618,8 +619,56 @@ function Resume(props: any) {
     },
   ];
 
+  const contentRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        const visiblePercentage = entry.intersectionRatio * 100;
+
+        // Determine if the element should be visible based on your threshold
+        const isVisibleThreshold = visiblePercentage >= 15; // Adjust threshold percentage
+
+        setIsVisible(isVisibleThreshold);
+      },
+      { threshold: [0, 0.2, 1] } // Intersection ratios to observe (0%, 50%, 100%)
+    );
+
+    if (contentRef.current) {
+      observer.observe(contentRef.current);
+    }
+
+    return () => {
+      if (contentRef.current) {
+        observer.unobserve(contentRef.current);
+      }
+    };
+  }, []);
+
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       const entry = entries[0];
+  //       setIsVisible(entry.isIntersecting);
+  //     },
+  //     { root: null, rootMargin: '0px', threshold: 0.01 } // Adjust the threshold value
+  //   );
+
+  //   if (contentRef.current) {
+  //     observer.observe(contentRef.current);
+  //   }
+
+  //   return () => {
+  //     if (contentRef.current) {
+  //       observer.unobserve(contentRef.current);
+  //     }
+  //   };
+  // }, []);
+
   return (
-    <div id="resume" className="page">
+    <div id="resume" className={`page ${isVisible ? 'visible-comp': 'invisible-comp'}`} ref={contentRef}>
       <h1 className="resume-title"><TextCreator text="R esume" speed={100}/></h1>
       <p className="resume-intro"><TextCreator text="A  Full Stack Web Developer with a background in Project Management and
         life-long devotion to learning. Effective at combining efficiency and creative problem solving to develop intuitive solutions and
