@@ -152,7 +152,7 @@ function Projects(props: any) {
   const [prevPercentage, setPrevPercentage] = useState("0");
   const [percentage, setPercentage] = useState<number>(0);
 
-
+if(!isMobileDev){
   React.useEffect(() => {
     const handleOnDown = (e: MouseEvent | TouchEvent) => {
       const clientX = 'touches' in e ? e.touches[0].clientX : (e as MouseEvent).clientX;
@@ -163,7 +163,8 @@ function Projects(props: any) {
       setMouseDownAt(0);
       setPrevPercentage(percentage.toString());
     };
-  
+    
+    
     const handleOnMove = (e: MouseEvent | TouchEvent) => {
       if (typeof mouseDownAt === "string" || mouseDownAt === 0) return;
   
@@ -185,6 +186,7 @@ function Projects(props: any) {
         (projectCard as HTMLElement).style.objectPosition = `${100 + nextPercentage}% center`;
       }
     };
+ 
   
     window.addEventListener("mousedown", handleOnDown);
     window.addEventListener("touchstart", (e: TouchEvent) => handleOnDown(e));
@@ -202,7 +204,7 @@ function Projects(props: any) {
       window.removeEventListener("touchmove", (e: TouchEvent) => handleOnMove(e));
     };
   }, [mouseDownAt, prevPercentage, percentage]);
-
+ };
 
 
   return (
