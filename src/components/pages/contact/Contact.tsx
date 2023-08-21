@@ -97,7 +97,7 @@ function Contact(props: any) {
     <div
       id="contact"
       ref={elementRef}
-      className={`scroll-transition ${
+      className={`page ${
         isVisible ? "visible-comp" : "invisible-comp"
       }`}
     >
