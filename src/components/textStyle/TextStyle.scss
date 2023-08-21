@@ -1,15 +1,14 @@
-.main-title{
-    text-align: start;
-    font-size: 4em;
-    white-space: nowrap;
-    top: 0dvh;
-    left: 1dvw;
-    position: relative;
+.main-title {
+  text-align: start;
+  font-size: 4em;
+  white-space: nowrap;
+  top: 0dvh;
+  left: 1dvw;
+  position: relative;
 }
 
-.title-container{
-    position: fixed;
-    display: flex;
-    z-index: 10;
-
+.title-container {
+  position: fixed;
+  display: flex;
+  z-index: 10;
 }

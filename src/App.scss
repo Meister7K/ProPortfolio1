@@ -3,21 +3,18 @@
   text-align: center;
 }
 
-.mask{
+.mask {
   overflow: hidden;
-
 }
 
-.port{
-  margin:0;
-transform: translateY(-110%);
-animation: slideDown1 1.5s .5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+.port {
+  margin: 0;
+  transform: translateY(-110%);
+  animation: slideDown1 1.5s 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
 @keyframes slideDown1 {
-  to{
-      transform:translatex(0);
+  to {
+    transform: translatex(0);
   }
-  
 }
-

@@ -1,19 +1,17 @@
-import './TextCreator.scss';
-import { useState, useEffect, useRef } from 'react';
+import "./TextCreator.scss";
+import { useState, useEffect, useRef } from "react";
 
 export const TextCreator = ({ text, speed }: any) => {
-  const [typedText, setTypedText] = useState('');
+  const [typedText, setTypedText] = useState("");
   const textRef = useRef(null); // Ref for the component
 
   useEffect(() => {
     const element = textRef.current;
 
     const observer = new IntersectionObserver((entries) => {
-
       let currentIndex = 0;
-      
+
       if (entries[0].isIntersecting) {
-        
         const typingInterval = setInterval(() => {
           if (currentIndex < text.length - 1) {
             setTypedText((prevText) => prevText + text[currentIndex]);
@@ -44,4 +42,3 @@ export const TextCreator = ({ text, speed }: any) => {
     </span>
   );
 };
-

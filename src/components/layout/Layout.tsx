@@ -29,33 +29,19 @@ function Layout() {
       <video src={Video} autoPlay loop muted id="video" />
       <div className="pages">
         <Suspense fallback={<Loader />}>
-          
-            <Home />
-          
+          <Home />
 
-          
-            <About />
-          
+          <About />
 
-          
-            <Resume />
-          
+          <Resume />
 
-          
-            <Projects />
-          
+          <Projects />
 
-          
-            <Game />
-          
+          <Game />
 
-          
-            <Contact />
-          
+          <Contact />
 
-          
-            <Support />
-          
+          <Support />
         </Suspense>
       </div>
       <Clock />

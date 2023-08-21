@@ -6,12 +6,11 @@ import DungeonImg from "../../../assets/images/projects/DungeonGame-GIF.gif";
 import BlogImg from "../../../assets/images/projects/BlogImg.png";
 import ERImage from "../../../assets/images/projects/ER quiz.png";
 import RickImg from "../../../assets/images/projects/Morty's Book of Schwifty Ricktails.gif";
-import Sunset from '../../../assets/images/projects/Sunset.jpg'
-import Planner from "../../../assets/images/projects/planner.png"
+import Sunset from "../../../assets/images/projects/Sunset.jpg";
+import Planner from "../../../assets/images/projects/planner.png";
 import { TextCreator } from "../../textCreator/TextCreator";
 
 function Projects(props: any) {
-
   // project list array
   const projectArray = [
     {
@@ -127,21 +126,22 @@ function Projects(props: any) {
   //   };
   // }, []);
 
-   //!mobile testing 
-   let devInfo = navigator.userAgent;
-   let regexDev = /android|iphone|kindle|ipad/i;
- 
- 
-   let isMobileDev = regexDev.test(devInfo);
- 
+  //!mobile testing
+  let devInfo = navigator.userAgent;
+  let regexDev = /android|iphone|kindle|ipad/i;
+
+  let isMobileDev = regexDev.test(devInfo);
 
   const handleDisplayChange = (projectID: any) => {
     setExpandedProject(expandedProject === projectID ? null : projectID);
     setProjects((prevProjects) =>
       prevProjects.map((project) =>
         project.id === projectID
-        ? { ...project, display: project.display === "primary" ? "secondary" : "primary" }
-        : { ...project, display: "secondary" }
+          ? {
+              ...project,
+              display: project.display === "primary" ? "secondary" : "primary",
+            }
+          : { ...project, display: "secondary" }
       )
     );
   };
@@ -152,103 +152,122 @@ function Projects(props: any) {
   const [prevPercentage, setPrevPercentage] = useState("0");
   const [percentage, setPercentage] = useState<number>(0);
 
-if(!isMobileDev){
-  React.useEffect(() => {
-    const handleOnDown = (e: MouseEvent | TouchEvent) => {
-      const clientX = 'touches' in e ? e.touches[0].clientX : (e as MouseEvent).clientX;
-      setMouseDownAt(clientX);
-    };
-  
-    const handleOnUp = () => {
-      setMouseDownAt(0);
-      setPrevPercentage(percentage.toString());
-    };
-    
-    
-    const handleOnMove = (e: MouseEvent | TouchEvent) => {
-      if (typeof mouseDownAt === "string" || mouseDownAt === 0) return;
-  
-      const clientX = 'touches' in e ? e.touches[0].clientX : (e as MouseEvent).clientX;
-      const mouseDelta = parseFloat(mouseDownAt.toString()) - clientX;
-      const maxDelta = window.innerWidth / 1.5;
-  
-      const newPercentage = (mouseDelta / maxDelta) * -100;
-      const nextPercentageUnconstrained = parseFloat(prevPercentage) + newPercentage;
-      const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -99);
-  
-      setPercentage(nextPercentage);
-  
-      const track = document.getElementById("project-track") as HTMLElement;
-      track.style.transform = `translate(${20+nextPercentage}%, 0%)`;
-  
-      const projectCards = track.getElementsByClassName("pro-image");
-      for (const projectCard of projectCards) {
-        (projectCard as HTMLElement).style.objectPosition = `${100 + nextPercentage}% center`;
+  if (!isMobileDev) {
+    React.useEffect(() => {
+      const handleOnDown = (e: MouseEvent | TouchEvent) => {
+        const clientX =
+          "touches" in e ? e.touches[0].clientX : (e as MouseEvent).clientX;
+        setMouseDownAt(clientX);
+      };
+
+      const handleOnUp = () => {
+        setMouseDownAt(0);
+        setPrevPercentage(percentage.toString());
+      };
+
+      const handleOnMove = (e: MouseEvent | TouchEvent) => {
+        if (typeof mouseDownAt === "string" || mouseDownAt === 0) return;
+
+        const clientX =
+          "touches" in e ? e.touches[0].clientX : (e as MouseEvent).clientX;
+        const mouseDelta = parseFloat(mouseDownAt.toString()) - clientX;
+        const maxDelta = window.innerWidth / 1.5;
+
+        const newPercentage = (mouseDelta / maxDelta) * -100;
+        const nextPercentageUnconstrained =
+          parseFloat(prevPercentage) + newPercentage;
+        const nextPercentage = Math.max(
+          Math.min(nextPercentageUnconstrained, 0),
+          -99
+        );
+
+        setPercentage(nextPercentage);
+
+        const track = document.getElementById("project-track") as HTMLElement;
+        track.style.transform = `translate(${20 + nextPercentage}%, 0%)`;
+
+        const projectCards = track.getElementsByClassName("pro-image");
+        for (const projectCard of projectCards) {
+          (projectCard as HTMLElement).style.objectPosition = `${
+            100 + nextPercentage
+          }% center`;
+        }
+      };
+
+      window.addEventListener("mousedown", handleOnDown);
+      window.addEventListener("touchstart", (e: TouchEvent) => handleOnDown(e));
+      window.addEventListener("mouseup", handleOnUp);
+      window.addEventListener("touchend", (e: TouchEvent) => handleOnUp(e));
+      window.addEventListener("mousemove", handleOnMove);
+      window.addEventListener("touchmove", (e: TouchEvent) => handleOnMove(e));
+
+      return () => {
+        window.removeEventListener("mousedown", handleOnDown);
+        window.removeEventListener("touchstart", (e: TouchEvent) =>
+          handleOnDown(e)
+        );
+        window.removeEventListener("mouseup", handleOnUp);
+        window.removeEventListener("touchend", (e: TouchEvent) =>
+          handleOnUp(e)
+        );
+        window.removeEventListener("mousemove", handleOnMove);
+        window.removeEventListener("touchmove", (e: TouchEvent) =>
+          handleOnMove(e)
+        );
+      };
+    }, [mouseDownAt, prevPercentage, percentage]);
+  }
+
+  const [isVisible, setIsVisible] = useState(false);
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!elementRef.current) return;
+
+      const element = elementRef.current;
+      const rect = element.getBoundingClientRect();
+
+      if (
+        rect.bottom >= window.innerHeight / 2 &&
+        rect.top <= window.innerHeight / 2
+      ) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
       }
     };
- 
-  
-    window.addEventListener("mousedown", handleOnDown);
-    window.addEventListener("touchstart", (e: TouchEvent) => handleOnDown(e));
-    window.addEventListener("mouseup", handleOnUp);
-    window.addEventListener("touchend", (e: TouchEvent) => handleOnUp(e));
-    window.addEventListener("mousemove", handleOnMove);
-    window.addEventListener("touchmove", (e: TouchEvent) => handleOnMove(e));
-  
+
+    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
+
     return () => {
-      window.removeEventListener("mousedown", handleOnDown);
-      window.removeEventListener("touchstart", (e: TouchEvent) => handleOnDown(e));
-      window.removeEventListener("mouseup", handleOnUp);
-      window.removeEventListener("touchend", (e: TouchEvent) => handleOnUp(e));
-      window.removeEventListener("mousemove", handleOnMove);
-      window.removeEventListener("touchmove", (e: TouchEvent) => handleOnMove(e));
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, [mouseDownAt, prevPercentage, percentage]);
- };
-
- const [isVisible, setIsVisible] = useState(false);
- const elementRef = useRef(null);
-
- useEffect(() => {
-   const handleScroll = () => {
-     if (!elementRef.current) return;
-
-     const element = elementRef.current;
-     const rect = element.getBoundingClientRect();
-
-
-      
-     if (rect.bottom >= window.innerHeight/2 && rect.top <= window.innerHeight/2)
-     {
-       setIsVisible(true);
-     } else{
-       setIsVisible(false);
-     }
-   };
-
-   
-   window.addEventListener('scroll', handleScroll);
-
-    
-   handleScroll();
-
-   
-   return () => {
-     window.removeEventListener('scroll', handleScroll);
-   };
- }, []);
-
+  }, []);
 
   return (
-    <div id="projects" className={`page ${isVisible ? 'visible-comp' : 'invisible-comp'}`} ref={elementRef}>
-      
-        <h1><TextCreator text="P rojects" speed={100}/></h1>
-        <br/>
-        <div className={`projects-container ${expandedProject !== null ? 'expanded' : ''}`}>
-        <ul id={`project-track${expandedProject !== null ? '-expanded' : ''}`} >
+    <div
+      id="projects"
+      className={`page ${isVisible ? "visible-comp" : "invisible-comp"}`}
+      ref={elementRef}
+    >
+      <h1>
+        <TextCreator text="P rojects" speed={100} />
+      </h1>
+      <br />
+      <div
+        className={`projects-container ${
+          expandedProject !== null ? "expanded" : ""
+        }`}
+      >
+        <ul id={`project-track${expandedProject !== null ? "-expanded" : ""}`}>
           {projects.map((project: any) => (
             <li
-              className={`project-item  ${project.display} ${expandedProject === project.id ? 'primary' : ''}`}
+              className={`project-item  ${project.display} ${
+                expandedProject === project.id ? "primary" : ""
+              }`}
               id={`project#${project.id}`}
               title="double click to toggle display"
               onDoubleClick={() => handleDisplayChange(project.id)}
@@ -256,18 +275,34 @@ if(!isMobileDev){
               key={project.id}
               draggable={false}
             >
-              <img src={project.image} style={expandedProject !== null ? { objectPosition: "center" } : {}} className="pro-image" draggable={false}/>
+              <img
+                src={project.image}
+                style={
+                  expandedProject !== null ? { objectPosition: "center" } : {}
+                }
+                className="pro-image"
+                draggable={false}
+              />
               <div className="project-content">
                 <h2>{project.title}</h2>
                 <p>{project.description}</p>
-                {project.inProgress ? <span className="ud">Under Development</span> : ""}
+                {project.inProgress ? (
+                  <span className="ud">Under Development</span>
+                ) : (
+                  ""
+                )}
 
-               
-                  {project.link === ''?'':<Button text="Link" href={project.link} className="pro-btn"/>}
+                {project.link === "" ? (
+                  ""
+                ) : (
+                  <Button text="Link" href={project.link} className="pro-btn" />
+                )}
 
-                <Button text="Repository" href={project.repo} className="pro-btn" />
-             
-                
+                <Button
+                  text="Repository"
+                  href={project.repo}
+                  className="pro-btn"
+                />
               </div>
             </li>
           ))}

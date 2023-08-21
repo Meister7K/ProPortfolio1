@@ -6,7 +6,7 @@ import { useRef, useState, useEffect } from "react";
 
 //add random word cycler into span
 
-function About(props:any) {
+function About(props: any) {
   const links = [
     {
       name: "UMD Roster",
@@ -31,32 +31,33 @@ function About(props:any) {
 
       const element = elementRef.current;
       const rect = element.getBoundingClientRect();
-       
 
-       
-      if (rect.bottom >= window.innerHeight/2 && rect.top <= window.innerHeight/2)
-      {
+      if (
+        rect.bottom >= window.innerHeight / 2 &&
+        rect.top <= window.innerHeight / 2
+      ) {
         setIsVisible(true);
-      } else{
+      } else {
         setIsVisible(false);
       }
     };
 
-    
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-     
     handleScroll();
 
-    
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
     <>
-      <div id="about" className={`page ${isVisible ? 'visible-comp' : 'invisible-comp'}`} ref={elementRef}>
+      <div
+        id="about"
+        className={`page ${isVisible ? "visible-comp" : "invisible-comp"}`}
+        ref={elementRef}
+      >
         <h1 className="about-title">
           <TextCreator text="A  Wild Dev Appeared!" speed={100} />
         </h1>

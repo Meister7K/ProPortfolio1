@@ -575,12 +575,12 @@ function Resume(props: any) {
       location: "Austin, TX(remote)",
       description:
         "P erformed project coordination and management duties for one large and several smaller clients that rely on LSC's Integrity Management group. ",
-        details:[
-          'Created Microsoft Teams and SharePoint pages for client groups within the organization to promote a more streamlined and open working environment for client teams.', 
-          'Built out and maintained workbooks for project work that include: Proposals, Contacts, Budgets, Schedules, Scope of work, Change orders, Deliverables, WBS, and lead Lessons Learned post project.', 
-          'Received several peer merit awards for exceptional work ethic and teamwork on large client projects.',
-          'Managed a team of several technicians over five lines of business spanning several states.'
-        ]
+      details: [
+        "Created Microsoft Teams and SharePoint pages for client groups within the organization to promote a more streamlined and open working environment for client teams.",
+        "Built out and maintained workbooks for project work that include: Proposals, Contacts, Budgets, Schedules, Scope of work, Change orders, Deliverables, WBS, and lead Lessons Learned post project.",
+        "Received several peer merit awards for exceptional work ethic and teamwork on large client projects.",
+        "Managed a team of several technicians over five lines of business spanning several states.",
+      ],
     },
     {
       title: "CP Technician",
@@ -589,12 +589,11 @@ function Resume(props: any) {
       location: "Roseville, MN(journeyman)",
       description:
         "P erformed installation and maintenance on hardware for electrical systems for energy companies. Collected and ran data analytics on sustainability systems for clients. performed pre-construction surveys for future safety systems. Lead teams of 3-6 technicians on integrity management  and construction projects for large energy companies.",
-        details: [
-          'Provided project completion safely and on schedule, accurate and timely data gathering for indirect surveys',
-          'Worked on CP design and field testing, construction installations, reporting and inspections.',
-          'Additional responsibilities included internal project quality assigned by supervisory staff to ensure maintenance of LSC equipment/calibrations, vehicles, and office space.'
-        ]
-        
+      details: [
+        "Provided project completion safely and on schedule, accurate and timely data gathering for indirect surveys",
+        "Worked on CP design and field testing, construction installations, reporting and inspections.",
+        "Additional responsibilities included internal project quality assigned by supervisory staff to ensure maintenance of LSC equipment/calibrations, vehicles, and office space.",
+      ],
     },
     {
       title: "Civil Consultant Intern (Financial Crimes Investigation Unit)",
@@ -603,12 +602,12 @@ function Resume(props: any) {
       location: "Duluth, MN",
       description:
         "S hadowed and participated in operations of the department. Reviewed financial documents and imported data into the national database. Created data documents and reports from findings along with ran queries for case specific evidence.",
-        details:[
-          'Worked in Excel to record, look up, and report on data obtained in financial cases.',
-          'Reviewed copious amounts of financial documents and learned to spot discrepancies through continuous reviews. Peer reviewed search warrants and other documents.',
-          'Learned how to use police sponsored communication skills to effectively connect with all audiences. Met and communicated with a diverse community. Worked with a team of investigators on many financial cases.',
-          'Solidified the values of teamwork and the importance of planning and communication with multiple team members.'
-        ]
+      details: [
+        "Worked in Excel to record, look up, and report on data obtained in financial cases.",
+        "Reviewed copious amounts of financial documents and learned to spot discrepancies through continuous reviews. Peer reviewed search warrants and other documents.",
+        "Learned how to use police sponsored communication skills to effectively connect with all audiences. Met and communicated with a diverse community. Worked with a team of investigators on many financial cases.",
+        "Solidified the values of teamwork and the importance of planning and communication with multiple team members.",
+      ],
     },
     {
       title: "Bartender, Bouncer, Line Cook",
@@ -617,7 +616,6 @@ function Resume(props: any) {
       location: "Duluth, MN",
       description:
         "W orked several positions while completing my undergraduate degree and playing football at UMD. Learned valuable time management and additional soft skills.",
-
     },
   ];
 
@@ -639,44 +637,51 @@ function Resume(props: any) {
   ];
 
   const [isVisible, setIsVisible] = useState(false);
-    const elementRef = useRef(null);
-  
-    useEffect(() => {
-      const handleScroll = () => {
-        if (!elementRef.current) return;
-  
-        const element = elementRef.current;
-        const rect = element.getBoundingClientRect();
-         
-        if (rect.bottom >= window.innerHeight/2 && rect.top <= window.innerHeight/2)
-        {
-          setIsVisible(true);
-        } else{
-          setIsVisible(false);
-        }
-      };
-  
-      
-      window.addEventListener('scroll', handleScroll);
-  
-       
-      handleScroll();
-  
-      
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }, []);
-  
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!elementRef.current) return;
+
+      const element = elementRef.current;
+      const rect = element.getBoundingClientRect();
+
+      if (
+        rect.bottom >= window.innerHeight / 2 &&
+        rect.top <= window.innerHeight / 2
+      ) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <div id="resume" ref={elementRef} className={`page ${isVisible ? 'visible-comp' : 'invisible-comp'}`}>
-      <h1 className="resume-title"><TextCreator text="R esume" speed={100}/></h1>
-      <p className="resume-intro"><TextCreator text="A  Full Stack Web Developer with a background in Project Management and
+    <div
+      id="resume"
+      ref={elementRef}
+      className={`page ${isVisible ? "visible-comp" : "invisible-comp"}`}
+    >
+      <h1 className="resume-title">
+        <TextCreator text="R esume" speed={100} />
+      </h1>
+      <p className="resume-intro">
+        <TextCreator
+          text="A  Full Stack Web Developer with a background in Project Management and
         life-long devotion to learning. Effective at combining efficiency and creative problem solving to develop intuitive solutions and
         user-friendly applications. Known among peers for a strong attention to
-        detail and a can-do attitude regardless of the complexity of the project" speed={6}/>
-        
+        detail and a can-do attitude regardless of the complexity of the project"
+          speed={6}
+        />
       </p>
       <br />
       <SkillList skills={iconArray} key={iconArray.index} />
@@ -696,9 +701,11 @@ function Resume(props: any) {
                   <h4 className="company">{job.company}</h4>
                   <h4 className="location">{job.location}</h4>
                 </div>
-                <p className="job-description"><TextCreator text={job.description} speed={6}/></p>
+                <p className="job-description">
+                  <TextCreator text={job.description} speed={6} />
+                </p>
                 <ul className="detail-list">
-                  {job?.details?.map((detail: any, index:any)=>(
+                  {job?.details?.map((detail: any, index: any) => (
                     <li key={index}>{detail}</li>
                   ))}
                 </ul>

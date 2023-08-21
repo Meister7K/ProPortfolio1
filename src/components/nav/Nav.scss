@@ -1,97 +1,86 @@
-.nav ul, .nav ul li {
-    list-style: none;
-   padding: 0;
-   margin:0;
+.nav ul,
+.nav ul li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
+.nav {
+  position: fixed;
+  display: flex;
+  bottom: 1vh;
+  right: 1vw;
+  z-index: 10;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.696);
+  padding: 5px;
+  min-width: 20px;
+  min-height: 20px;
+  transition: all 1s ease-in-out;
 
-
-.nav{
-    position: fixed;
-    display: flex;
-    bottom:1vh;
-    right:1vw;
-    z-index: 10;
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
-    box-shadow: 1px 1px 20px rgba(0,0,0,0.696);
-    padding: 5px;
-    min-width: 20px;
-    min-height: 20px;
+  ul {
+    max-width: fit-content;
+    max-height: fit-content;
     transition: all 1s ease-in-out;
-  
 
-    ul{
-       max-width: fit-content;
-       max-height: fit-content;
-       transition: all 1s ease-in-out;
-       
-       li:not(.active){
-        display: none;
-        
-       }
+    li:not(.active) {
+      display: none;
     }
-    li.active{
-        opacity: 0.5;
-    }
-
-&:hover{
-    transition: all 1s ease-in-out;
-    ul{
-        transition: all 1s ease-in-out;
-        opacity: 1;
-        display: flex;
-        flex-direction: column;
-        max-height: fit-content;
-        max-width: fit-content;
-        li{
-            display: block;
-            margin: 2.5px 0 2.5px 0;
-            pointer-events: all;
-        }
-        .active{
-            opacity: 1;
-                button{
-                    transition:cubic-bezier(0.5, -1, 0.5, 1) 0.5s;
-                    transform:  translate(-50px, 0);
-                    
-                }
-            }
-    }
-    
-
-
-    ul:hover > .nav-link:not(.active){
+  }
+  li.active {
     opacity: 0.5;
-    
-}
+  }
 
-  ul:hover > .nav-link:hover{
-    opacity: 1;
-}
-
-.nav-link{
-    transition: opacity 400ms ease;
-}
-ul{
-    transition: opacity 400ms ease;
-   
-}
+  &:hover {
+    transition: all 1s ease-in-out;
+    ul {
+      transition: all 1s ease-in-out;
+      opacity: 1;
+      display: flex;
+      flex-direction: column;
+      max-height: fit-content;
+      max-width: fit-content;
+      li {
+        display: block;
+        margin: 2.5px 0 2.5px 0;
+        pointer-events: all;
+      }
+      .active {
+        opacity: 1;
+        button {
+          transition: cubic-bezier(0.5, -1, 0.5, 1) 0.5s;
+          transform: translate(-50px, 0);
+        }
+      }
     }
 
+    ul:hover > .nav-link:not(.active) {
+      opacity: 0.5;
+    }
+
+    ul:hover > .nav-link:hover {
+      opacity: 1;
+    }
+
+    .nav-link {
+      transition: opacity 400ms ease;
+    }
+    ul {
+      transition: opacity 400ms ease;
+    }
+  }
 }
 
-.active{
-    opacity: 1;
-    filter: drop-shadow( 0 0 5px black 0.5);
+.active {
+  opacity: 1;
+  filter: drop-shadow(0 0 5px black 0.5);
 }
 
-
-.nav-link:active{
-    filter: drop-shadow( 1px 1px 10px white);
+.nav-link:active {
+  filter: drop-shadow(1px 1px 10px white);
 }
-.nav button{
-    width: 100%;
-    justify-content: center;
-
+.nav button {
+  width: 100%;
+  justify-content: center;
 }

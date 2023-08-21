@@ -1,54 +1,54 @@
-.contact-form{
-  width:100%;
+.contact-form {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  ul{
+  ul {
     width: 50dvw;
     max-width: 400px;
   }
 
-  li{
+  li {
     margin: 1dvi;
     display: flex;
     justify-content: center;
   }
 
-  input:not(.input-btn), textarea{
-    width:100%;
+  input:not(.input-btn),
+  textarea {
+    width: 100%;
     background: transparent;
     backdrop-filter: blur(5px);
   }
-  .input-btn{
+  .input-btn {
     z-index: 0;
   }
 }
 
-.social-icon{
+.social-icon {
   width: 9dvw;
   height: 9dvh;
   display: inline-block;
   margin: 2dvi;
   max-width: 100px;
-  filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
-  transition: transform .5s ease-in-out;
-  &:hover{
-  transform: scale(1.3)
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+  transition: transform 0.5s ease-in-out;
+  &:hover {
+    transform: scale(1.3);
   }
-  &:active{
-    transform: scale(.5);
+  &:active {
+    transform: scale(0.5);
   }
 }
 
-.social-links{
+.social-links {
   display: inline-flex;
   align-items: center;
   flex-wrap: wrap;
 }
 
-
-#contact{
+#contact {
   display: flex;
   flex-direction: column;
   justify-content: center;

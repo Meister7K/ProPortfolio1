@@ -1,17 +1,17 @@
-.game-menu{
-    position: fixed;
-    top: 1dvh;
-    right:1dvw;
-    z-index: 1000;
-    padding: 5px;
-    border-radius: 10px;
-    background: rgba(0,0,0,0.1);
-    backdrop-filter: blur(5px);
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    border: 1px solid rgba(255,255,255,0.3);
-    h2{
-        margin:0;
-    }
+.game-menu {
+  position: fixed;
+  top: 1dvh;
+  right: 1dvw;
+  z-index: 1000;
+  padding: 5px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  h2 {
+    margin: 0;
+  }
 }

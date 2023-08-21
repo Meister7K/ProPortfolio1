@@ -15,12 +15,12 @@
   overflow-x: hidden;
 }
 //!need to look at
-.projects-container.expanded{
+.projects-container.expanded {
   overflow: visible;
 }
 
 #project-track {
-  margin:1dvi;
+  margin: 1dvi;
   display: flex;
   position: relative;
   gap: 1vmin;
@@ -30,7 +30,7 @@
   animation-fill-mode: forwards;
 }
 //! need to look at
-#project-track-expanded{
+#project-track-expanded {
   display: block;
   width: 100%;
   transform: none !important;
@@ -44,7 +44,6 @@
   animation-fill-mode: forwards;
 }
 
-
 .project-item {
   flex: 0 0 auto;
   display: block;
@@ -57,7 +56,7 @@
   transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
   transform: translate(0%);
   .pro-image {
-      position: absolute;
+    position: absolute;
     user-select: none;
     flex: 0 0 auto;
     display: block;
@@ -79,10 +78,10 @@
 }
 
 .primary {
-  position:fixed;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%; 
+  width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
@@ -111,19 +110,20 @@
     object-fit: cover;
     object-position: center;
   }
-  .btn{
-    margin:5px;
+  .btn {
+    margin: 5px;
     width: 8em;
-    
   }
 }
 
-.hide{
-  display:none;
+.hide {
+  display: none;
 }
 .secondary {
   filter: drop-shadow(0 0 3px black);
-  .pro-btn, .btn, p {
+  .pro-btn,
+  .btn,
+  p {
     display: none;
   }
   .project-content {
@@ -131,12 +131,9 @@
     max-height: 0;
     padding: 0;
   }
-
-  
 }
 
 @media (max-width: 430px) {
-
   #project-track {
     display: block;
     overflow: visible;
@@ -145,14 +142,14 @@
     width: 100%;
     margin-bottom: 5dvh;
     border-radius: 10px;
-    
-    .pro-image{
+
+    .pro-image {
       width: 100%;
       height: 100%;
       border-radius: 10px;
     }
   }
-  .primary{
+  .primary {
     position: fixed;
     top: 0;
     left: 0;
@@ -165,9 +162,9 @@
     z-index: 20;
 
     padding: 0;
-  
+
     backdrop-filter: blur(2px);
-    .pro-image{
+    .pro-image {
       height: auto;
     }
   }

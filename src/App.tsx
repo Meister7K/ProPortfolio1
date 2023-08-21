@@ -1,7 +1,7 @@
 import Layout from "./components/layout/Layout";
 import "./App.scss";
-import {useState, useEffect, lazy} from 'react'
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { useState, useEffect, lazy } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Home from "./components/pages/homepage/Home";
 // import Contact from "./components/pages/contact/Contact";
 // import Maintenance from "./components/pages/maintenance/Maintenance";
@@ -12,36 +12,36 @@ import Error from "./components/pages/error/Error";
 // import Resume from "./components/pages/resume/Resume";
 import Loader from "./components/loader/Loader";
 //import Support from "./components/pages/support/Support";
-const GameCanvas = lazy(()=> import("./components/game_setup/canvas/GameCanvas")) ;
-
+const GameCanvas = lazy(
+  () => import("./components/game_setup/canvas/GameCanvas")
+);
 
 function App() {
-
-  //!mobile testing 
+  //!mobile testing
   let devInfo = navigator.userAgent;
   let regexDev = /android|iphone|kindle|ipad/i;
 
-
-
   let mobileTest = regexDev.test(devInfo);
 
-  console.log(mobileTest)
+  console.log(mobileTest);
 
-const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-useEffect(()=>{
-  setLoading(true);
-  setTimeout(()=>{
-    setLoading(false);
-  },1000)
-},[]);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
 
   return (
-    <div className="container">{loading? (<Loader/>):(
-      
-      <BrowserRouter>
+    <div className="container">
+      {loading ? (
+        <Loader />
+      ) : (
+        <BrowserRouter>
           <Routes>
-            <Route element={<Layout/>}>
+            <Route element={<Layout />}>
               {/* <Route path="home" element={<Home/>}/>
               <Route path="about" element={<About/>}/>
               <Route path="resume" element={<Resume/>}/>
@@ -49,14 +49,12 @@ useEffect(()=>{
               <Route path="contact" element={<Contact/>}/>
               <Route path="support" element={<Support/>}/>
               <Route path="game" element={<Game/>}/> */}
-              <Route path="game-canvas" element={<GameCanvas/>}/>
-              <Route path="*" element={<Error/>}/>
+              <Route path="game-canvas" element={<GameCanvas />} />
+              <Route path="*" element={<Error />} />
             </Route>
           </Routes>
-      </BrowserRouter>
-    )}
-    
-      
+        </BrowserRouter>
+      )}
     </div>
   );
 }

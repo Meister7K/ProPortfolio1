@@ -10,11 +10,11 @@ import { CylinderCollider, RigidBody } from "@react-three/rapier";
 import { PlayerController } from "../player/PlayerController";
 
 function Scene(props: ThreeElements["mesh"]) {
-//   const ball1Ref: any = useRef();
-//   const ball2Ref: any = useRef();
+  //   const ball1Ref: any = useRef();
+  //   const ball2Ref: any = useRef();
 
-//   const [hovered, hover] = useState(false);
-//   const [clicked, click] = useState(false);
+  //   const [hovered, hover] = useState(false);
+  //   const [clicked, click] = useState(false);
 
   // useFrame((_state, _delta) => (ball1Ref.current.rotation.x += 0.02, ball2Ref.current.rotation.y += 0.02));
 
@@ -34,19 +34,23 @@ function Scene(props: ThreeElements["mesh"]) {
       />
       {/* stage */}
       <group position-y={0.5}>
-        <RigidBody colliders={false} type="fixed" position-y={-0.5} friction={2}>
-        <CylinderCollider args={[1 / 2, 5]} />
-        <Cylinder scale={[5, 1, 5]} receiveShadow />
-        <meshStandardMaterial color="green" />
-      </RigidBody>
+        <RigidBody
+          colliders={false}
+          type="fixed"
+          position-y={-0.5}
+          friction={2}
+        >
+          <CylinderCollider args={[1 / 2, 5]} />
+          <Cylinder scale={[5, 1, 5]} receiveShadow />
+          <meshStandardMaterial color="green" />
+        </RigidBody>
       </group>
-      
 
       {/* Background */}
       <mesh position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[100, 100]} />
         <MeshReflectorMaterial
-        mirror={0}
+          mirror={0}
           blur={[1, 1]}
           resolution={1024}
           mixBlur={1}
@@ -57,15 +61,11 @@ function Scene(props: ThreeElements["mesh"]) {
           metalness={0.6}
           roughness={1}
         />
-
-
-        
       </mesh>
       {/* Players */}
-      <PlayerController/>
+      <PlayerController />
 
       {/* Enemies */}
-      
     </>
   );
 }
