@@ -4,8 +4,10 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense, useMemo } from "react";
 import Scene from "../scene/Scene";
 import { KeyboardControls } from "@react-three/drei";
-import { GenerateGameLevel } from "../store/Store";
 import { Menu } from "../menu/Menu";
+import {useEffect } from 'react'
+
+
 
 export const Controls = {
   forward: "forward",
@@ -15,8 +17,24 @@ export const Controls = {
   jump: "jump",
 };
 
-function GameCanvas(props: any) {
-  //GenerateGameLevel({numberOfLevels: 5});
+function useScrollLock() {
+  useEffect(() => {
+      // Lock scroll
+      document.body.style.overflow = 'hidden';
+
+      // Clean up on unmount
+      return () => {
+          // Unlock scroll
+          document.body.style.overflow = 'auto';
+      };
+  }, []); // Run only once on component mount
+}
+
+function GameCanvas({ isOn }: any) {
+
+  useScrollLock();
+
+  if (!isOn) return null;
 
   const keyMap = useMemo(
     () => [
@@ -28,6 +46,10 @@ function GameCanvas(props: any) {
     ],
     []
   );
+
+  useEffect(()=>{
+
+  })
 
   return (
     <div className="game-container">
