@@ -5,7 +5,7 @@ import { Controls } from "../canvas/GameCanvas";
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 
-const _JUMP = 0.9;
+const _JUMP = 1.5;
 const _MOVEMENT_SPEED = 0.1;
 const _MAX_VEL = 3;
 

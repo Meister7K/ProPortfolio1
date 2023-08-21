@@ -21,6 +21,11 @@
   justify-content: center;
 }
 
+.no-point{
+  pointer-events: none;
+  user-select: none;
+}
+
 @keyframes pulse {
   from {
     transform: scale(1);

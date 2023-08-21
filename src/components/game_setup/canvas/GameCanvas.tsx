@@ -3,7 +3,7 @@ import { Physics } from "@react-three/rapier";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useMemo } from "react";
 import Scene from "../scene/Scene";
-import { KeyboardControls } from "@react-three/drei";
+import { KeyboardControls, Sky } from "@react-three/drei";
 import { Menu } from "../menu/Menu";
 import {useEffect } from 'react'
 
@@ -57,15 +57,13 @@ function GameCanvas({ isOn }: any) {
         <Canvas
           className="game"
           id="game-canvas"
-          flat
-          linear
           shadows
-          camera={{ position: [0, 10, 20], fov: 30 }}
+          camera={{ position: [0, 10, 20], fov: 45 }}
         >
-          <color attach="background" args={["black"]} />
+          <Sky sunPosition={[500,20,500]} />
           <fog attach="fog" args={["white", 300, 400]} />
           <Suspense>
-            <Physics debug>
+            <Physics debug gravity={[0,-30,0]} >
               <Scene name="scene" />
             </Physics>
           </Suspense>

@@ -61,7 +61,8 @@ function Game(props: any) {
       ref={elementRef}
       className={`page ${isVisible ? "visible-comp" : "invisible-comp"}`}
     >
-      <h1>
+      <div className={`${!isScrollLocked ? 'no-point': ''}`} >
+        <h1>
         <TextCreator text="L ets Play a Game" speed={100} />
       </h1>
       <details>
@@ -71,6 +72,8 @@ function Game(props: any) {
           Settings&gt;System
         </p>
       </details>
+      </div>
+      
       <br />
       {!isGameStarted ? (
         <button className="btn game-btn" onClick={startGame}>
