@@ -3,11 +3,17 @@ import { Physics } from "@react-three/rapier";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useMemo } from "react";
 import Scene from "../scene/Scene";
-import { KeyboardControls, Sky } from "@react-three/drei";
+import { Html, KeyboardControls, Sky, useProgress, Stats } from "@react-three/drei";
 import { Menu } from "../menu/Menu";
-import {useEffect } from 'react'
+import {useEffect } from 'react';
+import { create } from 'zustand'
+import { AnimationMixer } from "three";
 
-
+export const useStore = create(() => ({
+  groundObjects: {},
+  actions: {},
+  mixer: new AnimationMixer()
+}))
 
 export const Controls = {
   forward: "forward",
@@ -16,6 +22,11 @@ export const Controls = {
   right: "right",
   jump: "jump",
 };
+
+function Loader() {
+  const { progress } = useProgress()
+  return <Html center>{progress} % loaded</Html>
+}
 
 function useScrollLock() {
   useEffect(() => {
@@ -57,15 +68,18 @@ function GameCanvas({ isOn }: any) {
         <Canvas
           className="game"
           id="game-canvas"
-          shadows
-          camera={{ position: [0, 10, 20], fov: 45 }}
+          shadows 
+          onPointerDown={(e) => e.target.requestPointerLock()}
+          // camera={{ position: [0, 10, 20], fov: 45 }}
         >
+          <Suspense fallback={<Loader/>}>
           <Sky sunPosition={[500,20,500]} />
           <fog attach="fog" args={["white", 300, 400]} />
-          <Suspense>
+          
             <Physics debug gravity={[0,-30,0]} >
               <Scene name="scene" />
             </Physics>
+            <Stats/>
           </Suspense>
         </Canvas>
         <Menu />
