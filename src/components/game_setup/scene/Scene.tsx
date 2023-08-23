@@ -1,17 +1,17 @@
-import "./Scene.scss";
-import { useFrame, ThreeElements } from "@react-three/fiber";
-//import { useRef, useState } from "react";
-import {
-  Cylinder,
-  OrbitControls,
-  MeshReflectorMaterial,
-} from "@react-three/drei";
-import { CylinderCollider, RigidBody } from "@react-three/rapier";
-import { PlayerController } from "../player/PlayerController";
+import { OrbitControls } from "@react-three/drei";
+import { ThreeElements } from "@react-three/fiber";
 import { Ground } from "../objects/Ground";
+import { Platform } from "../objects/Platform";
+import { Pole } from "../objects/Pole";
+import { PlayerController } from "../player/PlayerController";
+import "./Scene.scss";
+
 
 function Scene(props: ThreeElements["mesh"]) {
 
+
+
+ 
 
   //!crate reusable functions for body parts
   //! call functions to create parts
@@ -23,12 +23,15 @@ function Scene(props: ThreeElements["mesh"]) {
       <ambientLight intensity={1} />
       <pointLight castShadow intensity={0.8} position={[100,100,100]}/>
       {/* stage */}
-      <Ground/>
+      <Platform/>
+      {/* Objects */}
+      <Pole />
 
       {/* Background */}
-     
-      {/* Player */}
-      <PlayerController />
+     <Ground />
+
+      {/* Players */}
+      <PlayerController/>
 
       {/* Enemies */}
     </>

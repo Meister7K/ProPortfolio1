@@ -1,18 +1,16 @@
 import "./Player.scss";
 import * as THREE from "three";
+import { Froggy } from "../froggy/Froggy";
 
 
-const speed = 5;
-const direction = new THREE.Vector3();
-const frontVector = new THREE.Vector3();
-const sideVector = new THREE.Vector3()
-const rotation = new THREE.Vector3()
+export default function Player(){
 
-export const Player = ( lerp= THREE.MathUtils.lerp) =>{
-
+    return(
+        <Froggy />
+    )
 
 }
 
 
 
-export default Player;
+
