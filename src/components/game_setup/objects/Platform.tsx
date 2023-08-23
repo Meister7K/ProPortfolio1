@@ -1,4 +1,4 @@
-import { RigidBody, CylinderCollider } from "@react-three/rapier"
+import { RigidBody, CylinderCollider, MeshCollider } from "@react-three/rapier"
 import { glassTexture } from "../../../assets/images/textures/textures"
 
 
@@ -12,13 +12,15 @@ export const Platform = (props:any)=>{
         {...props}
           colliders={false}
           type="fixed"
+          position={[0,1,0]}
         >
-          <mesh receiveShadow position={[0,0,0]} >
-            <cylinderGeometry args={[10,10,2]}/>
-            <meshStandardMaterial map={glassTexture} map-repeat={[240,240]} color="black"/>
-             <CylinderCollider args={[1,10]}/>
+          <MeshCollider type='trimesh'>
+          <mesh receiveShadow  >
+            <cylinderGeometry args={[10,10,2]} />
+            <meshStandardMaterial map={glassTexture} map-repeat={[240,240]} color="gray"/>
+            <CylinderCollider args={[1,10]}/>
           </mesh>
-          
+          </MeshCollider>
         </RigidBody>
       </group>
    ) 

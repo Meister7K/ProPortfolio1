@@ -15,7 +15,7 @@ export const Ground = (props:any)=>{
           type="fixed"
           name='floor'
         >
-          <mesh receiveShadow position={[0,0,0]} rotation-x={-Math.PI/2}>
+          <mesh receiveShadow position={[0,-0.1,0]} rotation-x={-Math.PI/2}>
             <planeGeometry args={[100,100]}/>
             <meshStandardMaterial map={groundTexture} map-repeat={[240,240]} color="red"/>
           </mesh>

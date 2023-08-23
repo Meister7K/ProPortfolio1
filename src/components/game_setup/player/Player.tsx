@@ -1,6 +1,6 @@
-import "./Player.scss";
+
 import * as THREE from "three";
-import { Froggy } from "../froggy/Froggy";
+import { Froggy } from "../objects/Froggy";
 
 
 export default function Player(){

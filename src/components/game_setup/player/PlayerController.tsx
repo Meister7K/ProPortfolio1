@@ -11,7 +11,7 @@ const JUMP_FORCE = 2;
 const MOVEMENT_SPEED = 0.2;
 const MAX_VEL = 5;
 
-export const PlayerController = () => {
+export const PlayerController = (props:any) => {
 
   const jumpPressed = useKeyboardControls((state) => state[Controls.jump]);
   const leftPressed = useKeyboardControls((state) => state[Controls.left]);
@@ -64,8 +64,8 @@ export const PlayerController = () => {
 
     const targetCameraPosition = new THREE.Vector3(
       characterWorldPosition.x ,
-      characterWorldPosition.y + 4,
-      characterWorldPosition.z +10,
+      characterWorldPosition.y + 8,
+      characterWorldPosition.z +15,
     );
 
     // if (gameState === gameStates.GAME) {
@@ -103,9 +103,10 @@ export const PlayerController = () => {
   return (
     <group>
       <RigidBody
-      position={[0,0,8]} 
+      position={[0,3,8]} 
         ref={rigidbody}
         colliders={false}
+        friction={2}
         scale={[0.5, 0.5, 0.5]}
         enabledRotations={[false, false, false]}
         onCollisionEnter={() => {

@@ -5,7 +5,7 @@ Command: npx gltfjsx@6.2.10 ./public/models/Froggy.glb
 
 import React, { useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
-import "./Froggy.scss";
+
 
 export function Froggy(props: any) {
   const group = useRef();

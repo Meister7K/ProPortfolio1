@@ -2,8 +2,8 @@ import "./GameCanvas.scss";
 import { Physics } from "@react-three/rapier";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useMemo } from "react";
-import Scene from "../scene/Scene";
-import { Html, KeyboardControls, Sky, useProgress} from "@react-three/drei";
+import { Scene } from "./Scene";
+import { Html, KeyboardControls, OrbitControls, Sky, useProgress} from "@react-three/drei";
 import { Menu } from "../menu/Menu";
 import {useEffect } from 'react';
 
@@ -64,14 +64,15 @@ function GameCanvas({ isOn }: any) {
           className="game"
           id="game-canvas"
           shadows 
-          onPointerDown={(e) => e.target.requestPointerLock()}
+          //! onPointerDown={(e) => e.target.requestPointerLock()}
            camera={{ position: [0, 10, 20], fov: 45 }}
         >
+          <ambientLight intensity={1}/>
+          <OrbitControls/>
           <Suspense fallback={<Loader/>}>
           <Sky sunPosition={[500,20,500]} />
-          <fog attach="fog" args={["white", 300, 400]} />
           
-            <Physics debug gravity={[0,-10,0]} >
+            <Physics debug gravity={[0,-50,0]} >
               <Scene name="scene" />
             </Physics>
           </Suspense>
