@@ -2,7 +2,7 @@
   "name": "proportfolio1",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://Meister7K.github.io/proportfolio1",
+  "homepage": "https://Meister7K.github.io/ProPortfolio1",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
