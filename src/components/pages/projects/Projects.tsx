@@ -131,7 +131,7 @@ function Projects(_props: any) {
         setMouseDownAt(clientX);
       };
 
-      const handleOnUp = (e: MouseEvent | TouchEvent) => {
+      const handleOnUp = () => {
         setMouseDownAt(0);
         setPrevPercentage(percentage.toString());
       };
@@ -168,7 +168,7 @@ function Projects(_props: any) {
       window.addEventListener("mousedown", handleOnDown);
       window.addEventListener("touchstart", (e: TouchEvent) => handleOnDown(e));
       window.addEventListener("mouseup", handleOnUp);
-      window.addEventListener("touchend", (e: TouchEvent) => handleOnUp(e));
+      window.addEventListener("touchend", (_e: TouchEvent) => handleOnUp());
       window.addEventListener("mousemove", handleOnMove);
       window.addEventListener("touchmove", (e: TouchEvent) => handleOnMove(e));
 
@@ -178,8 +178,8 @@ function Projects(_props: any) {
           handleOnDown(e)
         );
         window.removeEventListener("mouseup", handleOnUp);
-        window.removeEventListener("touchend", (e: TouchEvent) =>
-          handleOnUp(e)
+        window.removeEventListener("touchend", (_e: TouchEvent) =>
+          handleOnUp()
         );
         window.removeEventListener("mousemove", handleOnMove);
         window.removeEventListener("touchmove", (e: TouchEvent) =>

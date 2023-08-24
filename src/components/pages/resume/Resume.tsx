@@ -6,7 +6,7 @@ import CAPM from "../../../assets/files/CAPM certificate.pdf";
 import { TextCreator } from "../../textCreator/TextCreator";
 import { useRef, useState, useEffect } from "react";
 
-function Resume(props: any) {
+function Resume(_props: any) {
   const iconArray: any = [
     {
       name: "Bootstrap",

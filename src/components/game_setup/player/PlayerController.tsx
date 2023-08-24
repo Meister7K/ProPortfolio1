@@ -1,5 +1,4 @@
 import { CapsuleCollider, RigidBody} from "@react-three/rapier";
-
 import {useKeyboardControls } from "@react-three/drei";
 import { Controls } from "../canvas/GameCanvas";
 import {useRef} from "react";
@@ -27,18 +26,20 @@ export const PlayerController = (props: any) => {
   );
 
    // eslint-disable-next-line
-  const rigidbody = useRef<RigidBody | null>(null);
+  const rigidbody = useRef<any|null>(null);
   const isOnFloor = useRef(true);
 const character = useRef<THREE.Group | null>(null);
 
 
   useFrame((state, delta) => {
+
     const impulse = { x: 0, y: 0, z: 0 };
     if (jumpPressed && isOnFloor.current) {
       impulse.y += JUMP_FORCE;
       isOnFloor.current = false;
     }
-
+  
+    
     const linvel = rigidbody.current.linvel();
     let changeRotation = false;
     if (rightPressed && linvel.x < MAX_VEL) {
@@ -65,7 +66,7 @@ const character = useRef<THREE.Group | null>(null);
       const angle = Math.atan2(linvel.x, linvel.z);
       character.current.rotation.y = angle;
     }
-
+  
     // CAMERA FOLLOW
     const characterWorldPosition = character.current.getWorldPosition(
       new THREE.Vector3()
@@ -107,7 +108,7 @@ const character = useRef<THREE.Group | null>(null);
       
     }
 
-      
+  
   }  
   });
 

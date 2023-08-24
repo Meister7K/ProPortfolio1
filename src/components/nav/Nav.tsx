@@ -1,18 +1,11 @@
 import "./Nav.scss";
 import { useState, useEffect } from "react";
 import { HashLink as Linkz } from "react-router-hash-link";
-import { useLocation } from "react-router-dom";
 
 function Nav(_props: any) {
-  //! add screen size state to freeze scroll
 
-  //!mobile testing
-  let devInfo = navigator.userAgent;
-  let regexDev = /android|iphone|kindle|ipad/i;
   // eslint-disable-next-line
-  let isMobileDev = regexDev.test(devInfo);
-  // eslint-disable-next-line
-  const location = useLocation();
+
   const [activeSection, setActiveSection] = useState("");
   const sections = [
     "home",
