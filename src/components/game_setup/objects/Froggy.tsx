@@ -56,5 +56,5 @@ export function Froggy(props: any) {
   );
 }
 
-useGLTF.preload("../../../../models/Froggy.glb");
+useGLTF.preload("/models/Froggy.glb");
 //export default Froggy;

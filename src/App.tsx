@@ -2,28 +2,18 @@ import Layout from "./components/layout/Layout";
 import "./App.scss";
 import { useState, useEffect, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Home from "./components/pages/homepage/Home";
-// import Contact from "./components/pages/contact/Contact";
-// import Maintenance from "./components/pages/maintenance/Maintenance";
-// import About from "./components/pages/about/About";
-// import Game from "./components/pages/game/Game";
+
 import Error from "./components/pages/error/Error";
-// import Projects from "./components/pages/projects/Projects";
-// import Resume from "./components/pages/resume/Resume";
+
 import Loader from "./components/loader/Loader";
-//import Support from "./components/pages/support/Support";
+
 const GameCanvas = lazy(
   () => import("./components/game_setup/canvas/GameCanvas")
 );
 
 function App() {
-  //!mobile testing
-  let devInfo = navigator.userAgent;
-  let regexDev = /android|iphone|kindle|ipad/i;
+ 
 
-  let mobileTest = regexDev.test(devInfo);
-
-  console.log(mobileTest);
 
   const [loading, setLoading] = useState(false);
 
@@ -42,13 +32,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route element={<Layout />}>
-              {/* <Route path="home" element={<Home/>}/>
-              <Route path="about" element={<About/>}/>
-              <Route path="resume" element={<Resume/>}/>
-              <Route path="projects" element={<Projects/>}/>
-              <Route path="contact" element={<Contact/>}/>
-              <Route path="support" element={<Support/>}/>
-              <Route path="game" element={<Game/>}/> */}
+             
               <Route path="game-canvas" element={<GameCanvas />} />
               <Route path="*" element={<Error />} />
             </Route>
