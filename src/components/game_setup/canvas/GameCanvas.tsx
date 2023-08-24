@@ -36,7 +36,7 @@ function useScrollLock() {
   }, []); // Run only once on component mount
 }
 
-function GameCanvas({ isOn, setIsGameStarted, isGameStarted}: any, props:any) {
+function GameCanvas({ isOn, setIsGameStarted, isGameStarted}: any) {
 
  
 
@@ -58,7 +58,7 @@ function GameCanvas({ isOn, setIsGameStarted, isGameStarted}: any, props:any) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    let intervalId;
+    let intervalId: number | undefined;
 
   
       intervalId = setInterval(() => {
@@ -78,7 +78,7 @@ function GameCanvas({ isOn, setIsGameStarted, isGameStarted}: any, props:any) {
           className="game"
           id="game-canvas"
           shadows 
-           onPointerDown={(e) => e.target.requestPointerLock()}
+           onPointerDown={(e) => (e.target as HTMLElement).requestPointerLock()}
            camera={{ position: [0, 10, 20], fov: 45 }}
         >
           <directionalLight

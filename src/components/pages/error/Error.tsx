@@ -1,6 +1,6 @@
 import "./Error.scss";
 
-function Error(props: any) {
+function Error(_props: any) {
   return (
     <>
       <h1>404</h1>

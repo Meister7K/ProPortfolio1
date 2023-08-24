@@ -637,7 +637,7 @@ function Resume(props: any) {
   ];
 
   const [isVisible, setIsVisible] = useState(false);
-  const elementRef = useRef(null);
+  const elementRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {

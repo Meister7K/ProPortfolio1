@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./ImageFlipper.scss";
 import Headshot from "../../assets/images/about/headshot.jpg";
 import KF1 from "../../assets/images/about/Family.jpg";

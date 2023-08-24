@@ -6,7 +6,7 @@ import { useRef, useState, useEffect } from "react";
 
 //add random word cycler into span
 
-function About(props: any) {
+function About(_props: any) {
   const links = [
     {
       name: "UMD Roster",
@@ -23,7 +23,7 @@ function About(props: any) {
   ];
 
   const [isVisible, setIsVisible] = useState(false);
-  const elementRef = useRef(null);
+  const elementRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {

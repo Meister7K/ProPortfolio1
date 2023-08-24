@@ -1,18 +1,15 @@
-import { useState, useEffect } from "react";
+
 import "./Menu.scss";
-import {gameStates, useGameStore } from "../store/Store";
+
 
 export const Menu = ({props}:any) => {
   let count = props;
 
-  // const {startGame, gameState}= useGameStore((state)=>{
-  //   startGame: state.startGame,
-  //   gameState: state.gameState,
-  // });
+
 
   return (
     <div className='game-menu'
-    // {`game-menu ${gameState!==gameStates.MENU ?'hidden':''}`}
+   
     >
       <h2>Controls</h2>
       <ul>
@@ -22,9 +19,8 @@ export const Menu = ({props}:any) => {
         <li>Right: D/RightArrow</li>
         <li>Jump: SpaceBar</li>
         </ul>
-        {/* <button className="btn" onClick={()=>startGame()}>Start</button>
-        <button className="btn">Scores</button> */}
-      <span>Time: {String(count)}s</span>
+
+      <h1 className="time">Time: {String(count)}s</h1>
     </div>
   );
 };

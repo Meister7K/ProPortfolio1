@@ -4,7 +4,7 @@ import "./Game.scss";
 //import { Link } from "react-router-dom"
 import { useEffect, useRef, useState } from "react";
 
-function Game(props: any) {
+function Game(_props: any) {
 
   //! game logic
   const [isGameStarted, setIsGameStarted] = useState(false);
@@ -19,7 +19,7 @@ function Game(props: any) {
 
   //!display enter logic
   const [isVisible, setIsVisible] = useState(false);
-  const elementRef = useRef(null);
+  const elementRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,11 +49,8 @@ function Game(props: any) {
 
 
   //! scroll lock logic
-  const [isScrollLocked, setScrollLocked] = useState(true); // Set to true to lock scroll initially
+  const [isScrollLocked] = useState(true); // Set to true to lock scroll initially
 
-    const toggleScrollLock = () => {
-        setScrollLocked(prevState => !prevState);
-    };
 
   return (
     <div

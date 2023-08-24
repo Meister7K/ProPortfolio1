@@ -1,6 +1,6 @@
 import { MeshCollider, RapierRigidBody, RigidBody, quat } from "@react-three/rapier"
 import { logTexture } from "../../../assets/images/textures/textures"
-import { useRef, useEffect, useState } from "react";
+import { useRef} from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
@@ -19,7 +19,7 @@ export const Pole = (props:any)=>{
 
   useFrame((_state, delta)=>{
 
-    // if(start){
+    if (ref.current) {
       const curRotation = quat(ref.current.rotation());
     const incrementRotation = new THREE.Quaternion().setFromAxisAngle(
       new THREE.Vector3(0, 0, 1),
@@ -29,7 +29,7 @@ export const Pole = (props:any)=>{
     ref.current.setNextKinematicRotation(curRotation);
 
     speed.current += delta;
-    // }
+    }
     
   })
 

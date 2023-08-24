@@ -28,9 +28,6 @@ function TextStyle() {
   };
 
   useEffect(() => {
-    const delayEffect = setTimeout(() => {
-      textFlip();
-    }, 1500);
   }, []);
 
   return (

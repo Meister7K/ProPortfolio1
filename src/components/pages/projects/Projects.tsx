@@ -10,7 +10,7 @@ import Sunset from "../../../assets/images/projects/Sunset.jpg";
 import Planner from "../../../assets/images/projects/planner.png";
 import { TextCreator } from "../../textCreator/TextCreator";
 
-function Projects(props: any) {
+function Projects(_props: any) {
   // project list array
   const projectArray = [
     {
@@ -131,7 +131,7 @@ function Projects(props: any) {
         setMouseDownAt(clientX);
       };
 
-      const handleOnUp = () => {
+      const handleOnUp = (e: MouseEvent | TouchEvent) => {
         setMouseDownAt(0);
         setPrevPercentage(percentage.toString());
       };
@@ -190,7 +190,7 @@ function Projects(props: any) {
   }
 
   const [isVisible, setIsVisible] = useState(false);
-  const elementRef = useRef(null);
+  const elementRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {

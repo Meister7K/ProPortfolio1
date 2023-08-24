@@ -3,9 +3,9 @@ import "./Home.scss";
 
 import { HashLink as Linkz } from "react-router-hash-link";
 
-function Home(props: any) {
+function Home(_props: any) {
   const [isVisible, setIsVisible] = useState(false);
-  const elementRef = useRef(null);
+  const elementRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {

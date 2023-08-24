@@ -1,6 +1,6 @@
 import "./Logo.scss";
 
-function Logo(props: any) {
+function Logo(_props: any) {
   return (
     <>
       <div className="logo">

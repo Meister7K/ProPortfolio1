@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 import { useEffect, useRef, useState } from "react";
 import { TextCreator } from "../../textCreator/TextCreator";
 
-function Contact(props: any) {
+function Contact(_props: any) {
   const socialLinks = [
     {
       icon: (
@@ -65,7 +65,7 @@ function Contact(props: any) {
   };
 
   const [isVisible, setIsVisible] = useState(false);
-  const elementRef = useRef(null);
+  const elementRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {

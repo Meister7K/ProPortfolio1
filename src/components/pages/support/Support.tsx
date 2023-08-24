@@ -2,9 +2,9 @@ import "./Support.scss";
 import Button from "../../button/Button";
 import { useRef, useState, useEffect } from "react";
 
-function Support(props: any) {
+function Support(_props: any) {
   const [isVisible, setIsVisible] = useState(false);
-  const elementRef = useRef(null);
+  const elementRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {

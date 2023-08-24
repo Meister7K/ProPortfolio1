@@ -1,8 +1,8 @@
 import { CapsuleCollider, RigidBody} from "@react-three/rapier";
-// import { gameStates, playAudio, useGameStore } from "../store";
+
 import {useKeyboardControls } from "@react-three/drei";
 import { Controls } from "../canvas/GameCanvas";
-import { useEffect, useRef, useState} from "react";
+import {useRef} from "react";
 import { useFrame } from "@react-three/fiber";
 import Player from "./Player";
 import * as THREE from "three";
@@ -14,7 +14,7 @@ const MAX_VEL = 5;
 
 
 export const PlayerController = (props: any) => {
-  const { setIsGameStarted, isGameStarted, ...otherProps } = props;
+  const { setIsGameStarted } = props;
 
 
 
@@ -25,8 +25,12 @@ export const PlayerController = (props: any) => {
   const forwardPressed = useKeyboardControls(
     (state) => state[Controls.forward]
   );
-  const rigidbody = useRef();
+
+   // eslint-disable-next-line
+  const rigidbody = useRef<RigidBody | null>(null);
   const isOnFloor = useRef(true);
+const character = useRef<THREE.Group | null>(null);
+
 
   useFrame((state, delta) => {
     const impulse = { x: 0, y: 0, z: 0 };
@@ -56,7 +60,7 @@ export const PlayerController = (props: any) => {
 
     rigidbody.current.applyImpulse(impulse, true);
 
-
+    if (character.current) {
     if (changeRotation) {
       const angle = Math.atan2(linvel.x, linvel.z);
       character.current.rotation.y = angle;
@@ -104,10 +108,10 @@ export const PlayerController = (props: any) => {
     }
 
       
-      
+  }  
   });
 
-  const character = useRef();
+  
 
 
   return (
@@ -118,7 +122,7 @@ export const PlayerController = (props: any) => {
       position={[0,3,8]} 
         ref={rigidbody}
         colliders={false}
-        friction={2}
+        friction={1}
         scale={[0.5, 0.5, 0.5]}
         enabledRotations={[false, false, false]}
         onCollisionEnter={() => {

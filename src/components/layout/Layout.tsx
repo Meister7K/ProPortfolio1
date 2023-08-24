@@ -44,8 +44,9 @@ function Layout() {
           <Support />
         </Suspense>
       </div>
-      <Clock />
       <Nav />
+      <Clock />
+      
       <div className="footer">
         <p className="copyright">
           <span>&copy;</span> {currentYear} Karl Finkel Portfolio

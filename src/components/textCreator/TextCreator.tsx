@@ -3,11 +3,11 @@ import { useState, useEffect, useRef } from "react";
 
 export const TextCreator = ({ text, speed }: any) => {
   const [typedText, setTypedText] = useState("");
-  const textRef = useRef(null); // Ref for the component
+  const textRef = useRef<HTMLSpanElement | null>(null); // Ref for the component
 
   useEffect(() => {
     const element = textRef.current;
-
+    if (element) {
     const observer = new IntersectionObserver((entries) => {
       let currentIndex = 0;
 
@@ -19,6 +19,7 @@ export const TextCreator = ({ text, speed }: any) => {
           } else {
             clearInterval(typingInterval);
           }
+            
         }, speed);
 
         // Disconnect the observer after the animation starts
@@ -32,6 +33,7 @@ export const TextCreator = ({ text, speed }: any) => {
       if (element) {
         observer.unobserve(element);
       }
+    }
     };
   }, [text, speed]);
 

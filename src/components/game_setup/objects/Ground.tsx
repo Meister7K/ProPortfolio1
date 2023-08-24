@@ -1,5 +1,5 @@
 
-import { RigidBody,  CuboidCollider } from "@react-three/rapier"
+import { RigidBody } from "@react-three/rapier"
 import { groundTexture } from "../../../assets/images/textures/textures"
 
 

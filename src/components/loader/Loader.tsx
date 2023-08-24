@@ -1,6 +1,6 @@
 import "./Loader.scss";
 
-function Loader(props: any) {
+function Loader(_props: any) {
   return (
     <>
       <div className="loader">
