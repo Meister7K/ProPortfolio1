@@ -96,35 +96,6 @@ function Projects(props: any) {
   const [projects, setProjects] = useState(projectArray);
   const [expandedProject, setExpandedProject] = useState<number | null>(null);
 
-  //! add screen size state to freeze scroll
-
-  // const contentRef = useRef(null);
-  // const [isVisible, setIsVisible] = useState(false);
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       const entry = entries[0];
-  //       const visiblePercentage = entry.intersectionRatio * 100;
-
-  //       // Determine if the element should be visible based on your threshold
-  //       const isVisibleThreshold = visiblePercentage >= 50; // Adjust threshold percentage
-
-  //       setIsVisible(isVisibleThreshold);
-  //     },
-  //     { threshold: [0, 0.5, 1] } // Intersection ratios to observe (0%, 50%, 100%)
-  //   );
-
-  //   if (contentRef.current) {
-  //     observer.observe(contentRef.current);
-  //   }
-
-  //   return () => {
-  //     if (contentRef.current) {
-  //       observer.unobserve(contentRef.current);
-  //     }
-  //   };
-  // }, []);
 
   //!mobile testing
   let devInfo = navigator.userAgent;

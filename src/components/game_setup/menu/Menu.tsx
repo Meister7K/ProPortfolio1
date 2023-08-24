@@ -1,32 +1,30 @@
 import { useState, useEffect } from "react";
 import "./Menu.scss";
+import {gameStates, useGameStore } from "../store/Store";
 
-export const Menu = () => {
-  const [start, setStart] = useState(false);
-  const [count, setCount] = useState(0);
+export const Menu = ({props}:any) => {
+  let count = props;
 
-  useEffect(() => {
-    let intervalId;
-
-    if (start) {
-      intervalId = setInterval(() => {
-        setCount(prevCount => prevCount + 1);
-      }, 1000);
-    }
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, [start]);
+  // const {startGame, gameState}= useGameStore((state)=>{
+  //   startGame: state.startGame,
+  //   gameState: state.gameState,
+  // });
 
   return (
-    <div className="game-menu">
-      <h2>Menu</h2>
-      <button onClick={() => setStart(true)} className="btn sgb">
-        Start
-      </button>
-      <button className="btn controls">Controls</button>
-      <span>Count: {count}</span>
+    <div className='game-menu'
+    // {`game-menu ${gameState!==gameStates.MENU ?'hidden':''}`}
+    >
+      <h2>Controls</h2>
+      <ul>
+        <li>Forward: W/UpArrow</li>
+        <li>Backward: W/BackArrow</li>
+        <li>Left: A/LeftArrow</li>
+        <li>Right: D/RightArrow</li>
+        <li>Jump: SpaceBar</li>
+        </ul>
+        {/* <button className="btn" onClick={()=>startGame()}>Start</button>
+        <button className="btn">Scores</button> */}
+      <span>Time: {String(count)}s</span>
     </div>
   );
 };

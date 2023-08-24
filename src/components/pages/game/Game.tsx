@@ -82,7 +82,7 @@ function Game(props: any) {
       ) : (
         // Render the GameCanvas component here
         <div>
-          <GameCanvas isOn={isScrollLocked} />
+          <GameCanvas isOn={isScrollLocked} setIsGameStarted={setIsGameStarted} isGameStarted={isGameStarted}/>
           <button className="btn exit" onClick={exitGame}>
             X
           </button>

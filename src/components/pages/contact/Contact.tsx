@@ -103,7 +103,7 @@ function Contact(props: any) {
     >
       <div className="contact-form">
         <h1>
-          <TextCreator text="C ontact" speed={100} />
+          <TextCreator text="Coontact" speed={100} />
         </h1>
         <h2>Let's get in touch!</h2>
         <form ref={form} onSubmit={sendEmail}>

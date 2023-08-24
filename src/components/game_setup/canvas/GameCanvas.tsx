@@ -1,11 +1,11 @@
 import "./GameCanvas.scss";
 import { Physics } from "@react-three/rapier";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useMemo } from "react";
+import { Suspense, useMemo, useState } from "react";
 import { Scene } from "./Scene";
 import { Html, KeyboardControls, OrbitControls, Sky, useProgress} from "@react-three/drei";
 import { Menu } from "../menu/Menu";
-import {useEffect } from 'react';
+import {useEffect} from 'react';
 
 
 
@@ -36,7 +36,9 @@ function useScrollLock() {
   }, []); // Run only once on component mount
 }
 
-function GameCanvas({ isOn }: any) {
+function GameCanvas({ isOn, setIsGameStarted, isGameStarted}: any, props:any) {
+
+ 
 
   useScrollLock();
 
@@ -53,9 +55,21 @@ function GameCanvas({ isOn }: any) {
     []
   );
 
-  useEffect(()=>{
+  const [count, setCount] = useState(0);
 
-  })
+  useEffect(() => {
+    let intervalId;
+
+  
+      intervalId = setInterval(() => {
+        setCount(prevCount => prevCount + 1);
+      }, 1000);
+
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
 
   return (
     <div className="game-container">
@@ -64,20 +78,26 @@ function GameCanvas({ isOn }: any) {
           className="game"
           id="game-canvas"
           shadows 
-          //! onPointerDown={(e) => e.target.requestPointerLock()}
+           onPointerDown={(e) => e.target.requestPointerLock()}
            camera={{ position: [0, 10, 20], fov: 45 }}
         >
-          <ambientLight intensity={1}/>
+          <directionalLight
+  intensity={0.5}
+  castShadow // highlight-line
+  shadow-mapSize-height={512}
+  shadow-mapSize-width={512}
+/>
+          <ambientLight intensity={2}/>
           <OrbitControls/>
           <Suspense fallback={<Loader/>}>
           <Sky sunPosition={[500,20,500]} />
           
-            <Physics debug gravity={[0,-50,0]} >
-              <Scene name="scene" />
+            <Physics gravity={[0,-50,0]} >
+              <Scene name="scene" setIsGameStarted={setIsGameStarted} isGameStarted={isGameStarted} />
             </Physics>
           </Suspense>
         </Canvas>
-        <Menu />
+        <Menu props={count}/>
       </KeyboardControls>
     </div>
   );

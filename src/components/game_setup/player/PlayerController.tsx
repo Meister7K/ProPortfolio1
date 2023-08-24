@@ -2,16 +2,21 @@ import { CapsuleCollider, RigidBody} from "@react-three/rapier";
 // import { gameStates, playAudio, useGameStore } from "../store";
 import {useKeyboardControls } from "@react-three/drei";
 import { Controls } from "../canvas/GameCanvas";
-import { useRef } from "react";
+import { useEffect, useRef, useState} from "react";
 import { useFrame } from "@react-three/fiber";
 import Player from "./Player";
 import * as THREE from "three";
+
 
 const JUMP_FORCE = 2;
 const MOVEMENT_SPEED = 0.2;
 const MAX_VEL = 5;
 
-export const PlayerController = (props:any) => {
+
+export const PlayerController = (props: any) => {
+  const { setIsGameStarted, isGameStarted, ...otherProps } = props;
+
+
 
   const jumpPressed = useKeyboardControls((state) => state[Controls.jump]);
   const leftPressed = useKeyboardControls((state) => state[Controls.left]);
@@ -68,12 +73,7 @@ export const PlayerController = (props:any) => {
       characterWorldPosition.z +15,
     );
 
-    // if (gameState === gameStates.GAME) {
-    //   targetCameraPosition.y = 6;
-    // }
-    // if (gameState !== gameStates.GAME) {
-    //   targetCameraPosition.y = 0;
-    // }
+
 
     state.camera.position.lerp(targetCameraPosition, delta * 2);
 
@@ -95,14 +95,26 @@ export const PlayerController = (props:any) => {
     lerpedLookAt.lerpVectors(currentLookAt, targetLookAt, delta *2);
 
     state.camera.lookAt(targetLookAt);
+
+
+    if(characterWorldPosition.y < 0){
+    
+      setIsGameStarted(false);
+      
+    }
+
+      
+      
   });
 
   const character = useRef();
 
 
   return (
-    <group>
+    <group >
       <RigidBody
+      dispose
+      {...props}
       position={[0,3,8]} 
         ref={rigidbody}
         colliders={false}
