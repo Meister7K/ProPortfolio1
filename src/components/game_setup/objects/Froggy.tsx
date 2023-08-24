@@ -10,7 +10,7 @@ import { useGLTF } from "@react-three/drei";
 export function Froggy(props: any) {
   const group = useRef();
   const { nodes, materials }:any = useGLTF(
-    "../models/Froggy.glb"
+    "./models/Froggy.glb"
   );
  
   return (
@@ -56,5 +56,5 @@ export function Froggy(props: any) {
   );
 }
 
-useGLTF.preload("../models/Froggy.glb");
+useGLTF.preload("./models/Froggy.glb");
 //export default Froggy;
