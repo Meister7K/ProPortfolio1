@@ -1,1 +1,0 @@
-import{j as t}from"./index-9803a5a1.js";function r(e){return t.jsx(t.Fragment,{children:e.href===""?t.jsx("button",{className:"btn",children:e.text}):t.jsx("a",{href:e.href,target:"_blank",rel:"noopener noreferrer",children:t.jsx("button",{className:"btn",children:e.text})})})}export{r as B};
