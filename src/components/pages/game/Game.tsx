@@ -69,7 +69,7 @@ function Game(props: any) {
         <summary>click here for running tips</summary>
         <p>
           For better runtime in Chrome, enable Hardware Acceleration under
-          Settings&gt;System
+          Settings&gt;System. Currently for web only &#128546;
         </p>
       </details>
       </div>
