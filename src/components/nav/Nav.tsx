@@ -4,8 +4,6 @@ import { HashLink as Linkz } from "react-router-hash-link";
 
 function Nav(_props: any) {
 
-  // eslint-disable-next-line
-
   const [activeSection, setActiveSection] = useState("");
   const sections = [
     "home",
@@ -14,7 +12,7 @@ function Nav(_props: any) {
     "projects",
     "game",
     "contact",
-    "support" /* "top"*/,
+    "support",
   ];
 
   useEffect(() => {

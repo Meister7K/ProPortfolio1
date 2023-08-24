@@ -5,10 +5,12 @@
   top: 0dvh;
   left: 1dvw;
   position: relative;
+  transform-style: preserve-3d;
 }
 
 .title-container {
   position: fixed;
   display: flex;
   z-index: 10;
+  transform-style: preserve-3d;
 }

@@ -1,6 +1,5 @@
 import "./Projects.scss";
 import React, { useState, useRef, useEffect } from "react";
-import Button from "../../button/Button";
 import TMFImage from "../../../assets/images/projects/TMF-home.png";
 import DungeonImg from "../../../assets/images/projects/DungeonGame-GIF.gif";
 import BlogImg from "../../../assets/images/projects/BlogImg.png";
@@ -8,7 +7,7 @@ import ERImage from "../../../assets/images/projects/ER quiz.png";
 import RickImg from "../../../assets/images/projects/Morty's Book of Schwifty Ricktails.gif";
 import Sunset from "../../../assets/images/projects/Sunset.jpg";
 import Planner from "../../../assets/images/projects/planner.png";
-import { TextCreator } from "../../textCreator/TextCreator";
+
 
 function Projects(_props: any) {
   // project list array
@@ -225,7 +224,7 @@ function Projects(_props: any) {
       ref={elementRef}
     >
       <h1>
-        <TextCreator text="P rojects" speed={100} />
+        Projects
       </h1>
       <br />
       <div
@@ -241,8 +240,8 @@ function Projects(_props: any) {
               }`}
               id={`project#${project.id}`}
               title="double click to toggle display"
-              onDoubleClick={() => handleDisplayChange(project.id)}
-              onTouchEnd={() => handleDisplayChange(project.id)}
+              onClickCapture={() => handleDisplayChange(project.id)}
+              // onTouchEnd={() => handleDisplayChange(project.id)}
               key={project.id}
               draggable={false}
             >
@@ -266,14 +265,15 @@ function Projects(_props: any) {
                 {project.link === "" ? (
                   ""
                 ) : (
-                  <Button text="Link" href={project.link} className="pro-btn" />
+                  <a href={project.link} target="_blank">
+                    <button className="pro-btn btn"  >Link</button>
+                  </a>
+                  
                 )}
 
-                <Button
-                  text="Repository"
-                  href={project.repo}
-                  className="pro-btn"
-                />
+<a href={project.repo} target="_blank">
+                    <button className="pro-btn btn">Repository</button>
+                  </a>
               </div>
             </li>
           ))}

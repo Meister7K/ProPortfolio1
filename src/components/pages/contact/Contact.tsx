@@ -1,7 +1,6 @@
 import "./Contact.scss";
 import emailjs from "@emailjs/browser";
 import { useEffect, useRef, useState } from "react";
-import { TextCreator } from "../../textCreator/TextCreator";
 
 function Contact(_props: any) {
   const socialLinks = [
@@ -103,7 +102,7 @@ function Contact(_props: any) {
     >
       <div className="contact-form">
         <h1>
-          <TextCreator text="Coontact" speed={100} />
+         Contact
         </h1>
         <h2>Let's get in touch!</h2>
         <form ref={form} onSubmit={sendEmail}>

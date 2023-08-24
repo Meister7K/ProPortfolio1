@@ -3,7 +3,6 @@ import SkillList from "../../skill-list/SkillList";
 import resume from "../../../assets/files/Karl Finkel Resume.pdf";
 import BootCert from "../../../assets/files/UTABootCert.pdf";
 import CAPM from "../../../assets/files/CAPM certificate.pdf";
-import { TextCreator } from "../../textCreator/TextCreator";
 import { useRef, useState, useEffect } from "react";
 
 function Resume(_props: any) {
@@ -574,7 +573,7 @@ function Resume(_props: any) {
       company: "LSC",
       location: "Austin, TX(remote)",
       description:
-        "P erformed project coordination and management duties for one large and several smaller clients that rely on LSC's Integrity Management group. ",
+        "Performed project coordination and management duties for one large and several smaller clients that rely on LSC's Integrity Management group. ",
       details: [
         "Created Microsoft Teams and SharePoint pages for client groups within the organization to promote a more streamlined and open working environment for client teams.",
         "Built out and maintained workbooks for project work that include: Proposals, Contacts, Budgets, Schedules, Scope of work, Change orders, Deliverables, WBS, and lead Lessons Learned post project.",
@@ -588,7 +587,7 @@ function Resume(_props: any) {
       company: "LSC",
       location: "Roseville, MN(journeyman)",
       description:
-        "P erformed installation and maintenance on hardware for electrical systems for energy companies. Collected and ran data analytics on sustainability systems for clients. performed pre-construction surveys for future safety systems. Lead teams of 3-6 technicians on integrity management  and construction projects for large energy companies.",
+        "Performed installation and maintenance on hardware for electrical systems for energy companies. Collected and ran data analytics on sustainability systems for clients. performed pre-construction surveys for future safety systems. Lead teams of 3-6 technicians on integrity management  and construction projects for large energy companies.",
       details: [
         "Provided project completion safely and on schedule, accurate and timely data gathering for indirect surveys",
         "Worked on CP design and field testing, construction installations, reporting and inspections.",
@@ -601,7 +600,7 @@ function Resume(_props: any) {
       company: "Duluth Police Dept.",
       location: "Duluth, MN",
       description:
-        "S hadowed and participated in operations of the department. Reviewed financial documents and imported data into the national database. Created data documents and reports from findings along with ran queries for case specific evidence.",
+        "Shadowed and participated in operations of the department. Reviewed financial documents and imported data into the national database. Created data documents and reports from findings along with ran queries for case specific evidence.",
       details: [
         "Worked in Excel to record, look up, and report on data obtained in financial cases.",
         "Reviewed copious amounts of financial documents and learned to spot discrepancies through continuous reviews. Peer reviewed search warrants and other documents.",
@@ -612,10 +611,10 @@ function Resume(_props: any) {
     {
       title: "Bartender, Bouncer, Line Cook",
       years: "2014-2017",
-      company: "Grandma's Sports Garden",
+      company: "Grandma's Sports Bar",
       location: "Duluth, MN",
       description:
-        "W orked several positions while completing my undergraduate degree and playing football at UMD. Learned valuable time management and additional soft skills.",
+        "Worked several positions while completing my undergraduate degree and playing football at UMD. Learned valuable time management and additional soft skills.",
     },
   ];
 
@@ -672,16 +671,13 @@ function Resume(_props: any) {
       className={`page ${isVisible ? "visible-comp" : "invisible-comp"}`}
     >
       <h1 className="resume-title">
-        <TextCreator text="R esume" speed={100} />
+        Resume
       </h1>
       <p className="resume-intro">
-        <TextCreator
-          text="A  Full Stack Web Developer with a background in Project Management and
+        A Full Stack Web Developer with a background in Project Management and
         life-long devotion to learning. Effective at combining efficiency and creative problem solving to develop intuitive solutions and
         user-friendly applications. Known among peers for a strong attention to
-        detail and a can-do attitude regardless of the complexity of the project"
-          speed={6}
-        />
+        detail and a can-do attitude regardless of the complexity of the project   
       </p>
       <br />
       <SkillList skills={iconArray} key={iconArray.index} />
@@ -702,7 +698,7 @@ function Resume(_props: any) {
                   <h4 className="location">{job.location}</h4>
                 </div>
                 <p className="job-description">
-                  <TextCreator text={job.description} speed={6} />
+                  {job.description}
                 </p>
                 <ul className="detail-list">
                   {job?.details?.map((detail: any, index: any) => (
