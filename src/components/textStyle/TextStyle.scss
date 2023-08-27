@@ -4,13 +4,17 @@
   white-space: nowrap;
   top: 0dvh;
   left: 1dvw;
-  position: relative;
   transform-style: flat;
+  margin: 0;
 }
 
 .title-container {
   position: fixed;
   display: flex;
+  left: 2dvw;
+  justify-content: center;
+  align-items: center;
+  height: 4.2em;
   z-index: 10;
   transform-style: flat;
 }

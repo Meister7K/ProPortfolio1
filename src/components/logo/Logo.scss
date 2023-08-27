@@ -1,62 +1,28 @@
-@keyframes spinTop {
-  from{
-    transform: rotateX(0deg);
-  }
-  to{
-    transform: rotateX(360deg);
-  }
-}
 
-@keyframes spinSide {
-  from{
-    transform: rotateY(0deg);
-  }
-  to{
-    transform: rotateY(360deg);
-  }
-}
-
-@keyframes spinDiagonal {
-  from{
-    transform: rotate3d(1,1,0,0deg);
-  }
-  to{
-    transform: rotate3D(1,1,0,360deg);
-  }
-}
 
 .logo {
   position: fixed;
-  top: 4vmin;
-  right: 4vmin;
+  top: 0;
+  right: 2dvw;
   z-index: 9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  height: 4.2em;
 
-.logo-background, .logo-front,.logo-center{
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 3.2em;
-  width: 3.2em;
-  border-radius: 50%;
-  z-index: 10;
-  border: 2px solid var(--DOrange);
-  &:hover{filter: drop-shadow( 0 0 5px var(--DOrange));}
-  transform-style: flat;
-}
-
-.logo-background{
-  animation: spinTop 3s linear infinite;
-}
-
-.logo-front{
-animation: spinSide 3s linear infinite ;
-}
-
-.logo-center{
-  animation: spinDiagonal 3s linear infinite ;
+ display: flex;
+    align-items: center;
+    justify-content: center;
+  img{
+   
+   width: 3em;
+   height: 3em;
+    filter: invert(90%);
   }
+}
+
+@media (max-width: 430px) {
+  .logo{
+    img{
+      width: 2em;
+      height: 2em;
+    }
+  }
+}

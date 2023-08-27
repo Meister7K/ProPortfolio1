@@ -29,13 +29,9 @@
   flex-direction: column;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 430px) {
   .header {
-    .logo {
-      width: 2em;
-      height: 2em;
-      right: 2em;
-    }
+   
     .main-title {
       font-size: 2em;
       top: 2dvh;
