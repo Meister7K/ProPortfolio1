@@ -8,6 +8,9 @@ import RickImg from "../../../assets/images/projects/Morty's Book of Schwifty Ri
 import Sunset from "../../../assets/images/projects/Sunset.jpg";
 import Planner from "../../../assets/images/projects/planner.png";
 import Employee from "../../../assets/images/projects/EmployeeCode.jpg";
+import TechBG from "../../../assets/images/projects/techBG.jpg";
+import Snow from "../../../assets/images/projects/weather.jpg";
+import Pass from "../../../assets/images/projects/passwordGenerator.png";
 
 
 function Projects(_props: any) {
@@ -102,6 +105,39 @@ function Projects(_props: any) {
       repo: "https://github.com/Meister7K/12-SQL-Challenge-Employee-Tracker",
       inProgress: false,
     },
+    {
+      id: 9,
+      display: "secondary",
+      title: "ReadMe Generator",
+      image: TechBG,
+      description:
+        "This project was created to develop a Node.JS program that generates a README.md file from user input based on prompts in the terminal. This program teaches how to create our own packages and install them into a JS file. It also taught me how to write files with hte inquirer and fs packages.",
+      link: "",
+      repo: "https://github.com/Meister7K/09-Professional-README-Generator",
+      inProgress: false,
+    },
+    {
+      id: 10,
+      display: "secondary",
+      title: "API Weather Dashboard",
+      image: Snow,
+      description:
+        "A weather dashboard that displays current weather and future forecasts for searched cities. This page uses openweather API to produce the weather data displayed on the page. In this project I learned how to set up API calls and import the data into useable information on the site.",
+      link: "https://meister7k.github.io/06-Server-Side-APIs-Challenge-Weather-Dashboard/",
+      repo: "https://github.com/Meister7K/06-Server-Side-APIs-Challenge-Weather-Dashboard",
+      inProgress: false,
+    },
+    {
+      id: 11,
+      display: "secondary",
+      title: "Vanilla JS Password Generator",
+      image: Pass,
+      description:
+        "This project was built to create an app that could create a randomly generated password. the page uses promps and confirms to select length of password and different characters included in the generated password. I learned about creating variables and pulling data from them along with the use of functions and for loops to make recursive processes automated.",
+      link: "https://meister7k.github.io/03-JavaScript-Password-Generator/",
+      repo: "https://github.com/Meister7K/03-JavaScript-Password-Generator",
+      inProgress: false,
+    },
   ];
   // project style transition
   const [projects, setProjects] = useState(projectArray);
@@ -171,7 +207,7 @@ function Projects(_props: any) {
         setPercentage(nextPercentage);
 
         const track = document.getElementById("project-track") as HTMLElement;
-        track.style.transform = `translate(${5+nextPercentage}%, 0%)`;
+        track.style.transform = `translate(${9+nextPercentage}%, 0%)`;
 
         const projectCards = track.getElementsByClassName("pro-image");
         for (const projectCard of projectCards) {

@@ -63,10 +63,8 @@ function About(_props: any) {
         </h1>
         <ImageFlipper />
         <p>
-          <TextCreator
-            text="I 'm Karl, an aspiring web dev. Formerly a project coordinator. Graduate of University of Minnesota Duluth. Defensive End of the UMD Bulldogs Football Team. Current resident of Denver, CO. Dog Daddy. Reading enthusiast. Interested in longevity, education, learning processes, sports, cybersecurity, and game development."
-            speed={10}
-          />
+          
+            I'm Karl, an aspiring web developer. Formerly a project coordinator.Graduduate of the University of Texas Austin Full stack bootcamp and Graduate of the University of Minnesota Duluth. Defensive End for the UMD Bulldogs Football Team. Current resident of Denver, CO. Dog Daddy. Reading enthusiast. Interested in longevity, education, learning techniques, sports, cybersecurity, and game development.
         </p>
         <br />
         <h3> Learn more here</h3>
