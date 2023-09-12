@@ -1,5 +1,5 @@
 import "./Projects.scss";
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import TMFImage from "../../../assets/images/projects/TMF-home.png";
 import DungeonImg from "../../../assets/images/projects/DungeonGame-GIF.gif";
 import BlogImg from "../../../assets/images/projects/BlogImg.png";
@@ -7,6 +7,7 @@ import ERImage from "../../../assets/images/projects/ER quiz.png";
 import RickImg from "../../../assets/images/projects/Morty's Book of Schwifty Ricktails.gif";
 import Sunset from "../../../assets/images/projects/Sunset.jpg";
 import Planner from "../../../assets/images/projects/planner.png";
+import Employee from "../../../assets/images/projects/EmployeeCode.jpg";
 
 
 function Projects(_props: any) {
@@ -90,6 +91,17 @@ function Projects(_props: any) {
       repo: "https://github.com/Meister7K/05-Third-Party-APIs-Challenge-Work-Day-Scheduler",
       inProgress: false,
     },
+    {
+      id: 8,
+      display: "secondary",
+      title: "SQL Employee Tracker",
+      image: Employee,
+      description:
+        "This project was created to develop a CMS (Content Management System)with a CLI (Command Line Interface) program that uses an SQL database to store and retrieve data that a user provides or requests. the theme is a company database that can use the inquirer package to use user input, and then use the sql2 and console.table packages to utilize that input into creating tables and databases for the user to view and edit as needed.",
+      link: "",
+      repo: "https://github.com/Meister7K/12-SQL-Challenge-Employee-Tracker",
+      inProgress: false,
+    },
   ];
   // project style transition
   const [projects, setProjects] = useState(projectArray);
@@ -104,6 +116,11 @@ function Projects(_props: any) {
 
   const handleDisplayChange = (projectID: any) => {
     setExpandedProject(expandedProject === projectID ? null : projectID);
+    if(expandedProject === null){
+      document.body.classList.add('scroll-disabled')
+    } else{
+      document.body.classList.remove('scroll-disabled')
+    }
     setProjects((prevProjects) =>
       prevProjects.map((project) =>
         project.id === projectID
@@ -111,7 +128,7 @@ function Projects(_props: any) {
               ...project,
               display: project.display === "primary" ? "secondary" : "primary",
             }
-          : { ...project, display: "secondary" }
+          : { ...project, display: "secondary"}
       )
     );
   };
@@ -123,7 +140,7 @@ function Projects(_props: any) {
   const [percentage, setPercentage] = useState<number>(0);
 
   if (!isMobileDev) {
-    React.useEffect(() => {
+    useEffect(() => {
       const handleOnDown = (e: MouseEvent | TouchEvent) => {
         const clientX =
           "touches" in e ? e.touches[0].clientX : (e as MouseEvent).clientX;
@@ -154,7 +171,7 @@ function Projects(_props: any) {
         setPercentage(nextPercentage);
 
         const track = document.getElementById("project-track") as HTMLElement;
-        track.style.transform = `translate(${20 + nextPercentage}%, 0%)`;
+        track.style.transform = `translate(${5+nextPercentage}%, 0%)`;
 
         const projectCards = track.getElementsByClassName("pro-image");
         for (const projectCard of projectCards) {
@@ -239,7 +256,7 @@ function Projects(_props: any) {
                 expandedProject === project.id ? "primary" : ""
               }`}
               id={`project#${project.id}`}
-              title="double click to toggle display"
+              title="drag to scroll & click to toggle display"
               onClickCapture={() => handleDisplayChange(project.id)}
               // onTouchEnd={() => handleDisplayChange(project.id)}
               key={project.id}
