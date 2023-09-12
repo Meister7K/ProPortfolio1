@@ -6,7 +6,10 @@ import { useRef, useState, useEffect } from "react";
 
 //add random word cycler into span
 
+
 function About(_props: any) {
+const lolEmoji = String.fromCodePoint(0x1F923)
+
   const links = [
     {
       name: "UMD Roster",
@@ -17,7 +20,7 @@ function About(_props: any) {
       href: "https://www.duluthnewstribune.com/sports/college-football-bulldogs-finkel-doesnt-lack-bite",
     },
     {
-      name: "Hudl video",
+      name: `HighSchool Video ${lolEmoji}`,
       href: "https://www.hudl.com/video/3/107133/5721aabddfe23b2d68752a71",
     },
   ];
