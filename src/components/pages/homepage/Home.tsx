@@ -7,9 +7,18 @@ function Home(_props: any) {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef<HTMLDivElement | null>(null);
 
+  
+
   useEffect(() => {
+
+    const video = document.getElementById("video")as HTMLElement;
+
+  video.style.opacity = '.7';
+
+
     const handleScroll = () => {
-      if (!elementRef.current) return;
+      if (!elementRef.current) 
+      return;
 
       const element = elementRef.current;
       const rect = element.getBoundingClientRect();
@@ -19,8 +28,12 @@ function Home(_props: any) {
         rect.top <= window.innerHeight / 2
       ) {
         setIsVisible(true);
+        
+        video.style.filter = "blur(0)"
       } else {
         setIsVisible(false);
+        
+        video.style.filter = "blur(5px)";
       }
     };
 

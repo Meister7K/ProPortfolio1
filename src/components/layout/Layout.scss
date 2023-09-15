@@ -8,6 +8,7 @@
   backdrop-filter: blur(5px);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 0 0 10px 10px;
+  transition: all .5s;
 }
 
 .pages {
@@ -36,6 +37,10 @@
       font-size: 2em;
       top: 2dvh;
     }
+    .icon{
+      width: 1em;
+      height: 1em;
+    }
   }
   .support-title {
     font-size: large;
@@ -48,6 +53,7 @@
   justify-content: center;
   .copyright {
     position: absolute;
+    font-weight: 400;
   }
 }
 
@@ -65,15 +71,16 @@
 }
 
 #video {
+  filter: brightness(var(--bright)) contrast(var(--cont)) opacity(var(--opacity)) ;
   position: fixed;
-  filter: brightness(0.5) saturate(4);
-  top: -35px;
-  left: 0;
+  top: -5%;
+  left: -1%;
   z-index: -1;
-  width: 100%;
+  width: 110%;
   height: 110%;
   overflow: hidden;
   object-fit: cover;
+  transition: filter 1s;
 }
 
 .invisible-comp > * {

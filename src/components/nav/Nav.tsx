@@ -12,7 +12,7 @@ function Nav(_props: any) {
     "projects",
     "game",
     "contact",
-    "support",
+    // "support",
   ];
 
   useEffect(() => {

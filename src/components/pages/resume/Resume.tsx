@@ -623,6 +623,7 @@ function Resume(_props: any) {
       location: "Duluth, MN",
       description:
         "Worked several positions while completing my undergraduate degree and playing football at UMD. Learned valuable time management and additional soft skills.",
+        details:["Learned exelent time managment and communication skills by juggling work, classes, football, and coursework"]
     },
   ];
 
@@ -693,7 +694,7 @@ function Resume(_props: any) {
         <br />
         <h2>Work History</h2>
         <ul className="history-list>">
-          {workArray.map((job: any, index: any) => (
+          {workArray.map((job: string, index: string) => (
             <>
               <li className="job-item" key={index}>
                 <div className="li-top">
@@ -708,11 +709,15 @@ function Resume(_props: any) {
                 <p className="job-description">
                   {job.description}
                 </p>
+                {job.details ?(<details>
+                <summary>Details & Achievments</summary>
                 <ul className="detail-list">
                   {job?.details?.map((detail: any, index: any) => (
-                    <li key={index}>{detail}</li>
+                    <li key={index}><p>{detail}</p></li>
                   ))}
                 </ul>
+              </details>):""}
+                
               </li>
               <br />
             </>

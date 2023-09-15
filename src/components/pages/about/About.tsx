@@ -71,13 +71,18 @@ const lolEmoji = String.fromCodePoint(0x1F923)
         </p>
         <br />
         <h3> Learn more here</h3>
-        <ul className="link-list">
+        <details>
+          <summary>links</summary>
+          <ul className="link-list">
           {links.map((link, index: any) => (
             <li key={index} className="add-link">
               <Button text={link.name} href={link.href} />
             </li>
           ))}
         </ul>
+        </details>
+        
+        
       </div>
     </>
   );

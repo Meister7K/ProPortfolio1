@@ -2,6 +2,7 @@ import Layout from "./components/layout/Layout";
 import "./App.scss";
 import { useState, useEffect, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { keepTheme } from "./utils/themes";
 
 import Error from "./components/pages/error/Error";
 
@@ -18,6 +19,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    keepTheme();
     setLoading(true);
     setTimeout(() => {
       setLoading(false);

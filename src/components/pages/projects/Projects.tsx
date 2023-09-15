@@ -25,7 +25,7 @@ function Projects(_props: any) {
         "Many of us struggle with balancing time to be productive and leisure time. TaskMaster-Flex is a game that gives you the best of both worlds. While fun and challenging, TMF is rewarding in all the ways of your favorite dungeon crawlers, while incentivizing you to accomplish all of the tasks and goals you set for yourself each day.",
       link: "https://taskmaster-flex-be1c20d82d58.herokuapp.com/",
       repo: "https://github.com/Meister7K/TaskMaster-Flex",
-      inProgress: false,
+      inProgress: true,
     },
 
     {
@@ -42,14 +42,15 @@ function Projects(_props: any) {
     {
       id: 3,
       display: "secondary",
-      title: "MVC Blog Site",
-      image: BlogImg,
+      title: "Rick & Morty Cocktail Generator",
+      image: RickImg,
       description:
-        "This project was created to test the methods of the MVC model by creating a functional blog based website. The site allows you to sign up or login and once completed, post or comment on blogs previously created.",
-      link: "https://anime-blog.herokuapp.com/",
-      repo: "https://github.com/Meister7K/14-Model-View-Controller-MVC-Tech-Blog",
+        "Morty's Book of Schwifty Ricktails is a web application that allows the user to select a base liquor and receive mixed drink ideas at random, based on the Rick and Morty character who also enjoys that drink. This was my first group project completed with some of my good friends from bootcamp.",
+      link: "https://sudo-apt-install.github.io/didactic/",
+      repo: "https://github.com/sudo-apt-install/didactic",
       inProgress: false,
     },
+    
     {
       id: 4,
       display: "secondary",
@@ -64,12 +65,12 @@ function Projects(_props: any) {
     {
       id: 5,
       display: "secondary",
-      title: "Rick & Morty Cocktail Generator",
-      image: RickImg,
+      title: "MVC Blog Site",
+      image: BlogImg,
       description:
-        "Morty's Book of Schwifty Ricktails is a web application that allows the user to select a base liquor and receive mixed drink ideas at random, based on the Rick and Morty character who also enjoys that drink. This was my first group project completed with some of my good friends from bootcamp.",
-      link: "https://sudo-apt-install.github.io/didactic/",
-      repo: "https://github.com/sudo-apt-install/didactic",
+        "This project was created to test the methods of the MVC model by creating a functional blog based website. The site allows you to sign up or login and once completed, post or comment on blogs previously created.",
+      link: "https://anime-blog.herokuapp.com/",
+      repo: "https://github.com/Meister7K/14-Model-View-Controller-MVC-Tech-Blog",
       inProgress: false,
     },
     {
@@ -293,7 +294,7 @@ function Projects(_props: any) {
               }`}
               id={`project#${project.id}`}
               title="drag to scroll & click to toggle display"
-              onClickCapture={() => handleDisplayChange(project.id)}
+              onClick={() => handleDisplayChange(project.id)}
               // onTouchEnd={() => handleDisplayChange(project.id)}
               key={project.id}
               draggable={false}
