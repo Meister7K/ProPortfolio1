@@ -54,7 +54,25 @@
 
 }
 
+@keyframes fadeIntoView {
+    0%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    50%{
+        opacity: 0;
+        transform: translateY(100%);
+
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .home-canvas{
+    opacity: .7;
     position: fixed;
     top: 0;
     left: 0;
@@ -64,5 +82,8 @@
     position: fixed;
     overflow: hidden;
     z-index: -1;
-
+    animation: fadeIntoView;
+    animation-duration: 3s;
+    animation-delay: 0;
+    animation-iteration-count: 1;
 }

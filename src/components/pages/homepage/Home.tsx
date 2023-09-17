@@ -6,6 +6,7 @@ import { HashLink as Linkz } from "react-router-hash-link";
 import { Canvas } from "@react-three/fiber";
 
 
+
 import { HomeCanvas } from "../../homeCanvas/HomeCanvas";
 
 
@@ -79,6 +80,7 @@ function Home(_props: any) {
       <div className="home-canvas">
         <Canvas className="home-canvas" shadows>
         <HomeCanvas />
+        
       </Canvas>
     </div>
       
