@@ -1,7 +1,7 @@
 import "./Layout.scss";
 import Nav from "../nav/Nav";
 import React, { Suspense, useRef } from "react";
-import TextStyle from "../textStyle/TextStyle";
+
 const About = React.lazy(() => import("../pages/about/About"));
 const Home = React.lazy(() => import("../pages/homepage/Home"));
 const Resume = React.lazy(() => import("../pages/resume/Resume"));

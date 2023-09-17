@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import "./Resume.scss";
 import SkillList from "../../skill-list/SkillList";
 import resume from "../../../assets/files/Karl Finkel Resume.pdf";
@@ -5,7 +9,7 @@ import BootCert from "../../../assets/files/UTABootCert.pdf";
 import CAPM from "../../../assets/files/CAPM certificate.pdf";
 import { useRef, useState, useEffect } from "react";
 
-function Resume(_props: any) {
+function Resume() {
   const iconArray: any = [
     {
       name: "Bootstrap",
@@ -694,7 +698,7 @@ function Resume(_props: any) {
         <br />
         <h2>Work History</h2>
         <ul className="history-list>">
-          {workArray.map((job: string, index: string) => (
+          {workArray.map((job: any, index: any) => (
             <>
               <li className="job-item" key={index}>
                 <div className="li-top">
@@ -728,7 +732,7 @@ function Resume(_props: any) {
         <br />
         <h2>Education</h2>
         <ul className="education-list>">
-          {eduArray.map((school: any, index: any) => (
+          {eduArray.map((school: any, index: number) => (
             <>
               <li className="edu-item" key={index}>
                 <div className="li-top">
