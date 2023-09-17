@@ -26,26 +26,26 @@
 }
 
 .theme-dark{
-  --text1: rgb(250, 243, 243);
-  --text2: gray;  
+  --text1: rgba(255,255,255,.8);
+  --text2: rgb(65,63,82);  
   --background1: #000000;
-  --background2: #586F7C;
+  --background2: 0,0,0, .3;
   --accent: var(--DOrange);
   //--button-border: #B8DBD9;
-  --shadow:0 0 3px rgba(0, 0, 0, 1);
+  --shadow:0 0 3px rgba(0, 0, 0, .5);
   --bright:.5;
   --cont: 2;
   --opacity: .7;
 }
 
 .theme-light{
-  --text1: rgb(0, 0, 0);
+  --text1: rgba(0,0,0, .8);
   --text2: gray;
   --background1: #ffffff;
-  --background2: #EDDCD2;
+  --background2: 255,255,255, .3;
   --accent: var(--DOrange);
   //--button-border: #5E4B56;
-  --shadow: 0 0 3px rgba(255, 255, 255, 0.2);
+  --shadow: 0 0 3px rgba(255, 255, 255, .5);
   --bright:1.5;
   --cont: 2;
   --opacity: .7;
@@ -96,7 +96,7 @@ h1 {
   background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 6px;
-  //bottom: 10px;
+
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   display: inline-flex;

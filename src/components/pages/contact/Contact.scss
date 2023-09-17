@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-items: center;
   align-items: center;
+
   ul {
     width: 50dvw;
     max-width: 400px;
@@ -20,6 +21,14 @@
     width: 100%;
     background: transparent;
     backdrop-filter: blur(5px);
+    color: inherit;
+    border-width: 2px;
+    border-style:ridge;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+    &::placeholder{
+      color: inherit;
+    }
   }
   .input-btn {
     z-index: 0;

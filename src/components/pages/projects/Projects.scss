@@ -29,7 +29,7 @@
   gap: 5vmin;
   width: fit-content;
   user-select: none;
-  transition: transform 1000ms;
+  transition: transform 1s;
   animation-fill-mode: forwards;
 }
 //! need to look at
@@ -43,7 +43,7 @@
   position: absolute;
   user-select: none;
   flex: 0 0 auto;
-  transition: all 1000ms;
+  transition: all 1s;
   animation-fill-mode: forwards;
 }
 
@@ -67,7 +67,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: object-position 1000ms;
+    transition: object-position 1s;
     animation-fill-mode: forwards;
   }
 }
@@ -96,7 +96,7 @@
   p,
   h2 {
     font-weight: bolder;
-    backdrop-filter: blur(2px);
+
     margin-bottom: 5dvh;
   }
 
@@ -106,6 +106,10 @@
     max-height: 100vh;
     max-width: 500px;
     padding: 2dvi;
+    font-weight: 300;
+    backdrop-filter: blur(3px);
+    background-color: rgba(var(--background2));
+    border-radius: 10px;
   }
   .pro-image {
     width: 100%;

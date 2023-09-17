@@ -112,7 +112,7 @@ function Projects(_props: any) {
       title: "ReadMe Generator",
       image: TechBG,
       description:
-        "This project was created to develop a Node.JS program that generates a README.md file from user input based on prompts in the terminal. This program teaches how to create our own packages and install them into a JS file. It also taught me how to write files with hte inquirer and fs packages.",
+        "This project was created to develop a Node.JS program that generates a README.md file from user input based on prompts in the terminal. This program teaches how to create our own packages and install them into a JS file. It also taught me how to write files with the inquirer and fs packages.",
       link: "",
       repo: "https://github.com/Meister7K/09-Professional-README-Generator",
       inProgress: false,

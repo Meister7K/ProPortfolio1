@@ -87,7 +87,13 @@ function Clock() {
     return () => clearInterval(intervalId);
   }, []);
 
-  return <h3 className="clock">{currentTime}</h3>;
+  return (
+    <div className="mask">
+    
+    <h3 className="clock port4">{currentTime}</h3>
+   
+    </div>
+    );
 }
 
 export default Clock;

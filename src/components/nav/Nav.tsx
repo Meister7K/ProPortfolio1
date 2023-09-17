@@ -7,10 +7,10 @@ function Nav(_props: any) {
   const [activeSection, setActiveSection] = useState("");
   const sections = [
     "home",
-    "about",
-    "resume",
     "projects",
+    "resume",
     "game",
+    "about",
     "contact",
     // "support",
   ];
@@ -44,7 +44,8 @@ function Nav(_props: any) {
   }, []);
 
   return (
-    <nav className={`nav`}>
+    <div className="mask">
+      <nav className={`nav port4`}>
       <ul>
         {sections.map((section) => (
           <li
@@ -58,6 +59,8 @@ function Nav(_props: any) {
         ))}
       </ul>
     </nav>
+    </div>
+    
   );
 }
 

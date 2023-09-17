@@ -19,33 +19,34 @@ function Layout() {
   const videoRef= useRef(null)
   return (
     <>
-      <div className="mask">
-        <div className="header port">
-          <TextStyle />
-
+      
+        
           <Logo />
-        </div>
-      </div>
+        
+      
+
+
       <video ref={videoRef} src={Video} autoPlay loop muted id="video" />
       <div className="pages">
         <Suspense fallback={<Loader />}>
           <Home />
-
-          <About />
+          
+          <Projects />
 
           <Resume />
 
-          <Projects />
-
           <Game />
+
+          <About />
 
           <Contact />
 
           {/* <Support /> */}
         </Suspense>
       </div>
-      <Nav />
-      <Clock />
+        <Nav />
+      <Clock /> 
+      
       
       <div className="footer">
         <p className="copyright">

@@ -8,10 +8,9 @@
   height: fit-content;
 }
 .game-btn {
-  width: fit-content;
-  align-self: center;
   animation: pulse 1s infinite alternate;
-  z-index: 0;
+  max-width: 30%;
+  align-self: center;
 }
 
 #game {
