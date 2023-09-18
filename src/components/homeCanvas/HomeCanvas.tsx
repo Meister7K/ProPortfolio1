@@ -12,23 +12,31 @@ export const HomeCanvas = () => {
     // const cyl1 = useRef(null);
 
     // const box1 = useRef(null);
+//  let mouseX;
+//         let mouseY;
+//     const homeCanvas = document.getElementById("canv");
+//     homeCanvas.addEventListener("mousemove",(e)=>{
+//         const rect = homeCanvas?.getBoundingClientRect();
+//         mouseX =((e.clientX-rect.left)/window.innerWidth)*2-1;
+//         mouseY =((e.clientY -rect.top)/window.innerHeight)*2+1;
+//     })
 
     const manyBalls = ()=>{
         const balls = [];
         for(let i=0;i<1000;i++){
-            // let x=Math.ceil(Math.random() *3) * (Math.round(Math.random()) ? 1 : -1);
-            // let y =Math.ceil(Math.random() * 3) * (Math.round(Math.random()) ? 1 : -1)
-            // let z =Math.ceil(Math.random() * 3) * (Math.round(Math.random()) ? 1 : -1)
-            const x= Math.cos(i)
-            const y= Math.tan(i)
-            const z= Math.sin(i)
+            let x=Math.ceil(Math.random() * 10) * (Math.round(Math.random()) ? 1 : -1);
+            let y =Math.ceil(Math.random() * 10) * (Math.round(Math.random()) ? 1 : -1)
+            let z =Math.ceil(Math.random() * 10) * (Math.round(Math.random()) ? 1 : -1)
+            // const x= Math.cos(i)
+            // const y= Math.tan(i)
+            // const z= Math.sin(i)
             balls[i]=[x,y,z]
         }
         return balls;
     }
 
     const balls = manyBalls().map((pos: any ,i)=>(<mesh position={pos} ref={sphere1} key={i}>
-        <sphereGeometry args={[.2,30,30]}/>
+        <sphereGeometry args={[.1,30,30]}/>
         <meshStandardMaterial metalness={3} />
     </mesh>))
 
@@ -44,9 +52,14 @@ export const HomeCanvas = () => {
     //     </mesh> 
     // )
 
+
+
     useFrame(()=>{
+       
+
         if(group1.current){
             //    group1.current.rotation.x += 0.001; 
+    //    group1.current.rotation.x += 0.001;
        group1.current.rotation.y += 0.001;
     //    box1.current.rotation.x += 0.01; 
     //    cyl1.current.rotation.z += -0.01; 
@@ -60,8 +73,10 @@ export const HomeCanvas = () => {
     {/* Lights */}
         <directionalLight color={"lightgray"} position={[0,10,0]}/>
         <directionalLight color={"darkorange"} position={[0,-10,0]}/>
+
+        <camera position={[0,5,5]} />
     {/* Objects */}
-        <group ref={group1}>
+        <group ref={group1} >
             {balls}
             {/* {cyl([0,0,-1])} */}
             {/* {box([0,0,-2])} */}

@@ -108,7 +108,7 @@ h1 {
   text-align: center;
   transition: all 400ms;
   //z-index: 10000;
-  text-shadow: 0 0 1px black;
+  text-shadow: var(--shadow);
   font-size: 1em;
   font-weight: 600;
   font-family: inherit;

@@ -14,7 +14,7 @@ function Home(_props: any) {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef<HTMLDivElement | null>(null);
 
-  const titleArray = ["Web Developer", "Problem Solver", "Sports Junkie", "Visual Creative"]
+  const titleArray = ["Web Developer", "Problem Solver", "Sports Junkie", "Visual Creative", "software Engineer", "Project Coordinator"]
 
 
   useEffect(() => {
@@ -77,7 +77,7 @@ function Home(_props: any) {
           </Linkz>
         </div>
       </div>
-      <div className="home-canvas">
+      <div className="home-canvas" id="canv">
         <Canvas className="home-canvas" shadows>
         <HomeCanvas />
         
