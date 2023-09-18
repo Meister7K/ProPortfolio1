@@ -1,4 +1,4 @@
-import{r as ze,g as a0}from"./index-e48de06b.js";/**
+import{r as ze,g as a0}from"./index-8cdc9a6b.js";/**
  * @license
  * Copyright 2010-2023 Three.js Authors
  * SPDX-License-Identifier: MIT
