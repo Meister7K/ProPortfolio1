@@ -60,7 +60,9 @@ export const HomeCanvas = () => {
         if(group1.current){
             //    group1.current.rotation.x += 0.001; 
     //    group1.current.rotation.x += 0.001;
-       group1.current.rotation.y += 0.001;
+       group1.current.rotation.x += 0.001;
+       group1.current.rotation.y -= 0.001;
+       group1.current.rotation.z -= 0.001;
     //    box1.current.rotation.x += 0.01; 
     //    cyl1.current.rotation.z += -0.01; 
         }
