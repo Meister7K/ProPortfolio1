@@ -141,7 +141,7 @@ function Projects(_props: any) {
       inProgress: false,
     },
     {
-      id: 11,
+      id: 12,
       display: "secondary",
       title: "THREE JS Practice App",
       image: Space,
