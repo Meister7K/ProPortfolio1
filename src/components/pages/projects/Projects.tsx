@@ -11,6 +11,7 @@ import Employee from "../../../assets/images/projects/EmployeeCode.jpg";
 import TechBG from "../../../assets/images/projects/techBG.jpg";
 import Snow from "../../../assets/images/projects/weather.jpg";
 import Pass from "../../../assets/images/projects/passwordGenerator.png";
+import Space from "../../../assets/images/projects/space.jpg";
 
 
 function Projects(_props: any) {
@@ -139,6 +140,17 @@ function Projects(_props: any) {
       repo: "https://github.com/Meister7K/03-JavaScript-Password-Generator",
       inProgress: false,
     },
+    {
+      id: 11,
+      display: "secondary",
+      title: "THREE JS Practice App",
+      image: Space,
+      description:
+        "A workspace where I'm learning the fundementals of 3D building and animation. I am currentlu working on a space mobile ",
+      link: "https://meister7k.github.io/ThreeJSTSPractice/",
+      repo: "https://github.com/Meister7K/ThreeJSTSPractice",
+      inProgress: true,
+    },
   ];
   // project style transition
   const [projects, setProjects] = useState(projectArray);
@@ -146,10 +158,10 @@ function Projects(_props: any) {
 
 
   //!mobile testing
-  let devInfo = navigator.userAgent;
-  let regexDev = /android|iphone|kindle|ipad/i;
+  const devInfo = navigator.userAgent;
+  const regexDev = /android|iphone|kindle|ipad/i;
 
-  let isMobileDev = regexDev.test(devInfo);
+  const isMobileDev = regexDev.test(devInfo);
 
   const handleDisplayChange = (projectID: any) => {
     setExpandedProject(expandedProject === projectID ? null : projectID);
