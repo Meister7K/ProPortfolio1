@@ -5,7 +5,7 @@ import React, { Suspense, useRef } from "react";
 const About = React.lazy(() => import("../pages/about/About"));
 const Home = React.lazy(() => import("../pages/homepage/Home"));
 const Resume = React.lazy(() => import("../pages/resume/Resume"));
-const Projects = React.lazy(() => import("../pages/projects/Projects"));
+const Projects = React.lazy(() => import("../pages/projects/NewProjects"));
 const Contact = React.lazy(() => import("../pages/contact/Contact"));
 const Game = React.lazy(() => import("../pages/game/Game"));
 //const Support = React.lazy(() => import("../pages/support/Support"));
